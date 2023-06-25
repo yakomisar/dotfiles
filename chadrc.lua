@@ -1,14 +1,14 @@
  local M = {}
      M.ui = {
-        theme = 'catppuccin',
+        theme = 'vscode_dark',
         tabufline = {
-     overriden_modules = function()
-       return {
-         buttons = function()
-           return ""
-         end,
-        }
-        end,
+            overriden_modules = function()
+                return {
+                    buttons = function()
+                    return ""
+                    end,
+                }
+            end,
         },
     }
      M.plugins = "custom.plugins"
