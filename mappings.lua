@@ -1,5 +1,12 @@
 local M = {}
 
+M.general = {
+  i = {
+    -- jk --> ESC 
+    ["jk"] = { "<ESC>", "ESC keybinding in insert mode" },
+  }
+}
+
 M.dap = {
   plugin = true,
   n = {
@@ -46,6 +53,10 @@ M.gopher = {
     ["<leader>gsy"] = {
       "<cmd> GoTagAdd yaml <CR>",
       "Add yaml struct tags"
+    },
+    ["<leader>gsr"] = {
+      "<cmd>GoTagRm json,yaml<CR>",
+      "Remove tags (json/yaml) from struct"
     }
   }
 }

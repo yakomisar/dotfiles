@@ -1,6 +1,6 @@
  local M = {}
      M.ui = {
-        theme = 'everforest',
+        theme = 'everblush',
         tabufline = {
             overriden_modules = function()
                 return {
