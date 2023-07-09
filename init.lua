@@ -1,7 +1,7 @@
 local opt = vim.opt
 
 -- Vim options
-opt.timeoutlen = 50 -- Which-key timeout in ms
+opt.timeoutlen = 150 -- Which-key timeout in ms
 opt.backup = false
 opt.swapfile = false
 

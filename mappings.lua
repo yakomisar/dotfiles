@@ -2,8 +2,7 @@ local M = {}
 
 M.general = {
   i = {
-    -- jk --> ESC 
-    ["jk"] = { "<ESC>", "ESC keybinding in insert mode" },
+    ["jk"] = { "<ESC>", noremap = true, silent = true, expr = false, description = "ESC keybinding in insert mode" },
   }
 }
 
