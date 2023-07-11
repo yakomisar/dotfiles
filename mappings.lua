@@ -56,6 +56,10 @@ M.gopher = {
     ["<leader>gsr"] = {
       "<cmd>GoTagRm json,yaml<CR>",
       "Remove tags (json/yaml) from struct"
+    },
+    ["<leader>rr"] = {
+      "<cmd>GoIfErr<CR>",
+      "Add if err check"
     }
   }
 }
