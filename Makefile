@@ -37,6 +37,8 @@ install:
 	@echo "Setting up Go environment variables..."
 	echo "export GOPATH=$HOME/go" >> ~/.zshrc
 	echo "export GO111MODULE=on" >> ~/.zshrc
+	echo "export PATH=$PATH:$HOME/go/bin" >> ~/.zshrc
+	source ~/.zshrc
 
 go-tools:
 	@echo "Installing asmfmt..."
