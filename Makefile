@@ -1,0 +1,139 @@
+
+# Makefile for setting up packages
+
+# Install dependencies
+install:
+	@echo "Installing Xcode Command Line Tools..."
+	xcode-select --install || { echo "Xcode Command Line Tools installation failed"; exit 1; }
+
+	@echo "Installing Homebrew..."
+	/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" || { echo "Homebrew installation failed"; exit 1; }
+
+	@echo "Installing Oh My Zsh..."
+	sh -c "$$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || { echo "Oh My Zsh installation failed"; exit 1; }
+
+	@echo "Installing Nerd Fonts..."
+	brew tap homebrew/cask-fonts
+	brew install --cask font-hack-nerd-font || { echo "Nerd Fonts installation failed"; exit 1; }
+
+	@echo "Assigning Caps Lock to Control..."
+	if [ ! -f /Library/LaunchDaemons/org.capslock-to-control.plist ]; then \
+		echo "hidutil property --set '{\"UserKeyMapping\":[{\"HIDKeyboardModifierMappingSrc\":0x700000039,\"HIDKeyboardModifierMappingDst\":0x7000000E0}]}'" | sudo tee -a /Library/LaunchDaemons/org.capslock-to-control.plist > /dev/null; \
+		sudo launchctl load /Library/LaunchDaemons/org.capslock-to-control.plist; \
+	else \
+		echo "Caps Lock to Control already configured."; \
+	fi
+
+	@echo "Installing iTerm..."
+	brew install --cask iterm2 || { echo "iTerm2 installation failed"; exit 1; }
+
+	@echo "Applying Monaco font to iTerm..."
+	defaults write com.googlecode.iterm2 "Normal Font" -string "Monaco 14"
+
+	@echo "Enabling anti-aliasing in iTerm..."
+	defaults write com.googlecode.iterm2 AppleFontSmoothing -int 2
+
+	@echo "Installing Git..."
+	brew install git || { echo "Git installation failed"; exit 1; }
+
+	@echo "Installing Go..."
+	brew install go || { echo "Go installation failed"; exit 1; }
+
+	@echo "Setting up Go environment variables..."
+	echo "export PATH=$$PATH:/usr/local/go/bin" >> ~/.zshrc
+	echo "export GOPATH=$$HOME/go" >> ~/.zshrc
+	echo "export PATH=$$PATH:$$GOPATH/bin" >> ~/.zshrc
+	echo "export GO111MODULE=on" >> ~/.zshrc
+
+	@echo "Installing golines..."
+	go install github.com/segmentio/golines/cmd/golines@latest || { echo "Golines installation failed"; exit 1; }
+
+	@echo "Installing gomodifytags..."
+	go install github.com/fatih/gomodifytags@latest || { echo "Gomodifytags installation failed"; exit 1; }
+
+	@echo "Installing GoIfErr..."
+	go install github.com/marcusolsson/gowraps/gowraps/cmd/GoIfErr@latest || { echo "GoIfErr installation failed"; exit 1; }
+
+	@echo "Installing gofumt..."
+	go install mvdan.cc/gofumpt@latest || { echo "Gofumt installation failed"; exit 1; }
+
+	@echo "Installing goimports-reviser..."
+	go install github.com/incu6us/goimports-reviser@latest || { echo "Goimports-reviser installation failed"; exit 1; }
+
+	@echo "Installing Neovim..."
+	brew install neovim || { echo "Neovim installation failed"; exit 1; }
+
+	@echo "Installing NVChad..."
+	git clone https://github.com/siduck76/NvChad ~/.config/nvim || { echo "NVChad installation failed"; exit 1; }
+	rm -rf ~/.config/nvim/lua/custom
+	git clone https://github.com/yakomisar/dotfiles ~/.config/nvim/lua/custom || { echo "Custom dotfiles installation failed"; exit 1; }
+
+	@echo "Installing Tmux..."
+	brew install tmux || { echo "Tmux installation failed"; exit 1; }
+
+# Install Go tools
+go-tools:
+	@echo "Installing asmfmt..."
+	go install github.com/klauspost/asmfmt/cmd/asmfmt@latest
+
+	@echo "Installing gofumpt..."
+	go install mvdan.cc/gofumpt@latest
+
+	@echo "Installing gopls..."
+	go install golang.org/x/tools/gopls@latest
+
+	@echo "Installing goimports..."
+	go install golang.org/x/tools/cmd/goimports@latest
+
+	@echo "Installing hey..."
+	go install github.com/rakyll/hey@latest
+
+	@echo "Installing staticcheck..."
+	go install honnef.co/go/tools/cmd/staticcheck@latest
+
+	@echo "Installing gorename..."
+	go install golang.org/x/tools/cmd/gorename@latest
+
+	@echo "Installing impl..."
+	go install github.com/josharian/impl@latest
+
+	@echo "Installing dlv..."
+	go install github.com/go-delve/delve/cmd/dlv@latest
+
+	@echo "Installing goimports-reviser..."
+	go install github.com/incu6us/goimports-reviser@latest
+
+	@echo "Installing gotags..."
+	go install github.com/jstemmer/gotags@latest
+
+	@echo "Installing keyify..."
+	go install github.com/dominikh/go-tools/cmd/keyify@latest
+
+	@echo "Installing errcheck..."
+	go install github.com/kisielk/errcheck@latest
+
+	@echo "Installing fillstruct..."
+	go install github.com/davidrjenni/reftools/cmd/fillstruct@latest
+
+	@echo "Installing golines..."
+	go install github.com/segmentio/golines/cmd/golines@latest
+
+	@echo "Installing guru..."
+	go install golang.org/x/tools/cmd/guru@latest
+
+	@echo "Installing revive..."
+	go install github.com/mgechev/revive@latest
+
+	@echo "Installing godef..."
+	go install github.com/rogpeppe/godef@latest
+
+	@echo "Installing gomodifytags..."
+	go install github.com/fatih/gomodifytags@latest
+
+	@echo "Installing golangci-lint..."
+	curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.42.0
+
+	@echo "Installing gotests..."
+	go install github.com/cweill/gotests/...@latest
+
+.PHONY: install go-tools
