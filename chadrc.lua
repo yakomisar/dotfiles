@@ -1,6 +1,6 @@
  local M = {}
      M.ui = {
-        theme = 'everblush',
+        theme = 'vscode_dark',
         tabufline = {
             overriden_modules = function()
                 return {
