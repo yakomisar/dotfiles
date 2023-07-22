@@ -6,7 +6,7 @@ M.general = {
   },
   n = {
     ["<leader>s"] = {
-      "<cmd> split<CR>",
+      "<cmd> vsplit<CR>",
       noremap = true,
       silent = true,
       expr = false,
