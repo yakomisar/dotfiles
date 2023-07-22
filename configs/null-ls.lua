@@ -1,11 +1,18 @@
 local null_ls = require("null-ls")
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+local format = null_ls.builtins.formatting
 
 local opts = {
   sources = {
-    null_ls.builtins.formatting.gofumpt,
-    null_ls.builtins.formatting.goimports_reviser,
-    null_ls.builtins.formatting.golines,
+    -- Golang formatting
+    format.gofumpt,
+    format.goimports_reviser,
+    format.golines,
+    -- Web formatting (jsx,html, ts and many others...)
+    format.prettierd.with({
+                filetypes = {"javascript", "javascriptreact", "typescript", "typescriptreact", "css", "html", "json", "yaml", "markdown", "graphql"},
+            }),
+    format.stylua,
   },
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then

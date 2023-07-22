@@ -3,6 +3,9 @@ local M = {}
 M.general = {
   i = {
     ["jk"] = { "<ESC>", noremap = true, silent = true, expr = false, description = "ESC keybinding in insert mode" },
+  },
+  n = {
+    ["<leader>s"] = { "<cmd> split", noremap = true, silent = true, expr = false, description = "Split horizontal in normal mode" },
   }
 }
 
