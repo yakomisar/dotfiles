@@ -23,12 +23,12 @@ M.ui = {
         --     -- base06 - Light Foreground (Not often used)
         --     -- base07 - Light Background (Not often used)
         -- base08 = "white", -- Variables, XML Tags, Markup Link Text, Markup Lists, Diff Deleted
-        --     base09 = "#c7c1f6", --Integers, Boolean, Constants, XML Attributes, Markup Link Url
+        -- base09 = "#c7c1f6", --Integers, Boolean, Constants, XML Attributes, Markup Link Url
         --     base0A = "#8ae8f1", -- Classes, Markup Bold, Search Text Background
         --     base0B = "#fddd69", --Strings, Inherited Class, Markup Code, Diff Inserted
         --     -- base0C - Support, Regular Expressions, Escape Characters, Markup Quotes
         --     base0D = "#c0ef7f", --Functions, Methods, Attribute IDs, Headings
-        --     base0E = colors.color1, -- Keywords, Storage, Selector, Markup Italic, Diff Changed
+        -- base0E = colors.color1, -- Keywords, Storage, Selector, Markup Italic, Diff Changed
         --     base0F = "#d699b6", -- Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?>
       },
       --   base_30 = {
@@ -42,9 +42,9 @@ M.ui = {
           bold = true,
         }, -- operators like = != := ==
         ["@keyword.return"] = {
-          fg = "#8ae8f1",
+          -- fg = "#40a6bf", -- good color
+          fg = "#50e3c2", -- good contrast color
           bold = true,
-          -- fg = "#c7c1f6",
         },
         --     ["@keyword.function"] = {
         --       fg = colors.color1,
@@ -81,9 +81,6 @@ M.ui = {
     },
     Boolean = {
       bold = true,
-    },
-    Operator = {
-      italic = true,
     },
   },
 }
