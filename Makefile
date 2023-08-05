@@ -11,6 +11,9 @@ install:
 	@echo "Installing Oh My Zsh..."
 	sh -c "$$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || { echo "Oh My Zsh installation failed"; exit 1; }
 
+	@echo "Installing bat"
+	brew install bat
+
 	@echo "Installing Nerd Fonts..."
 	brew tap homebrew/cask-fonts
 	brew install --cask font-hack-nerd-font || { echo "Nerd Fonts installation failed"; exit 1; }
@@ -30,6 +33,9 @@ install:
 
 	@echo "Installing Git..."
 	brew install git || { echo "Git installation failed"; exit 1; }
+
+	@echo "Install NVChad"
+	git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 
 	@echo "Installing Go..."
 	brew install go || { echo "Go installation failed"; exit 1; }
@@ -85,5 +91,11 @@ go-tools:
 
 	@echo "Installing GoIfErr..."
 	go install github.com/koron/iferr@latest
+
+nvchad-custom:
+	@echo "Add custom config to NvChad"
+	cd ~/.config/ && git clone https://github.com/yakomisar/dotfiles .
+	cd ~/.config/nvim/lua/ && rm -rf custom
+	ln -s ~/.config/custom_nvchad/ custom
 
 .PHONY: install go-tools
