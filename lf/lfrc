@@ -3,6 +3,8 @@ set icons
 
 # enable dividers
 set drawbox
+# enable filesize
+set info size
 
 # global option
 set hidden!
@@ -18,15 +20,17 @@ set cursorpreviewfmt "\033[7;2m"
 # custom commands
 # delete
 cmd delete ${{
-    set -f
-    printf "$fx\n"
-    printf "delete?[y/n]"
-    read ans
-    [ $ans = "y" ] && mv $fx ~/.trash
+  clear; tput cup $(($(tput lines)/3)); tput bold
+  set -f
+  printf "$fx\n"
+  printf "delete?[y/n]"
+  read ans
+  [ $ans = "y" ] && mv $fx ~/.trash
 }}
 
 # Unpack
 cmd extract ${{
+  clear; tput cup $(($(tput lines)/3)); tput bold
 	set -f
 	printf "%s\n\t" "$fx"
 	printf "extract?[y/N]"
@@ -51,6 +55,9 @@ cmd zip ${{
     zip -r $1.zip $1
     rm -rf $1
 }}
+
+# mkdir command. See wiki if you want it to select created dir
+map a :push %mkdir<space>
 
 # mappings
 map d delete
