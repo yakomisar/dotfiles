@@ -92,6 +92,9 @@ go-tools:
 	@echo "Installing GoIfErr..."
 	go install github.com/koron/iferr@latest
 
+	@echo "Installing debugger for Go - Delve"
+	go install github.com/go-delve/delve/cmd/dlv@latest
+
 nvchad-custom:
 	@echo "Add custom config to NvChad"
 	cd ~/.config/ && git clone https://github.com/yakomisar/dotfiles .

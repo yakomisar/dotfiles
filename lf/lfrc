@@ -20,13 +20,15 @@ set cursorpreviewfmt "\033[7;2m"
 # custom commands
 # delete
 cmd delete ${{
-  clear; tput cup $(($(tput lines)/3)); tput bold
-  set -f
-  printf "$fx\n"
-  printf "delete?[y/n]"
-  read ans
-  [ $ans = "y" ] && mv $fx ~/.trash
+    set -f
+    printf "$fx\n"
+    printf "delete?[y/n]"
+    read ans
+    [ "$ans" = "y" ] && rm -rf $fx
 }}
+
+# define a custom 'rename' command without prompt for overwrite
+cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
 
 # Unpack
 cmd extract ${{
@@ -62,3 +64,4 @@ map a :push %mkdir<space>
 # mappings
 map d delete
 map E extract
+map r push :rename<space>
