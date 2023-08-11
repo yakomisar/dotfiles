@@ -9,6 +9,7 @@ return {
       vim.cmd([[colorscheme nightfly]])
     end,
   },
+  -- commenting plugin ('gc'/'gcc' to comment)
   {
     'numToStr/Comment.nvim',
     event = { "BufReadPost", "BufNewFile" },
@@ -55,5 +56,40 @@ return {
       ---Function to call after (un)comment
       post_hook = nil,
     },
+  },
+  {
+    "nvim-telescope/telescope.nvim",
+      cmd = "Telescope",
+      opts = function(_, opts)
+        opts.defaults = {
+          layout_strategy = "horizontal",
+          prompt_prefix = " ",
+          selection_caret = " ",
+          mappings = {
+          i = {
+            ["<C-c>"] = require("telescope.actions").close, -- close Telescope window
+            ["<C-k>"] = require("telescope.actions").move_selection_previous, -- move to prev result
+            ["<C-j>"] = require("telescope.actions").move_selection_next, -- move to next result
+            ["<C-q>"] = require("telescope.actions").send_selected_to_qflist + require("telescope.actions").open_qflist, -- send selected to quickfixlist
+            },
+          },
+        }
+        opts.pickers = {
+          colorscheme = { enable_preview = true },
+        }
+      end,
+
+      dependencies = {
+        "nvim-lua/plenary.nvim",
+        "nvim-telescope/telescope-fzf-native.nvim",
+      },
+  },
+  {
+    "nvim-telescope/telescope-fzf-native.nvim",
+      cmd = "Telescope",
+      build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
+      config = function()
+        require("telescope").load_extension("fzf")
+      end,
   },
 }
