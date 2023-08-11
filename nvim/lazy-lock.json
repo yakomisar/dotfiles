@@ -1,4 +1,5 @@
 {
+  "Comment.nvim": { "branch": "master", "commit": "0236521ea582747b58869cb72f70ccfa967d2e89" },
   "lazy.nvim": { "branch": "main", "commit": "3ad55ae678876516156cca2f361c51f7952a924b" },
   "vim-nightfly-guicolors": { "branch": "master", "commit": "e5638253af9bc27b81a129690cd9a9a7fcf79f4d" }
 }
