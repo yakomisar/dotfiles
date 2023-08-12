@@ -17,7 +17,12 @@ opt.autoindent = true
 -- line wrapping
 opt.wrap = false
 
+-- disable scrolling
+opt.scrolloff = 8
+
 -- search settings
+opt.hlsearch = false
+opt.incsearch = true
 opt.ignorecase = true
 opt.smartcase = true
 
