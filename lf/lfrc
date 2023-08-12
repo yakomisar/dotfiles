@@ -20,18 +20,14 @@ set scrolloff 10
 set cursorpreviewfmt "\033[7;2m"
 
 # custom commands
-# delete
-# cmd delete ${{
-#     set -f
-#     printf "$fx\n"
-#     printf "delete?[y/n]"
-#     read ans
-#     [ "$ans" = "y" ] && rm -rf $fx
-# }}
 cmd delete ${{
+    IFS='
+'
     set -f
     echo "Files to delete:"
-    echo "$fx"
+    for file in $fx; do
+        echo "$file"
+    done
     printf "Delete all?[y/n] "
     read ans
     if [ "$ans" = "y" ]; then
@@ -40,6 +36,18 @@ cmd delete ${{
         done
     fi
 }}
+
+# define custom command to create a file or dir
+cmd create ${{
+    printf "Enter name (end with / for directory): "
+    read -r name
+    if [[ "$name" == */ ]]; then
+        mkdir -p "$name"
+    else
+        touch "$name"
+    fi
+}}
+
 # define a custom 'rename' command without prompt for overwrite
 cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
 
@@ -71,10 +79,8 @@ cmd zip ${{
     rm -rf $1
 }}
 
-# mkdir command. See wiki if you want it to select created dir
-map a :push %mkdir<space>
-
 # mappings
 map d delete
 map E extract
 map r push :rename<space>
+map a create
