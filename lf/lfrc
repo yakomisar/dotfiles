@@ -3,6 +3,8 @@ set icons
 
 # enable dividers
 set drawbox
+# apply ratio for windows
+set ratios 1:1:1
 # enable filesize
 set info size
 
@@ -19,14 +21,25 @@ set cursorpreviewfmt "\033[7;2m"
 
 # custom commands
 # delete
+# cmd delete ${{
+#     set -f
+#     printf "$fx\n"
+#     printf "delete?[y/n]"
+#     read ans
+#     [ "$ans" = "y" ] && rm -rf $fx
+# }}
 cmd delete ${{
     set -f
-    printf "$fx\n"
-    printf "delete?[y/n]"
+    echo "Files to delete:"
+    echo "$fx"
+    printf "Delete all?[y/n] "
     read ans
-    [ "$ans" = "y" ] && rm -rf $fx
+    if [ "$ans" = "y" ]; then
+        for file in $fx; do
+            rm -rf "$file"
+        done
+    fi
 }}
-
 # define a custom 'rename' command without prompt for overwrite
 cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
 
