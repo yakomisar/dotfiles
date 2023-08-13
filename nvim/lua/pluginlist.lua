@@ -9,6 +9,49 @@ return {
       vim.cmd([[colorscheme nightfly]])
     end,
   },
+  -- Treesitter
+  {
+    "nvim-treesitter/nvim-treesitter",
+    event = "BufWinEnter",
+    config = "require('treesitter')",
+    build = ":TSUpdate",
+    },
+  -- {
+  --   "nvim-treesitter/nvim-treesitter",
+  --
+  --   opts = function(_, opts)
+  --       opts.autopairs = { enable = true }
+  --       opts.autotag = { enable = true, disable = { "xml" } }
+  --       opts.context_commenting = { enable = true, enable_autocmd = false }
+  --       opts.highlight = {
+  --         enable = true,
+  --         disabled = {
+  --           "css", "latex", "markdown",
+  --         },
+  --         additional_vim_regex_highlighting = true,
+  --       }
+  --       opts.indent = { enable = true, disable = { "yml", "yaml" } }
+  --       opts.rainbow = {
+  --         enable = true,
+  --         extended_mode = true,
+  --         max_file_lines = 1500,
+  --         colors = {
+  --           "Gold", "Orchid", "DodgerBlue", "Cornsilk", "Salmon", "LawnGreen",
+  --         },
+  --       }
+  --       opts.disable = { "latex" }
+  --       opts.ensure_installed = {
+  --         "bash", "go", "lua", "c", "c_sharp", "cpp", "dockerfile", "html", "javascript",
+  --         "json", "lua", "markdown", "markdown_inline", "python", "query",
+  --         "regex", "ruby", "rust", "sql", "toml", "tsx", "typescript", "vim",
+  --         "vimdoc", "yaml",
+  --       }
+  --   end,
+  --
+  --   dependencies = {
+  --     "mrjones2014/nvim-ts-rainbow",
+  --   },
+  -- },
   -- commenting plugin ('gc'/'gcc' to comment)
   {
     'numToStr/Comment.nvim',
@@ -170,5 +213,38 @@ return {
         extensions = {},
       })
     end,
+  },
+  -- LSP-zero installation
+  -- {
+  --   'VonHeikemen/lsp-zero.nvim',
+  --   branch = 'v2.x',
+  --   event = {"InsertEnter"},
+  --   dependencies = {
+  --     -- LSP Support
+  --     {'neovim/nvim-lspconfig'},             -- Required
+  --     {'williamboman/mason.nvim'},           -- Optional
+  --     {'williamboman/mason-lspconfig.nvim'}, -- Optional
+  --
+  --     -- Autocompletion
+  --     {'hrsh7th/nvim-cmp'},     -- Required
+  --     {'hrsh7th/cmp-nvim-lsp'}, -- Required
+  --     {'L3MON4D3/LuaSnip'},     -- Required
+  --   }
+  -- },
+
+  -- lightweight file manager
+  {
+      "nvim-neo-tree/neo-tree.nvim",
+      branch = "v3.x",
+      cmd = "Neotree",
+      deactivate = function()
+        vim.cmd([[Neotree close]])
+      end,
+      keys = false,
+      dependencies = {
+        "nvim-lua/plenary.nvim",
+        "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+        "MunifTanjim/nui.nvim",
+      }
   },
 }

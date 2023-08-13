@@ -56,8 +56,8 @@ keymap.set("n", "<S-Tab>", ":tabp<CR>") --  go to previous tab
 -- Plugin Keybinds
 ----------------------
 
--- nvim-tree
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
+-- file-tree
+keymap.set("n", "<leader>e", ":Neotree<CR>") -- toggle file explorer
 
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
