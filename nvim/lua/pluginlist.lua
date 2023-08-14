@@ -12,10 +12,30 @@ return {
   -- Treesitter
   {
     "nvim-treesitter/nvim-treesitter",
+    cmd = {
+      "TSBufDisable",
+      "TSBufEnable",
+      "TSBufToggle",
+      "TSConfigInfo",
+      "TSDisable",
+      "TSEditQuery",
+      "TSEditQueryUserAfter",
+      "TSEnable",
+      "TSInstall",
+      "TSInstallFromGrammar",
+      "TSInstallInfo",
+      "TSInstallSync",
+      "TSModuleInfo",
+      "TSToggle",
+      "TSUninstall",
+      "TSUpdate",
+      "TSUpdateSync",
+    },
+    -- event = "FileType",
     event = "BufWinEnter",
     config = "require('treesitter')",
     build = ":TSUpdate",
-    },
+  },
   -- {
   --   "nvim-treesitter/nvim-treesitter",
   --
@@ -214,24 +234,7 @@ return {
       })
     end,
   },
-  -- LSP-zero installation
-  -- {
-  --   'VonHeikemen/lsp-zero.nvim',
-  --   branch = 'v2.x',
-  --   event = {"InsertEnter"},
-  --   dependencies = {
-  --     -- LSP Support
-  --     {'neovim/nvim-lspconfig'},             -- Required
-  --     {'williamboman/mason.nvim'},           -- Optional
-  --     {'williamboman/mason-lspconfig.nvim'}, -- Optional
   --
-  --     -- Autocompletion
-  --     {'hrsh7th/nvim-cmp'},     -- Required
-  --     {'hrsh7th/cmp-nvim-lsp'}, -- Required
-  --     {'L3MON4D3/LuaSnip'},     -- Required
-  --   }
-  -- },
-
   -- lightweight file manager
   {
       "nvim-neo-tree/neo-tree.nvim",
