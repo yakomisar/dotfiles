@@ -35,7 +35,7 @@ keymap.set("i", "jk", "<ESC>")
 keymap.set("n", "q", ":silent nohl<CR>", {noremap = true, silent = true})
 
 -- delete single character without copying into register
-keymap.set("n", "x", '"_x')
+keymap.set("n", "x", '"_x', {noremap = true})
 
 -- increment/decrement numbers
 keymap.set("n", "<leader>+", "<C-a>") -- increment
@@ -47,10 +47,11 @@ keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
 keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
 keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 
+-- buffer management
 keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
-keymap.set("n", "<leader>x", ":tabclose<CR>") -- close current tab
-keymap.set("n", "<Tab>", ":tabn<CR>") --  go to next tab
-keymap.set("n", "<S-Tab>", ":tabp<CR>") --  go to previous tab
+keymap.set("n", "<leader>x", "::BufferLinePickClose<CR>") -- close current tab
+keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>") --  go to next tab
+keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>") --  go to previous tab
 
 ----------------------
 -- Plugin Keybinds

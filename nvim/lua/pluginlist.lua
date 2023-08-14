@@ -12,29 +12,15 @@ return {
   -- Treesitter
   {
     "nvim-treesitter/nvim-treesitter",
-    cmd = {
-      "TSBufDisable",
-      "TSBufEnable",
-      "TSBufToggle",
-      "TSConfigInfo",
-      "TSDisable",
-      "TSEditQuery",
-      "TSEditQueryUserAfter",
-      "TSEnable",
-      "TSInstall",
-      "TSInstallFromGrammar",
-      "TSInstallInfo",
-      "TSInstallSync",
-      "TSModuleInfo",
-      "TSToggle",
-      "TSUninstall",
-      "TSUpdate",
-      "TSUpdateSync",
-    },
-    -- event = "FileType",
-    event = "BufWinEnter",
-    config = "require('treesitter')",
+    -- config = "require('treesitter')",
     build = ":TSUpdate",
+  },
+  -- Bufferline
+  {
+    'akinsho/bufferline.nvim',
+    event = "BufWinEnter",
+    version = "*",
+    dependencies = 'nvim-tree/nvim-web-devicons',
   },
   -- {
   --   "nvim-treesitter/nvim-treesitter",
@@ -196,7 +182,8 @@ return {
         options = {
           theme = lualine_nightfly,
           icons_enabled = true,
-          component_separators = { left = "", right = "" },
+          -- component_separators = { left = "", right = "" },
+          component_separators = { left = "", right = "" },
           section_separators = { left = "", right = "" },
           disabled_filetypes = {
             winbar = {},

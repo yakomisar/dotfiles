@@ -5,6 +5,7 @@ vim.g.mapleader = " "
 vim.opt.shortmess:append("I")
 
 require("plugins")
+require("treesitter")
 require("options")
 require("keymaps")
--- require("treesitter")
+require("bufferline-config")
