@@ -9,7 +9,7 @@ set ratios 1:1:1
 set info size
 
 # global option
-set hidden!
+#set hidden!
 set previewer ~/.config/lf/bat.sh
 set ignorecase true
 
@@ -51,14 +51,18 @@ cmd create ${{
 # define a custom 'rename' command without prompt for overwrite
 cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
 
-# Unpack
+# unpack
 cmd extract ${{
-  clear; tput cup $(($(tput lines)/3)); tput bold
-	set -f
-	printf "%s\n\t" "$fx"
-	printf "extract?[y/N]"
-	read ans
-	[ $ans = "y" ] && aunpack $fx
+    set -f
+    case "$f" in
+        *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf "$f";;
+        *.tar.gz|*.tgz) tar xzvf "$f";;
+        *.tar.xz|*.txz) tar xJvf "$f";;
+        *.zip) unzip "$f";;
+        *.rar) unar "$f";;
+        *.7z) 7z x "$f";;
+        *) echo "Unsupported archive format: $f";;
+    esac
 }}
 
 # compress current file or selected files with tar and gunzip

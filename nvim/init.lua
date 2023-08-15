@@ -4,6 +4,7 @@ vim.g.mapleader = " "
 -- disable the startup splash screen
 vim.opt.shortmess:append("I")
 
+vim.cmd[[colorscheme selenized]]
 require("plugins")
 require("treesitter")
 require("options")
