@@ -51,8 +51,8 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
     hi CursorColumn guifg=NONE guibg=#184956 guisp=NONE gui=NONE cterm=NONE
     hi Folded guifg=NONE guibg=#184956 guisp=NONE gui=NONE cterm=NONE
     hi ColorColumn guifg=NONE guibg=#2d5b69 guisp=NONE gui=NONE cterm=NONE
-    hi LineNr guifg=#72898f guibg=#184956 guisp=NONE gui=NONE cterm=NONE
-    hi CursorLineNr guifg=#cad8d9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+    hi LineNr guifg=#326473 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+    hi CursorLineNr guifg=#cad8d9 guibg=NONE guisp=NONE gui=bold,italic cterm=NONE
     hi VertSplit guifg=#72898f guibg=#72898f guisp=NONE gui=NONE cterm=NONE
     hi StatusLine guifg=NONE guibg=NONE guisp=NONE gui=reverse ctermfg=NONE ctermbg=NONE cterm=reverse
     hi StatusLineNC guifg=NONE guibg=#2d5b69 guisp=NONE gui=NONE cterm=NONE

@@ -13,12 +13,30 @@ return {
     "nvim-treesitter/nvim-treesitter",
     -- config = "require('treesitter')",
     build = ":TSUpdate",
+    event = "BufReadPost",
+    config = function()
+			require("treesitter-config")
+		end,
+    dependencies = {
+      "windwp/nvim-ts-autotag",
+    },
+  },
+  -- Autopairs
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = function()
+			require("autopairs-config")
+		end,
   },
   -- Bufferline
   {
     'akinsho/bufferline.nvim',
     event = "BufWinEnter",
     version = "*",
+    config = function()
+      require("bufferline-config")
+		end,
     dependencies = 'nvim-tree/nvim-web-devicons',
   },
   -- {
@@ -146,81 +164,9 @@ return {
     "nvim-lualine/lualine.nvim",
     event = 'VeryLazy',
     config = function()
-      -- import lualine plugin safely
-      local status, lualine = pcall(require, "lualine")
-      if not status then
-        return
-      end
-
-      -- get lualine nightfly theme
-      local lualine_nightfly = require("lualine.themes.solarized_dark")
-
-      -- new colors for theme
-      local new_colors = {
-        blue = "#65D1FF",
-        green = "#3EFFDC",
-        violet = "#FF61EF",
-        yellow = "#FFDA7B",
-        black = "#000000",
-      }
-
-      -- change nightlfy theme colors
-      lualine_nightfly.normal.a.bg = new_colors.blue
-      lualine_nightfly.insert.a.bg = new_colors.green
-      lualine_nightfly.visual.a.bg = new_colors.violet
-      lualine_nightfly.command = {
-        a = {
-          gui = "bold",
-          bg = new_colors.yellow,
-          fg = new_colors.black,
-        },
-      }
-
-      -- configure lualine with modified theme
-      lualine.setup({
-        options = {
-          theme = lualine_nightfly,
-          icons_enabled = true,
-          -- component_separators = { left = "", right = "" },
-          component_separators = { left = "", right = "" },
-          section_separators = { left = "", right = "" },
-          disabled_filetypes = {
-            winbar = {},
-            statusline = { "alpha", "dashboard" },
-          },
-          ignore_focus = {},
-          always_divide_middle = true,
-          globalstatus = false,
-          refresh = {
-            statusline = 1000,
-            tabline = 1000,
-            winbar = 1000,
-          },
-        },
-        sections = {
-          lualine_a = { "mode" },
-          lualine_b = { "branch", "diff", "diagnostics" },
-          lualine_c = { "filename" },
-          lualine_x = { "encoding", "fileformat", "filetype" },
-          lualine_y = { "progress" },
-          lualine_z = { "location" },
-        },
-        inactive_sections = {
-          lualine_a = {},
-          lualine_b = {},
-          lualine_c = { "filename" },
-          lualine_x = { "location" },
-          lualine_y = {},
-          lualine_z = {},
-        },
-        tabline = {},
-        winbar = {},
-        inactive_winbar = {},
-        extensions = {},
-      })
+			require("lualine-config")
     end,
   },
-  --
   -- lightweight file manager
   {
       "nvim-neo-tree/neo-tree.nvim",
@@ -230,10 +176,13 @@ return {
         vim.cmd([[Neotree close]])
       end,
       keys = false,
+      config = function()
+        require("neotree-config")
+      end,
       dependencies = {
         "nvim-lua/plenary.nvim",
         "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
         "MunifTanjim/nui.nvim",
-      }
+      },
   },
 }

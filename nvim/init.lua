@@ -6,7 +6,5 @@ vim.opt.shortmess:append("I")
 
 vim.cmd[[colorscheme selenized]]
 require("plugins")
-require("treesitter")
 require("options")
 require("keymaps")
-require("bufferline-config")
