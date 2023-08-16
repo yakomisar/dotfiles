@@ -29,6 +29,44 @@ return {
 			require("autopairs-config")
 		end,
   },
+  -- Colorizer
+  {
+    "NvChad/nvim-colorizer.lua",
+      cmd = { "ColorizerAttachToBuffer", "ColorizerDetachFromBuffer", "ColorizerReloadAllBuffers", "ColorizerToggle" },
+      ft = { "css", "sass", "html", "javascript", "javascriptreact", "typescriptreact" },
+      opts = {
+        user_default_options = { names = false, RRGGBBAA = true, AARRGGBB = true, virtualtext = "▎" },
+        filetypes = {
+          css = { css_fn = true },
+          sass = { sass = { enable = true } },
+          html = { css_fn = true, tailwind = "lsp" },
+          javascript = { css_fn = true, tailwind = "lsp" },
+          javascriptreact = { css_fn = true, tailwind = "lsp" },
+          typescriptreact = { css_fn = true, tailwind = "lsp" },
+        },
+      },
+      config = function(_, opts)
+        require("colorizer").setup(opts)
+      end,
+  },
+  -- {
+  --   'VonHeikemen/lsp-zero.nvim',
+  --   branch = 'v2.x',
+  --   config = function()
+  --     require("lsp-config")
+  --   end,
+  --   dependencies = {
+  --     -- LSP Support
+  --     {'neovim/nvim-lspconfig'},             -- Required
+  --     {'williamboman/mason.nvim'},           -- Optional
+  --     {'williamboman/mason-lspconfig.nvim'}, -- Optional
+  --
+  --     -- Autocompletion
+  --     {'hrsh7th/nvim-cmp'},     -- Required
+  --     {'hrsh7th/cmp-nvim-lsp'}, -- Required
+  --     {'L3MON4D3/LuaSnip'},     -- Required
+  --   }
+  -- },
   -- Bufferline
   {
     'akinsho/bufferline.nvim',
@@ -130,7 +168,7 @@ return {
       opts = function(_, opts)
         opts.defaults = {
           layout_strategy = "horizontal",
-          prompt_prefix = " ",
+          prompt_prefix = "  ",
           selection_caret = " ",
           mappings = {
           i = {

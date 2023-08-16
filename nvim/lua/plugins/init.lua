@@ -149,6 +149,8 @@ require("lazy").setup("pluginlist",{
         "tohtml",
         "tutor",
         "zipPlugin",
+        "editorconfig",
+        "rplugin",
       },
     },
   },
