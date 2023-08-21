@@ -57,8 +57,9 @@ keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>") --  go to previous tab
 -- Plugin Keybinds
 ----------------------
 
--- file-tree
-keymap.set("n", "<leader>e", ":Neotree<CR>") -- toggle file explorer
+-- File manager Neotree 
+keymap.set("n", "<leader>e", ":Neotree focus<CR>") -- focus file explorer
+keymap.set("n", "<C-n>", ":Neotree close<CR>") -- toggle file explorer
 
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore

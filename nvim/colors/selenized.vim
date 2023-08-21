@@ -124,7 +124,8 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
     hi FoldColumn guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
     hi ModeMsg guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
     hi MoreMsg guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
-    hi NonText guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
+    hi NonText guifg=#103c48 guibg=#103c48 guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
+    " hi NonText guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
     hi Question guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
     hi SignColumn guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
     hi SpecialKey guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
@@ -175,7 +176,8 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
   hi ColorColumn guifg=NONE guibg=#cfcebe guisp=NONE gui=NONE cterm=NONE
   hi LineNr guifg=#909995 guibg=#e9e4d0 guisp=NONE gui=NONE cterm=NONE
   hi CursorLineNr guifg=#3a4d53 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-  hi VertSplit guifg=#909995 guibg=#909995 guisp=NONE gui=NONE cterm=NONE
+  hi VertSplit guifg=#fffb00 guibg=#fffb00 guisp=NONE gui=NONE cterm=NONE
+  " hi VertSplit guifg=#909995 guibg=#909995 guisp=NONE gui=NONE cterm=NONE
   hi StatusLine guifg=NONE guibg=NONE guisp=NONE gui=reverse ctermfg=NONE ctermbg=NONE cterm=reverse
   hi StatusLineNC guifg=NONE guibg=#cfcebe guisp=NONE gui=NONE cterm=NONE
   hi! link StatusLineTerm StatusLine
@@ -245,7 +247,8 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
   hi FoldColumn guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
   hi ModeMsg guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
   hi MoreMsg guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
-  hi NonText guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
+  hi NonText guifg=#103c48 guibg=#103c48 guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
+  " hi NonText guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
   hi Question guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
   hi SignColumn guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
   hi SpecialKey guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
@@ -280,7 +283,8 @@ if s:t_Co >= 256
     hi ColorColumn ctermfg=NONE ctermbg=240 cterm=NONE
     hi LineNr ctermfg=245 ctermbg=238 cterm=NONE
     hi CursorLineNr ctermfg=252 ctermbg=NONE cterm=NONE
-    hi VertSplit ctermfg=245 ctermbg=245 cterm=NONE
+    hi VertSplit ctermfg=#ff2600 ctermbg=#ff2600 cterm=NONE
+    " hi VertSplit ctermfg=245 ctermbg=245 cterm=NONE
     hi StatusLine ctermfg=NONE ctermbg=NONE cterm=reverse
     hi StatusLineNC ctermfg=NONE ctermbg=240 cterm=NONE
     hi! link StatusLineTerm StatusLine
@@ -380,7 +384,8 @@ if s:t_Co >= 256
   hi ColorColumn ctermfg=NONE ctermbg=252 cterm=NONE
   hi LineNr ctermfg=246 ctermbg=187 cterm=NONE
   hi CursorLineNr ctermfg=239 ctermbg=NONE cterm=NONE
-  hi VertSplit ctermfg=246 ctermbg=246 cterm=NONE
+  hi VertSplit ctermfg=#ff2600 ctermbg=#ff2600 cterm=NONE
+  " hi VertSplit ctermfg=246 ctermbg=246 cterm=NONE
   hi StatusLine ctermfg=NONE ctermbg=NONE cterm=reverse
   hi StatusLineNC ctermfg=NONE ctermbg=252 cterm=NONE
   hi! link StatusLineTerm StatusLine
@@ -482,7 +487,8 @@ if s:t_Co >= 16
     hi ColorColumn ctermfg=NONE ctermbg=DarkGrey cterm=NONE
     hi LineNr ctermfg=LightGrey ctermbg=Black cterm=NONE
     hi CursorLineNr ctermfg=White ctermbg=NONE cterm=NONE
-    hi VertSplit ctermfg=LightGrey ctermbg=LightGrey cterm=NONE
+    hi VertSplit ctermfg=#ff2600 ctermbg=#ff2600 cterm=NONE
+    " hi VertSplit ctermfg=LightGrey ctermbg=LightGrey cterm=NONE
     hi StatusLine ctermfg=NONE ctermbg=NONE cterm=reverse
     hi StatusLineNC ctermfg=NONE ctermbg=DarkGrey cterm=NONE
     hi! link StatusLineTerm StatusLine
@@ -582,7 +588,7 @@ if s:t_Co >= 16
   hi ColorColumn ctermfg=NONE ctermbg=DarkGrey cterm=NONE
   hi LineNr ctermfg=LightGrey ctermbg=Black cterm=NONE
   hi CursorLineNr ctermfg=White ctermbg=NONE cterm=NONE
-  hi VertSplit ctermfg=LightGrey ctermbg=LightGrey cterm=NONE
+  hi VertSplit ctermfg=#ff2600 ctermbg=#ff2600 cterm=NONE
   hi StatusLine ctermfg=NONE ctermbg=NONE cterm=reverse
   hi StatusLineNC ctermfg=NONE ctermbg=DarkGrey cterm=NONE
   hi! link StatusLineTerm StatusLine

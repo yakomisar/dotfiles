@@ -8,6 +8,15 @@ return {
   --     vim.cmd([[colorscheme nightfly]])
   --   end,
   -- },
+  -- {
+  --   "Mofiqul/vscode.nvim",
+  --     lazy = false,-- make sure we load this during startup if it is your main colorscheme 
+  --     priority = 1000, -- make sure to load this before all the other start plugins
+  --     config = function()
+  --       -- load the colorscheme here
+  --       vim.cmd([[colorscheme vscode]])
+  --     end,
+  -- },
   -- Treesitter
   {
     "nvim-treesitter/nvim-treesitter",
@@ -49,6 +58,56 @@ return {
         require("colorizer").setup(opts)
       end,
   },
+  {
+    "neovim/nvim-lspconfig",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+      { "folke/neodev.nvim", opts = {} },
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+    },
+    config = function()
+			require("lsp-config")
+		end,
+  },
+  {
+    "hrsh7th/nvim-cmp",
+    event = {"InsertEnter"},
+    dependencies = {
+      -- snippets
+      "L3MON4D3/LuaSnip", -- snippet engine
+      "saadparwaiz1/cmp_luasnip", -- for autocompletion
+      "rafamadriz/friendly-snippets", -- useful snippets
+      -- autocompletion
+      "hrsh7th/cmp-nvim-lsp", -- completion plugin
+    },
+    config = function()
+			require("cmp-config")
+		end,
+  },
+  {
+		"jose-elias-alvarez/null-ls.nvim",
+		ft = {
+			"go",
+			"gomod",
+			"gosum",
+			"gowork",
+			"javascript",
+			"javascriptreact",
+			"typescript",
+			"typescriptreact",
+			"css",
+			"html",
+			"json",
+			"yaml",
+			"markdown",
+			"graphql",
+			"lua",
+		},
+		opts = function()
+			return require("null-ls-config")
+		end,
+	},
   -- {
   --   'VonHeikemen/lsp-zero.nvim',
   --   branch = 'v2.x',
@@ -70,7 +129,8 @@ return {
   -- Bufferline
   {
     'akinsho/bufferline.nvim',
-    event = "BufWinEnter",
+    -- event = "BufWinEnter",
+    event = 'VeryLazy',
     version = "*",
     config = function()
       require("bufferline-config")
@@ -183,7 +243,6 @@ return {
           colorscheme = { enable_preview = true },
         }
       end,
-
       dependencies = {
         "nvim-lua/plenary.nvim",
         "nvim-telescope/telescope-fzf-native.nvim",

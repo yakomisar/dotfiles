@@ -11,7 +11,20 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
 )
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  ensure_installed = { "c", "lua", "vim", "go", "vimdoc", "query", "html", "javascript" },
+  ensure_installed = {
+    "c",
+    "lua", 
+    "vim",
+    "go",
+    "vimdoc",
+    "query",
+    "html",
+    "javascript",
+    "go",
+    "gomod",
+    "gowork",
+    "gosum",
+  },
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,
