@@ -81,6 +81,7 @@ return {
 			"rafamadriz/friendly-snippets", -- useful snippets
 			-- autocompletion
 			"hrsh7th/cmp-nvim-lsp", -- completion plugin
+			"onsails/lspkind-nvim", -- sexy icons
 		},
 		config = function()
 			require("cmp-config")
