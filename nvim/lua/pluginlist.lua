@@ -82,6 +82,10 @@ return {
 			-- autocompletion
 			"hrsh7th/cmp-nvim-lsp", -- completion plugin
 			"onsails/lspkind-nvim", -- sexy icons
+			-- path
+			"hrsh7th/cmp-path",
+			-- buffer
+			"hrsh7th/cmp-buffer",
 		},
 		config = function()
 			require("cmp-config")
