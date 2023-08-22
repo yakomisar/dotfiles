@@ -11,7 +11,6 @@ keymap = vim.keymap -- as a shorthand
 ---------------------
 -- General Keymaps
 ---------------------
-
 -- Mapping hjkl movement with CTRL in Insert Mode
 keymap.set("i", "<C-h>", "<Left>", { noremap = true, silent = true })
 keymap.set("i", "<C-j>", "<Down>", { noremap = true, silent = true })

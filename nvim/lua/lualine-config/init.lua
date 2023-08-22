@@ -90,9 +90,24 @@ require("lualine").setup({
 	sections = {
 		lualine_a = { "mode" },
 		lualine_b = { "branch", "diff", "diagnostics" },
-		lualine_c = { "filename" },
+		-- lualine_c = { "filename" },
+		lualine_c = {
+			function()
+				local path = vim.fn.expand("%:p:h:t") -- parent directory name
+				local file = vim.fn.expand("%:t") -- filename
+				return path .. "/" .. file
+			end,
+		},
 		lualine_x = { "encoding", "filetype" },
 		lualine_y = { "progress" },
 		lualine_z = { "location" },
+	},
+	inactive_sections = {
+		lualine_a = {},
+		lualine_b = {},
+		lualine_c = { "filename" },
+		lualine_x = { "location" },
+		lualine_y = {},
+		lualine_z = {},
 	},
 })
