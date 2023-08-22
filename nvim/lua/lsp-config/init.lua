@@ -1,8 +1,3 @@
--- IMPORTANT: make sure to setup neodev BEFORE lspconfig
-require("neodev").setup({
-	-- add any options here, or leave empty to use the default settings
-})
-
 local on_attach = function(_, bufnr)
 	local bufmap = function(keys, func)
 		vim.keymap.set("n", keys, func, { buffer = bufnr })
@@ -10,7 +5,6 @@ local on_attach = function(_, bufnr)
 
 	bufmap("<leader>r", vim.lsp.buf.rename)
 	bufmap("<leader>a", vim.lsp.buf.code_action)
-
 	bufmap("gd", vim.lsp.buf.definition)
 	bufmap("K", vim.lsp.buf.hover)
 	bufmap("gD", vim.lsp.buf.declaration)
@@ -59,7 +53,6 @@ require("mason-lspconfig").setup_handlers({
 	end,
 
 	["lua_ls"] = function()
-		require("neodev").setup()
 		require("lspconfig").lua_ls.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
@@ -75,7 +68,6 @@ require("mason-lspconfig").setup_handlers({
 	end,
 
 	["gopls"] = function()
-		require("neodev").setup()
 		require("lspconfig").gopls.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,

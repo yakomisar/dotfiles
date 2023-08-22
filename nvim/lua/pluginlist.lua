@@ -63,7 +63,6 @@ return {
 		"neovim/nvim-lspconfig",
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
-			{ "folke/neodev.nvim", opts = {} },
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
 		},
@@ -233,6 +232,18 @@ return {
 			"nvim-lua/plenary.nvim",
 			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
 			"MunifTanjim/nui.nvim",
+		},
+	},
+	-- LSP saga
+	{
+		"nvimdev/lspsaga.nvim",
+		event = "LspAttach",
+		config = function()
+			require("lspsaga-config")
+		end,
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter", -- optional
+			"nvim-tree/nvim-web-devicons", -- optional
 		},
 	},
 }

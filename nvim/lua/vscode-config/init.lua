@@ -17,6 +17,7 @@ require("vscode").setup({
 	-- Override colors (see ./lua/vscode/colors.lua)
 	color_overrides = {
 		vscGreen = "#505050",
+		vscPopupFront = "#FFFFFF",
 	},
 	--
 	-- -- Disable nvim-tree background color
