@@ -5,5 +5,5 @@ vim.g.mapleader = " "
 require("plugins")
 require("options")
 require("keymaps")
-vim.cmd([[colorscheme selenized]])
+-- vim.cmd([[colorscheme selenized]])
 -- disable the startup splash screen
