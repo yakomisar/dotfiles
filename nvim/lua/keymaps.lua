@@ -66,6 +66,8 @@ keymap.set("n", "<leader>fw", "<cmd>Telescope live_grep<cr>", { noremap = true, 
 keymap.set("n", "<leader>fs", "<cmd>Telescope grep_string<cr>", { noremap = true, silent = true }) -- find string under cursor in current working directory
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { noremap = true, silent = true }) -- list open buffers in current neovim instance
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { noremap = true, silent = true }) -- list available help tags
+keymap.set("n", "<leader>fr", "<cmd>Telescope resume<cr>", { noremap = true, silent = true }) -- list available help tags
+keymap.set("n", "<leader>fo", "<cmd>Telescope oldfiles<cr>", { noremap = true, silent = true }) -- find files within current working directory, respects .gitignore
 
 -- telescope git commands (not on youtube nvim video)
 keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>", { noremap = true, silent = true }) -- list all git commits (use <cr> to checkout) ["gc" for git commits]

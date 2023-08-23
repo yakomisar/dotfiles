@@ -186,8 +186,12 @@ return {
 						["<C-c>"] = require("telescope.actions").close, -- close Telescope window
 						["<C-k>"] = require("telescope.actions").move_selection_previous, -- move to prev result
 						["<C-j>"] = require("telescope.actions").move_selection_next, -- move to next result
-						["<C-q>"] = require("telescope.actions").send_selected_to_qflist
-							+ require("telescope.actions").open_qflist, -- send selected to quickfixlist
+					},
+					n = {
+						["<leader>fx"] = function()
+							require("telescope.actions").send_selected_to_qflist()
+							require("telescope.actions").open_qflist()
+						end,
 					},
 				},
 			}
