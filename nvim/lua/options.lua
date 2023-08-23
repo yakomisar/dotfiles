@@ -1,5 +1,11 @@
 local opt = vim.opt -- as a shorthand
 
+-- so your mappings are correct
+-- disable the startup splash screen
+opt.shortmess:append("I")
+-- make sure to set `mapleader` before lazy
+vim.g.mapleader = " "
+
 -- vim options
 opt.backup = false
 opt.swapfile = false

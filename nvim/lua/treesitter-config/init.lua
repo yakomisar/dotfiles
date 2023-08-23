@@ -1,10 +1,12 @@
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-	underline = true,
+	-- underline = true,
+	-- update_in_insert = true,
+	underline = false,
+	update_in_insert = false,
 	virtual_text = {
-		spacing = 5,
+		spacing = 2,
 		severity_limit = "Warning",
 	},
-	update_in_insert = true,
 })
 require("nvim-treesitter.configs").setup({
 	-- A list of parser names, or "all" (the five listed parsers should always be installed)

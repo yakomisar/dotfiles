@@ -234,16 +234,4 @@ return {
 			"MunifTanjim/nui.nvim",
 		},
 	},
-	-- LSP saga
-	{
-		"nvimdev/lspsaga.nvim",
-		event = "LspAttach",
-		config = function()
-			require("lspsaga-config")
-		end,
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter", -- optional
-			"nvim-tree/nvim-web-devicons", -- optional
-		},
-	},
 }
