@@ -5,7 +5,8 @@ local opt = vim.opt -- as a shorthand
 opt.shortmess:append("I")
 -- make sure to set `mapleader` before lazy
 vim.g.mapleader = " "
-
+-- one status line for all windows
+vim.opt.laststatus = 3
 -- vim options
 opt.backup = false
 opt.swapfile = false
