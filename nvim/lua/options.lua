@@ -6,7 +6,7 @@ opt.shortmess:append("I")
 -- make sure to set `mapleader` before lazy
 vim.g.mapleader = " "
 -- one status line for all windows
-vim.opt.laststatus = 3
+opt.laststatus = 3
 -- vim options
 opt.backup = false
 opt.swapfile = false
@@ -16,7 +16,8 @@ opt.relativenumber = true
 opt.number = true
 
 -- tabs & indentation
-opt.showtabline = 2
+opt.showtabline = 1
+
 opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true

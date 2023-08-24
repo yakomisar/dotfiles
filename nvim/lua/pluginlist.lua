@@ -72,7 +72,7 @@ return {
 	},
 	{
 		"hrsh7th/nvim-cmp",
-		event = { "InsertEnter" },
+		event = "InsertEnter",
 		dependencies = {
 			-- snippets
 			"L3MON4D3/LuaSnip", -- snippet engine
@@ -114,16 +114,16 @@ return {
 		end,
 	},
 	-- Bufferline
-	{
-		"akinsho/bufferline.nvim",
-		-- event = "BufWinEnter",
-		event = "VeryLazy",
-		version = "*",
-		config = function()
-			require("bufferline-config")
-		end,
-		dependencies = "nvim-tree/nvim-web-devicons",
-	},
+	-- {
+	-- 	"akinsho/bufferline.nvim",
+	-- 	-- event = "BufWinEnter",
+	-- 	event = "VeryLazy",
+	-- 	version = "*",
+	-- 	config = function()
+	-- 		require("bufferline-config")
+	-- 	end,
+	-- 	dependencies = "nvim-tree/nvim-web-devicons",
+	-- },
 	-- commenting plugin ('gc'/'gcc' to comment)
 	{
 		"numToStr/Comment.nvim",
