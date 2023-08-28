@@ -48,7 +48,7 @@ keymap.set("n", "<leader>sx", ":close<CR>", { noremap = true, silent = true }) -
 
 -- buffer management
 keymap.set("n", "<leader>to", ":tabnew<CR>", { noremap = true, silent = true }) -- open new tab
-keymap.set("n", "<leader>x", ":bdelete<CR>", { noremap = true, silent = true })
+keymap.set("n", "<leader>x", [[<Cmd>bprevious <bar> bdelete #<CR>]], { noremap = true, silent = true })
 keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true }) --  go to next tab
 keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true }) --  go to previous tab
 
