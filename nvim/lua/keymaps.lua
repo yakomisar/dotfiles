@@ -48,7 +48,7 @@ keymap.set("n", "<leader>sx", ":close<CR>", { noremap = true, silent = true }) -
 
 -- buffer management
 keymap.set("n", "<leader>to", ":tabnew<CR>", { noremap = true, silent = true }) -- open new tab
-keymap.set("n", "<leader>x", ":bdelete<CR>:bnext<CR>", { noremap = true, silent = true })
+keymap.set("n", "<leader>x", ":bdelete<CR>", { noremap = true, silent = true })
 keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true }) --  go to next tab
 keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true }) --  go to previous tab
 
@@ -77,3 +77,12 @@ keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>", { noremap = true,
 
 -- restart lsp server (not on youtube nvim video)
 keymap.set("n", "<leader>rs", ":LspRestart<CR>", { noremap = true, silent = true }) -- mapping to restart lsp if necessary
+
+-- Add json struct tags
+keymap.set("n", "<leader>gsj", "<cmd> GoTagAdd json <cr>", { noremap = true, silent = true })
+-- Add yaml struct tags
+keymap.set("n", "<leader>gsy", "<cmd> GoTagAdd yaml <CR>", { noremap = true, silent = true })
+-- Remove tags (json/yaml) from struct
+keymap.set("n", "<leader>gsr", "<cmd>GoTagRm json,yaml<CR>", { noremap = true, silent = true })
+-- Add if err check
+keymap.set("n", "<leader>rr", "<cmd>GoIfErr<CR>", { noremap = true, silent = true })

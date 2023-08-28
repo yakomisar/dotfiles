@@ -87,6 +87,21 @@ require("mason-lspconfig").setup_handlers({
 		})
 	end,
 
+	["tsserver"] = function()
+		require("lspconfig").tsserver.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+		})
+	end,
+
+	["html"] = function()
+		require("lspconfig").html.setup({
+			filetypes = { "html", "css" },
+			on_attach = on_attach,
+			capabilities = capabilities,
+		})
+	end,
+
 	-- another example
 	-- ["omnisharp"] = function()
 	--     require('lspconfig').omnisharp.setup {

@@ -1,7 +1,7 @@
 -- import lualine plugin safely
 local status, lualine = pcall(require, "lualine")
 if not status then
-	return
+  return
 end
 
 -- -- local custom_theme = require'lualine.themes.onedark'
@@ -78,36 +78,36 @@ end
 --   extensions = {},
 -- })
 require("lualine").setup({
-	options = {
-		-- theme = custom_theme,
-		theme = "vscode",
-		icons_enabled = true,
-		disabled_filetypes = { "neo-tree" },
-		-- component_separators = { left = "", right = "" },
-		component_separators = { left = "", right = "" },
-		section_separators = { left = "", right = "" },
-	},
-	sections = {
-		lualine_a = { "mode" },
-		lualine_b = { "branch", "diff", "diagnostics" },
-		-- lualine_c = { "filename" },
-		lualine_c = {
-			function()
-				local path = vim.fn.expand("%:p:h:t") -- parent directory name
-				local file = vim.fn.expand("%:t") -- filename
-				return path .. "/" .. file
-			end,
-		},
-		lualine_x = { "encoding", "filetype" },
-		lualine_y = { "progress" },
-		lualine_z = { "location" },
-	},
-	inactive_sections = {
-		lualine_a = {},
-		lualine_b = {},
-		lualine_c = { "filename" },
-		lualine_x = { "location" },
-		lualine_y = {},
-		lualine_z = {},
-	},
+  options = {
+    -- theme = custom_theme,
+    theme = "vscode",
+    icons_enabled = true,
+    disabled_filetypes = { "neo-tree" },
+    -- component_separators = { left = "", right = "" },
+    component_separators = { left = "", right = "" },
+    section_separators = { left = "", right = "" },
+  },
+  sections = {
+    lualine_a = { "mode" },
+    lualine_b = { "branch", "diff", "diagnostics" },
+    -- lualine_c = { "filename" },
+    lualine_c = {
+      function()
+        local path = vim.fn.expand("%:p:h:t") -- parent directory name
+        local file = vim.fn.expand("%:t")     -- filename
+        return path .. "/" .. file
+      end,
+    },
+    lualine_x = { "encoding", "filetype" },
+    lualine_y = { "progress" },
+    lualine_z = { "location" },
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = { "filename" },
+    lualine_x = { "location" },
+    lualine_y = {},
+    lualine_z = {},
+  },
 })
