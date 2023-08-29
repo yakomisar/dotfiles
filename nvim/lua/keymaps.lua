@@ -41,15 +41,15 @@ keymap.set("n", "<leader>+", "<C-a>", { noremap = true, silent = true }) -- incr
 keymap.set("n", "<leader>-", "<C-x>", { noremap = true, silent = true }) -- decrement
 
 -- window management
-keymap.set("n", "<leader>sv", "<C-w>v", { noremap = true, silent = true }) -- split window vertically
-keymap.set("n", "<leader>sh", "<C-w>s", { noremap = true, silent = true }) -- split window horizontally
-keymap.set("n", "<leader>se", "<C-w>=", { noremap = true, silent = true }) -- make split windows equal width & height
+keymap.set("n", "<leader>sv", "<C-w>v", { noremap = true, silent = true })     -- split window vertically
+keymap.set("n", "<leader>sh", "<C-w>s", { noremap = true, silent = true })     -- split window horizontally
+keymap.set("n", "<leader>se", "<C-w>=", { noremap = true, silent = true })     -- make split windows equal width & height
 keymap.set("n", "<leader>sx", ":close<CR>", { noremap = true, silent = true }) -- close current split window
 
 -- buffer management
-keymap.set("n", "<leader>to", ":tabnew<CR>", { noremap = true, silent = true }) -- open new tab
+keymap.set("n", "<leader>to", ":tabnew<CR>", { noremap = true, silent = true })           -- open new tab
 keymap.set("n", "<leader>x", [[<Cmd>bprevious <bar> bdelete #<CR>]], { noremap = true, silent = true })
-keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true }) --  go to next tab
+keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })   --  go to next tab
 keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true }) --  go to previous tab
 
 ----------------------
@@ -58,22 +58,22 @@ keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { noremap = true, silent 
 
 -- File manager Neotree
 keymap.set("n", "<leader>e", ":Neotree focus<CR>", { noremap = true, silent = true }) -- focus file explorer
-keymap.set("n", "<C-n>", ":Neotree close<CR>", { noremap = true, silent = true }) -- toggle file explorer
+keymap.set("n", "<C-n>", ":Neotree close<CR>", { noremap = true, silent = true })     -- toggle file explorer
 
 -- telescope
-keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { noremap = true, silent = true }) -- find files within current working directory, respects .gitignore
-keymap.set("n", "<leader>fw", "<cmd>Telescope live_grep<cr>", { noremap = true, silent = true }) -- find string in current working directory as you type
+keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { noremap = true, silent = true })  -- find files within current working directory, respects .gitignore
+keymap.set("n", "<leader>fw", "<cmd>Telescope live_grep<cr>", { noremap = true, silent = true })   -- find string in current working directory as you type
 keymap.set("n", "<leader>fs", "<cmd>Telescope grep_string<cr>", { noremap = true, silent = true }) -- find string under cursor in current working directory
-keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { noremap = true, silent = true }) -- list open buffers in current neovim instance
-keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { noremap = true, silent = true }) -- list available help tags
-keymap.set("n", "<leader>fr", "<cmd>Telescope resume<cr>", { noremap = true, silent = true }) -- list available help tags
-keymap.set("n", "<leader>fo", "<cmd>Telescope oldfiles<cr>", { noremap = true, silent = true }) -- find files within current working directory, respects .gitignore
+keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { noremap = true, silent = true })     -- list open buffers in current neovim instance
+keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { noremap = true, silent = true })   -- list available help tags
+keymap.set("n", "<leader>fr", "<cmd>Telescope resume<cr>", { noremap = true, silent = true })      -- list available help tags
+keymap.set("n", "<leader>fo", "<cmd>Telescope oldfiles<cr>", { noremap = true, silent = true })    -- find files within current working directory, respects .gitignore
 
 -- telescope git commands (not on youtube nvim video)
-keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>", { noremap = true, silent = true }) -- list all git commits (use <cr> to checkout) ["gc" for git commits]
+keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>", { noremap = true, silent = true })   -- list all git commits (use <cr> to checkout) ["gc" for git commits]
 keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>", { noremap = true, silent = true }) -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
-keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>", { noremap = true, silent = true }) -- list git branches (use <cr> to checkout) ["gb" for git branch]
-keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>", { noremap = true, silent = true }) -- list current changes per file with diff preview ["gs" for git status]
+keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>", { noremap = true, silent = true })  -- list git branches (use <cr> to checkout) ["gb" for git branch]
+keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>", { noremap = true, silent = true })    -- list current changes per file with diff preview ["gs" for git status]
 
 -- restart lsp server (not on youtube nvim video)
 keymap.set("n", "<leader>rs", ":LspRestart<CR>", { noremap = true, silent = true }) -- mapping to restart lsp if necessary
@@ -86,3 +86,63 @@ keymap.set("n", "<leader>gsy", "<cmd> GoTagAdd yaml <CR>", { noremap = true, sil
 keymap.set("n", "<leader>gsr", "<cmd>GoTagRm json,yaml<CR>", { noremap = true, silent = true })
 -- Add if err check
 keymap.set("n", "<leader>rr", "<cmd>GoIfErr<CR>", { noremap = true, silent = true })
+
+---------------------
+-- Debugging Keymaps
+---------------------
+
+-- Toggle the DAP UI
+keymap.set("n", "<F4>", ":lua require('dapui').toggle()<CR>", { noremap = true, silent = true })
+
+-- Toggle breakpoint
+keymap.set("n", "<F5>", ":lua require('dap').toggle_breakpoint()<CR>", { noremap = true, silent = true })
+
+-- Continue execution
+keymap.set("n", "<F9>", ":lua require('dap').continue()<CR>", { noremap = true, silent = true })
+
+-- Step over, into, out
+keymap.set("n", "<F1>", ":lua require('dap').step_over()<CR>", { noremap = true, silent = true })
+keymap.set("n", "<F2>", ":lua require('dap').step_into()<CR>", { noremap = true, silent = true })
+keymap.set("n", "<F3>", ":lua require('dap').step_out()<CR>", { noremap = true, silent = true })
+
+-- Leader mappings for step commands
+keymap.set("n", "<Leader>dsc", ":lua require('dap').continue()<CR>", { noremap = true, silent = true })
+keymap.set("n", "<Leader>dsv", ":lua require('dap').step_over()<CR>", { noremap = true, silent = true })
+keymap.set("n", "<Leader>dsi", ":lua require('dap').step_into()<CR>", { noremap = true, silent = true })
+keymap.set("n", "<Leader>dso", ":lua require('dap').step_out()<CR>", { noremap = true, silent = true })
+
+-- Hover over variables
+keymap.set("n", "<Leader>dhh", ":lua require('dap.ui.variables').hover()<CR>", { noremap = true, silent = true })
+keymap.set("v", "<Leader>dhv", ":lua require('dap.ui.variables').visual_hover()<CR>", { noremap = true, silent = true })
+
+-- UI widgets for hovering and displaying scopes
+keymap.set("n", "<Leader>duh", ":lua require('dap.ui.widgets').hover()<CR>", { noremap = true, silent = true })
+keymap.set(
+  "n",
+  "<Leader>duf",
+  ":lua local widgets=require('dap.ui.widgets');widgets.centered_float(widgets.scopes)<CR>",
+  { noremap = true, silent = true }
+)
+
+-- Open and run the last command in the REPL
+keymap.set("n", "<Leader>dro", ":lua require('dap').repl.open()<CR>", { noremap = true, silent = true })
+keymap.set("n", "<Leader>drl", ":lua require('dap').repl.run_last()<CR>", { noremap = true, silent = true })
+
+-- Set and toggle breakpoints
+keymap.set(
+  "n",
+  "<Leader>dbc",
+  ":lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",
+  { noremap = true, silent = true }
+)
+keymap.set(
+  "n",
+  "<Leader>dbm",
+  ":lua require('dap').set_breakpoint({ nil, nil, vim.fn.input('Log point message: ') })<CR>",
+  { noremap = true, silent = true }
+)
+keymap.set("n", "<Leader>dbt", ":lua require('dap').toggle_breakpoint()<CR>", { noremap = true, silent = true })
+
+-- Display variables and toggle the DAP UI
+keymap.set("n", "<Leader>dc", ":lua require('dap.ui.variables').scopes()<CR>", { noremap = true, silent = true })
+keymap.set("n", "<Leader>di", ":lua require('dapui').toggle()<CR>", { noremap = true, silent = true })
