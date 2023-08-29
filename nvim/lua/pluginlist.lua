@@ -234,8 +234,8 @@ return {
   -- Lualine plugin for good looking line at the bottom
   {
     "nvim-lualine/lualine.nvim",
-    -- event = "VeryLazy",
-    event = "BufWinEnter",
+    event = "VeryLazy",
+    -- event = "BufWinEnter",
     config = function()
       require("lualine-config")
     end,
