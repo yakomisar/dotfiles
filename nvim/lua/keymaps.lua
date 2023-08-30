@@ -157,7 +157,7 @@ function insert_header()
 		"----",
 		"---- File        : " .. vim.fn.expand("%:t"),
 		"---- Author      : Your Name",
-		"---- Description : Initialization file for Neovim configuration",
+		"---- Description : <input description>",
 		"---- Version     : 1.0.0",
 		"---- Created     : " .. os.date("%Y-%m-%d"),
 		"---- Updated     : " .. os.date("%Y-%m-%d"),

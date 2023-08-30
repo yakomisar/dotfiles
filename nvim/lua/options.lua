@@ -36,8 +36,8 @@ opt.ignorecase = true
 opt.smartcase = true
 
 -- cursor line
-opt.cursorline = true
-
+opt.cursorline = false
+-- opt.lazyredraw = true
 -- appearance
 opt.termguicolors = true
 opt.background = "dark"

@@ -6,10 +6,10 @@
 ----
 ---- File        : init.lua
 ---- Author      : Your Name
----- Description : Initialization file for Neovim configuration
+---- Description :
 ---- Version     : 1.0.0
----- Created     : 2023-01-01
----- Updated     : 2023-08-29
+---- Created     : 2023-08-30
+---- Updated     : 2023-08-30
 ----
 
 require("options")
