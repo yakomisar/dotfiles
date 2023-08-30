@@ -83,6 +83,45 @@ cmd zip ${{
     rm -rf $1
 }}
 
+# Add prefix to files
+# dirname -- "$f" extracts the directory name from the full path.
+# basename -- "$f" extracts only the filename from the full path.
+# new_file="$dir/$prefix$base" constructs the new filename with the prefix.
+# mv -- "$f" "$new_file" moves the old file to the new filename.
+cmd prefix ${{
+    set -f
+    prefix="$*"  # Take the prefix as an argument
+    if [ -z "$prefix" ]; then
+        echo "Please provide a prefix."
+        exit 1
+    fi
+    for f in $fx; do
+        dir=$(dirname -- "$f")
+        base=$(basename -- "$f")
+        new_file="$dir/$prefix$base"
+        mv -- "$f" "$new_file"
+    done
+    lf -remote "send $id load"
+}}
+
+# Add suffix to files
+cmd suffix ${{
+    set -f
+    suffix="$*"  # Take the suffix as an argument
+    if [ -z "$suffix" ]; then
+        echo "Please provide a suffix."
+        exit 1
+    fi
+    for f in $fx; do
+      filename=$(basename -- "$f")
+      extension="${filename##*.}"
+      filename_no_ext="${filename%.*}"
+      new_filename="${filename_no_ext}${suffix}.${extension}"
+      mv -- "$f" "$new_filename"
+    done
+    lf -remote "send $id load"
+}}
+
 # mappings
 map d delete
 map E extract
