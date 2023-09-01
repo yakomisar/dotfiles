@@ -1,6 +1,5 @@
 local opt = vim.opt -- as a shorthand
 
--- so your mappings are correct
 -- disable the startup splash screen
 opt.shortmess:append("I")
 -- make sure to set `mapleader` before lazy
@@ -25,6 +24,9 @@ opt.autoindent = true
 
 -- line wrapping
 opt.wrap = false
+
+-- set hidden
+opt.hidden = true
 
 -- disable scrolling
 opt.scrolloff = 8

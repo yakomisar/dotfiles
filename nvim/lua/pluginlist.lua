@@ -1,23 +1,27 @@
 return {
   -- the colorscheme should be available when starting Neovim
-  -- { "bluz71/vim-nightfly-guicolors",
-  --   lazy = false,-- make sure we load this during startup if it is your main colorscheme
-  --   priority = 1000, -- make sure to load this before all the other start plugins
-  --   config = function()
-  --     -- load the colorscheme here
-  --     vim.cmd([[colorscheme nightfly]])
-  --   end,
-  -- },
   {
-    "Mofiqul/vscode.nvim",
+    "bluz71/vim-nightfly-guicolors",
     lazy = false,  -- make sure we load this during startup if it is your main colorscheme
     priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
-      require("vscode-config")
       -- load the colorscheme here
-      -- vim.cmd([[colorscheme vscode]])
+      vim.cmd([[colorscheme nightfly]])
+
+      -- Set WinSeparator highlight group
+      vim.cmd([[highlight WinSeparator guibg=None guifg=#1f4461]])
     end,
   },
+  -- {
+  --   "Mofiqul/vscode.nvim",
+  --   lazy = false,  -- make sure we load this during startup if it is your main colorscheme
+  --   priority = 1000, -- make sure to load this before all the other start plugins
+  --   config = function()
+  --     require("vscode-config")
+  --     -- load the colorscheme here
+  --     -- vim.cmd([[colorscheme vscode]])
+  --   end,
+  -- },
   -- Treesitter
   {
     "nvim-treesitter/nvim-treesitter",

@@ -4,7 +4,7 @@ set icons
 # enable dividers
 set drawbox
 # apply ratio for windows
-set ratios 1:2:3
+set ratios 1:1:2
 # enable filesize
 set info size
 
