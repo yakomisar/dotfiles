@@ -48,7 +48,8 @@ keymap.set("n", "<leader>sx", ":close<CR>", { noremap = true, silent = true }) -
 
 -- buffer management
 keymap.set("n", "<leader>to", ":tabnew<CR>", { noremap = true, silent = true }) -- open new tab
-keymap.set("n", "<leader>x", [[<Cmd>bprevious <bar> bdelete #<CR>]], { noremap = true, silent = true })
+-- keymap.set("n", "<leader>x", ":bdelete<CR>", { noremap = true, silent = true })
+keymap.set("n", "<leader>x", ":bp<bar>sp<bar>bn<bar>bd<CR>", { noremap = true, silent = true })
 keymap.set("n", "<Tab>", ":bnext<CR>", { noremap = true, silent = true }) --  go to next tab
 keymap.set("n", "<S-Tab>", ":bprevious<CR>", { noremap = true, silent = true }) --  go to previous tab
 -- keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true }) --  go to next tab
@@ -112,7 +113,6 @@ keymap.set("n", "<Leader>dsc", ":lua require('dap').continue()<CR>", { noremap =
 keymap.set("n", "<Leader>dsv", ":lua require('dap').step_over()<CR>", { noremap = true, silent = true })
 keymap.set("n", "<Leader>dsi", ":lua require('dap').step_into()<CR>", { noremap = true, silent = true })
 keymap.set("n", "<Leader>dso", ":lua require('dap').step_out()<CR>", { noremap = true, silent = true })
-
 -- Hover over variables
 keymap.set("n", "<Leader>dhh", ":lua require('dap.ui.variables').hover()<CR>", { noremap = true, silent = true })
 keymap.set("v", "<Leader>dhv", ":lua require('dap.ui.variables').visual_hover()<CR>", { noremap = true, silent = true })
@@ -148,6 +148,17 @@ keymap.set("n", "<Leader>dbt", ":lua require('dap').toggle_breakpoint()<CR>", { 
 -- Display variables and toggle the DAP UI
 keymap.set("n", "<Leader>dc", ":lua require('dap.ui.variables').scopes()<CR>", { noremap = true, silent = true })
 keymap.set("n", "<Leader>di", ":lua require('dapui').toggle()<CR>", { noremap = true, silent = true })
+
+-- [[ Highlight on yank ]]
+-- See `:help vim.highlight.on_yank()`
+local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+vim.api.nvim_create_autocmd("TextYankPost", {
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+	group = highlight_group,
+	pattern = "*",
+})
 
 function insert_header()
 	local lines = {

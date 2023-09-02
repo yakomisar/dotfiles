@@ -34,6 +34,7 @@ return {
     end,
     dependencies = {
       { "windwp/nvim-ts-autotag", event = "InsertEnter" },
+      "nvim-treesitter/nvim-treesitter-textobjects",
     },
   },
   -- Autopairs
