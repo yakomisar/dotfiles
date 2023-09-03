@@ -17,8 +17,8 @@ opt.number = true
 -- tabs & indentation
 opt.showtabline = 1
 
-opt.tabstop = 2
-opt.shiftwidth = 2
+opt.tabstop = 4
+opt.shiftwidth = 4
 opt.expandtab = true
 opt.autoindent = true
 
