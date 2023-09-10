@@ -34,9 +34,6 @@ install:
 	@echo "Installing Git..."
 	brew install git || { echo "Git installation failed"; exit 1; }
 
-	@echo "Install NVChad"
-	git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
-
 	@echo "Installing Go..."
 	brew install go || { echo "Go installation failed"; exit 1; }
 
@@ -94,11 +91,5 @@ go-tools:
 
 	@echo "Installing debugger for Go - Delve"
 	go install github.com/go-delve/delve/cmd/dlv@latest
-
-nvchad-custom:
-	@echo "Add custom config to NvChad"
-	cd ~/.config/ && git clone https://github.com/yakomisar/dotfiles .
-	cd ~/.config/nvim/lua/ && rm -rf custom
-	ln -s ~/.config/custom_nvchad/ custom
 
 .PHONY: install go-tools
