@@ -1,17 +1,4 @@
 return {
-	-- the colorscheme should be available when starting Neovim
-	-- {
-	-- 	"bluz71/vim-nightfly-guicolors",
-	-- 	lazy = false, -- make sure we load this during startup if it is your main colorscheme
-	-- 	priority = 1000, -- make sure to load this before all the other start plugins
-	-- 	config = function()
-	-- 		-- load the colorscheme here
-	-- 		vim.cmd([[colorscheme nightfly]])
-	--
-	-- 		-- Set WinSeparator highlight group
-	-- 		vim.cmd([[highlight WinSeparator guibg=None guifg=#1f4461]])
-	-- 	end,
-	-- },
 	{
 		"catppuccin/nvim",
 		name = "catppuccin",
@@ -23,25 +10,13 @@ return {
 					nvimtree = false,
 					neotree = true,
 				},
-				-- background = { -- :h background
-				-- light = "latte",
-				-- 	dark = "mocha",
-				-- },
 			}) -- load the colorscheme here
 			vim.cmd.colorscheme("catppuccin")
 			vim.cmd([[highlight WinSeparator guibg=None guifg=#303446]])
+			-- Set custom highlights
+			vim.cmd([[ hi BufferLineBufferSelected guifg=#ff6b1d gui=bold,italic ]])
 		end,
 	},
-	-- {
-	--   "Mofiqul/vscode.nvim",
-	--   lazy = false,  -- make sure we load this during startup if it is your main colorscheme
-	--   priority = 1000, -- make sure to load this before all the other start plugins
-	--   config = function()
-	--     require("vscode-config")
-	--     -- load the colorscheme here
-	--     -- vim.cmd([[colorscheme vscode]])
-	--   end,
-	-- },
 	-- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -53,7 +28,11 @@ return {
 			require("treesitter-config")
 		end,
 		dependencies = {
-			{ "windwp/nvim-ts-autotag", event = "InsertEnter" },
+			{
+				"windwp/nvim-ts-autotag",
+				event = "InsertEnter",
+				ft = { "html", "xml", "javascript", "typescript" },
+			},
 			"nvim-treesitter/nvim-treesitter-textobjects",
 		},
 	},
@@ -63,6 +42,17 @@ return {
 		event = "InsertEnter",
 		config = function()
 			require("autopairs-config")
+		end,
+	},
+	-- Surrounds
+	{
+		"kylechui/nvim-surround",
+		version = "*", -- Use for stability; omit to use `main` branch for the latest features
+		event = "VeryLazy",
+		config = function()
+			require("nvim-surround").setup({
+				-- Configuration here, or leave empty to use defaults
+			})
 		end,
 	},
 	-- Colorizer
