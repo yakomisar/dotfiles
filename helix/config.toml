@@ -1,0 +1,17 @@
+theme = "sonokai"
+
+[editor]
+line-number = "relative"
+mouse = true
+
+[keys.insert]
+C-j = ["move_line_down", "scroll_down"]
+C-k = ["move_line_up", "scroll_up"]
+j = { k = "normal_mode" } # Maps `jk` to exit insert mode
+C-h = "move_char_left"
+C-l = "move_char_right"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
