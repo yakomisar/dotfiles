@@ -4,6 +4,7 @@ theme = "dark_plus"
 line-number = "relative"
 mouse = true
 bufferline = "always"
+middle-click-paste = false
 
 [keys.insert]
 C-j = ["move_line_down", "scroll_down"]
@@ -12,15 +13,22 @@ j = { k = "normal_mode" } # Maps `jk` to exit insert mode
 C-h = "move_char_left"
 C-l = "move_char_right"
 
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+render = true
+character = "┊"
+
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
 select = "underline"
 
 [editor.statusline]
-left = ["mode", "spinner"]
+left = ["mode", "spinner", "diagnostics"]
 center = ["file-name"]
-right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+right = ["selections", "position", "file-encoding", "file-line-ending", "file-type"]
 separator = "|"
 mode.normal = "NORMAL"
 mode.insert = "INSERT"

@@ -1,0 +1,6 @@
+[[language]]
+name = "go"
+formatter = { command = "golines" }
+config = { "formatting.gofumpt" = true }
+# formatter = { command = "goimports" }
+# formatter = { command = "/Users/olegkomisarenko/.config/helix/goformat.sh"}
