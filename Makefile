@@ -23,13 +23,10 @@ install:
 	sudo launchctl load /Library/LaunchDaemons/org.capslock-to-control.plist
 
 	@echo "Installing iTerm..."
-	brew install --cask iterm2 || { echo "iTerm2 installation failed"; exit 1; }
+	brew install --cask kitty || { echo "kitty installation failed"; exit 1; }
 
 	@echo "Applying Monaco font to iTerm..."
 	defaults write com.googlecode.iterm2 "Normal Font" -string "Monaco 14"
-
-	@echo "Enabling anti-aliasing in iTerm..."
-	defaults write com.googlecode.iterm2 AppleFontSmoothing -int 2
 
 	@echo "Installing Git..."
 	brew install git || { echo "Git installation failed"; exit 1; }
