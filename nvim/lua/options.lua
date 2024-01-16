@@ -10,6 +10,8 @@ opt.laststatus = 3
 opt.backup = false
 opt.swapfile = false
 
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+
 -- line numbers
 opt.relativenumber = true
 opt.number = true
@@ -38,7 +40,7 @@ opt.ignorecase = true
 opt.smartcase = true
 
 -- cursor line
-opt.cursorline = false
+opt.cursorline = true
 -- opt.lazyredraw = true
 -- appearance
 opt.termguicolors = true
