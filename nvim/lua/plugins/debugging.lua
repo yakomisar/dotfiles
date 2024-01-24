@@ -26,9 +26,8 @@ return {
 			dapui.close()
 		end
 
-		-- vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint, {})
-		vim.keymap.set("n", "<Leader>b", ":DapToggleBreakpoint<CR>")
-		vim.keymap.set("n", "<F5>", ":DapContinue<CR>")
-		-- vim.keymap.set('n', '<leader>b', dap.continue, {})
+		vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint, { desc = "Set Breakpoint " })
+		-- vim.keymap.set("n", "<Leader>b", ":DapToggleBreakpoint<CR>")
+		vim.keymap.set("n", "<F5>", dap.continue, { desc = "Dap Continue" })
 	end,
 }

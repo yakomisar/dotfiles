@@ -6,11 +6,11 @@ return {
 		require("catppuccin").setup({
 			flavour = "mocha", -- "mocha", -- latte, frappe, macchiato, mocha
 			integrations = {
-        cmp = true,
+        -- cmp = true,
 				nvimtree = false,
 				neotree = true,
 			},
-			transparent_background = true,
+			-- transparent_background = true,
 		})
 		vim.cmd.colorscheme("catppuccin")
 		vim.cmd([[highlight WinSeparator guibg=None guifg=#242437]])

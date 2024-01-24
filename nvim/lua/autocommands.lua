@@ -2,7 +2,7 @@ local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
 local komisar_group = augroup("komisar", {})
-local statusline_group = augroup("StatusLine", {})
+-- local statusline_group = augroup("StatusLine", {})
 local highlight_group = augroup("YankHighlight", { clear = true })
 
 autocmd("TextYankPost", {
@@ -60,9 +60,9 @@ autocmd("BufWritePre", {
 	end,
 })
 
--- custom statusline
-autocmd({ "WinEnter", "BufEnter" }, {
-	group = statusline_group,
-	pattern = "*",
-	command = [[setlocal statusline=%!v:lua.require('statusline').setup()]],
-})
+-- -- custom statusline
+-- autocmd({ "WinEnter", "BufEnter" }, {
+-- 	group = statusline_group,
+-- 	pattern = "*",
+-- 	command = [[setlocal statusline=%!v:lua.require('statusline').setup()]],
+-- })

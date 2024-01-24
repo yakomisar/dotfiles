@@ -1,5 +1,6 @@
 return {
 	"ysomad/gopher.nvim",
+	ft = "go",
 	branch = "develop",
 	config = function()
 		require("gopher").setup({

@@ -44,10 +44,10 @@ keymap.set("n", "x", '"_x', { noremap = true, silent = true })
 
 -- utils
 keymap.set(
-	"n",
-	"<leader>s",
-	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-	{ desc = "Rename in curr buffer" }
+  "n",
+  "<leader>s",
+  [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+  { desc = "Rename in curr buffer" }
 )
 -- vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { desc = "chmod +x curr file" })
 
@@ -79,7 +79,7 @@ keymap.set("n", "]b", "<cmd>bnext<cr>", { desc = "Next buffer" })
 
 -- File manager Neotree
 keymap.set("n", "<leader>e", ":Neotree focus<CR>", { noremap = true, silent = true }) -- focus file explorer
-keymap.set("n", "<C-n>", ":Neotree close<CR>", { noremap = true, silent = true }) -- toggle file explorer
+keymap.set("n", "<C-n>", ":Neotree close<CR>", { noremap = true, silent = true })     -- toggle file explorer
 
 ----------------------
 -- Gopher Keymaps
