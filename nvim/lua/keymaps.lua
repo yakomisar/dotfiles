@@ -42,6 +42,9 @@ keymap.set("n", "q", ":silent nohl<CR>", { noremap = true, silent = true })
 -- delete single character without copying into register
 keymap.set("n", "x", '"_x', { noremap = true, silent = true })
 
+-- buffer management
+keymap.set("n", "<leader>x", ":bp<bar>sp<bar>bn<bar>bd<CR>", { noremap = true, silent = true })
+
 -- utils
 keymap.set(
   "n",

@@ -6,20 +6,20 @@ local komisar_group = augroup("komisar", {})
 local highlight_group = augroup("YankHighlight", { clear = true })
 
 autocmd("TextYankPost", {
-	callback = function()
-		vim.highlight.on_yank({
-      timeout = 50,
-    })
-	end,
 	group = highlight_group,
 	pattern = "*",
+	callback = function()
+		vim.highlight.on_yank({
+			timeout = 40,
+		})
+	end,
 })
 
 --- remove all trailing whitespace on save
 autocmd("BufWritePre", {
 	group = komisar_group,
 	pattern = "*",
-	command = [[%s/\s\+$//e]],
+	command = "%s/\\s\\+$//e",
 })
 
 -- don't auto commenting new lines
