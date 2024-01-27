@@ -7,20 +7,16 @@ return {
       { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     },
     config = function()
-      local telescope = require("telescope")
       local actions = require("telescope.actions")
       local builtin = require("telescope.builtin")
+      local telescope = require("telescope")
 
       telescope.setup({
         defaults = {
           path_display = { "truncate " },
-          -- layout_strategy = "vertical",
-          -- layout_strategy = "horizontal",
-          -- pickers = {
-          -- 	find_files = {
-          -- 		theme = "dropdown",
-          -- 	},
-          -- },
+          layout_strategy = "vertical",
+          layout_config = { mirror = true, height = 0.95, width = 0.75 },
+          -- layout_config = { height = 0.95, width = 0.95 },
           prompt_prefix = "  ",
           selection_caret = " ",
           mappings = {
@@ -32,6 +28,26 @@ return {
             },
           },
         },
+        --
+        -- lsp_code_actions = {
+        --   theme = "dropdown",
+        --   layout_config = {
+        --     center = {
+        --       width = 120,
+        --     },
+        --   },
+        -- },
+        -- pickers = {
+        -- 	find_files = {
+        -- 		theme = "dropdown",
+        -- 		previewer = false,
+        -- 		layout_config = {
+        -- 			center = {
+        -- 				width = 120,
+        -- 			},
+        -- 		},
+        -- 	},
+        -- },
       })
 
       telescope.load_extension("fzf")
@@ -50,13 +66,15 @@ return {
   {
     "nvim-telescope/telescope-ui-select.nvim",
     config = function()
-      require("telescope").setup({
-        extension = {
+      require("telescope").setup {
+        extensions = {
           ["ui-select"] = {
-            require("telescope.themes").get_dropdown({}),
-          },
-        },
-      })
+            require("telescope.themes").get_dropdown {
+              -- even more opts
+            }
+          }
+        }
+      }
       require("telescope").load_extension("ui-select")
     end,
   },
