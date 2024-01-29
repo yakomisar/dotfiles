@@ -11,12 +11,8 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
-    "folke/neodev.nvim",
   },
   config = function()
-    require("neodev").setup({
-      -- add any options here, or leave empty to use the default settings
-    })
     local lspconfig = require("lspconfig")
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
@@ -93,6 +89,11 @@ return {
     -- end
 
     lspconfig["tsserver"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    lspconfig["jsonls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
