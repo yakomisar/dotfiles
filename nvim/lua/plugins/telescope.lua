@@ -5,6 +5,13 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
       { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+      {
+        "debugloop/telescope-undo.nvim",
+        keys = { "<leader>u", "<cmd>Telescope undo<cr>" },
+        config = function()
+          require("telescope").load_extension("undo")
+        end,
+      },
     },
     config = function()
       local actions = require("telescope.actions")
@@ -13,10 +20,21 @@ return {
 
       telescope.setup({
         defaults = {
-          path_display = { "truncate " },
-          layout_strategy = "vertical",
-          layout_config = { mirror = true, height = 0.95, width = 0.75 },
-          -- layout_config = { height = 0.95, width = 0.95 },
+          path_display = { "truncate" },
+          -- layout_strategy = "vertical",
+          layout_strategy = "horizontal",
+          -- layout_config = { mirror = true, height = 0.95, width = 0.75 },
+          layout_config = {
+            horizontal = {
+              prompt_position = "top",
+              preview_width = 0.5,
+            },
+            width = 0.8,
+            height = 0.8,
+            preview_cutoff = 120,
+          },
+          sorting_strategy = "ascending",
+          winblend = 0,
           prompt_prefix = "  ",
           selection_caret = " ",
           mappings = {
@@ -28,26 +46,6 @@ return {
             },
           },
         },
-        --
-        -- lsp_code_actions = {
-        --   theme = "dropdown",
-        --   layout_config = {
-        --     center = {
-        --       width = 120,
-        --     },
-        --   },
-        -- },
-        -- pickers = {
-        -- 	find_files = {
-        -- 		theme = "dropdown",
-        -- 		previewer = false,
-        -- 		layout_config = {
-        -- 			center = {
-        -- 				width = 120,
-        -- 			},
-        -- 		},
-        -- 	},
-        -- },
       })
 
       telescope.load_extension("fzf")
@@ -66,15 +64,15 @@ return {
   {
     "nvim-telescope/telescope-ui-select.nvim",
     config = function()
-      require("telescope").setup {
+      require("telescope").setup({
         extensions = {
           ["ui-select"] = {
-            require("telescope.themes").get_dropdown {
+            require("telescope.themes").get_dropdown({
               -- even more opts
-            }
-          }
-        }
-      }
+            }),
+          },
+        },
+      })
       require("telescope").load_extension("ui-select")
     end,
   },

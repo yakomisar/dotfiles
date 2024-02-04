@@ -17,12 +17,12 @@ return {
     -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
     require("luasnip.loaders.from_vscode").lazy_load()
     -- set background for option picker
-    -- vim.api.nvim_set_hl(0, "CustomCmpPicker", { bg = "#b4ebbc", fg = "#212031" })
     vim.cmd("highlight CustomCmpPicker guibg=#b4ebbc guifg=#212031 gui=bold")
 
     cmp.setup({
       completion = {
-        completeopt = "menu,menuone,preview,noselect",
+        -- completeopt = "menu,menuone,preview,noselect",
+        completeopt = "menu,menuone,preview",
       },
       snippet = { -- configure how nvim-cmp interacts with snippet engine
         expand = function(args)

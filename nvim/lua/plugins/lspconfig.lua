@@ -23,7 +23,7 @@ return {
       local builtin = require("telescope.builtin")
 
       opts.desc = "Show LSP references"
-      vim.keymap.set("n", "gR", builtin.lsp_references, opts) -- show definition, references
+      vim.keymap.set("n", "<leader>gr", builtin.lsp_references, opts) -- show definition, references
 
       opts.desc = "Go to declaration"
       vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
@@ -75,6 +75,12 @@ return {
 
       opts.desc = "Restart LSP"
       vim.keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+
+      opts.desc = "Show function/types usage/reference count"
+      vim.keymap.set("n", "<leader>cl", vim.lsp.codelens.display, opts) -- mapping to restart lsp if necessary
+
+      opts.desc = "Clear function/types usage/reference count"
+      vim.keymap.set("n", "<leader>cc", vim.lsp.codelens.clear, opts) -- mapping to restart lsp if necessary
     end
 
     -- used to enable autocompletion (assign to every lsp server config)
