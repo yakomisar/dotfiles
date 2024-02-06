@@ -20,7 +20,7 @@ return {
 
       telescope.setup({
         defaults = {
-          path_display = { "truncate" },
+          path_display = { "truncate " },
           -- layout_strategy = "vertical",
           layout_strategy = "horizontal",
           -- layout_config = { mirror = true, height = 0.95, width = 0.75 },
