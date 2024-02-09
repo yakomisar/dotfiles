@@ -10,6 +10,7 @@ opt.laststatus = 3
 opt.backup = false
 opt.swapfile = false
 
+opt.undofile = true
 opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 
 -- line numbers

@@ -45,6 +45,9 @@ keymap.set("n", "x", '"_x', { noremap = true, silent = true })
 -- buffer management
 keymap.set("n", "<leader>x", ":bp<bar>sp<bar>bn<bar>bd<CR>", { noremap = true, silent = true })
 
+-- Toggle terminal
+vim.api.nvim_set_keymap('n', '<leader>tg', ':ToggleTerm<CR>', {noremap = true, silent = true})
+
 -- utils
 keymap.set(
   "n",

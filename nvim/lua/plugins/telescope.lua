@@ -7,9 +7,9 @@ return {
       { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
       {
         "debugloop/telescope-undo.nvim",
-        keys = { "<leader>u", "<cmd>Telescope undo<cr>" },
         config = function()
           require("telescope").load_extension("undo")
+          vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>", { desc = "Telescope undo" })
         end,
       },
     },
