@@ -46,7 +46,7 @@ keymap.set("n", "x", '"_x', { noremap = true, silent = true })
 keymap.set("n", "<leader>x", ":bp<bar>sp<bar>bn<bar>bd<CR>", { noremap = true, silent = true })
 
 -- Toggle terminal
-vim.api.nvim_set_keymap('n', '<leader>tg', ':ToggleTerm<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<D-j>', ':ToggleTerm<CR>', {noremap = true, silent = true})
 
 -- utils
 keymap.set(
