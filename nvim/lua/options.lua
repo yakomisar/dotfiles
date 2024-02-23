@@ -11,10 +11,11 @@ opt.backup = false
 opt.swapfile = false
 
 opt.undofile = true
-opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+-- opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 
 -- line numbers
-opt.relativenumber = true
+-- opt.relativenumber = true
+opt.relativenumber = false
 opt.number = true
 
 -- tabs & indentation

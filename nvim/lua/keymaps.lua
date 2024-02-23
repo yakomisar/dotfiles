@@ -46,15 +46,10 @@ keymap.set("n", "x", '"_x', { noremap = true, silent = true })
 keymap.set("n", "<leader>x", ":bp<bar>sp<bar>bn<bar>bd<CR>", { noremap = true, silent = true })
 
 -- Toggle terminal
-vim.api.nvim_set_keymap('n', '<D-j>', ':ToggleTerm<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<D-j>", ":ToggleTerm<CR>", { noremap = true, silent = true })
 
 -- utils
-keymap.set(
-  "n",
-  "<leader>s",
-  [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-  { desc = "Rename in curr buffer" }
-)
+keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Rename in curr buffer" })
 -- vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { desc = "chmod +x curr file" })
 
 -- giga yankers and pasters
@@ -85,7 +80,7 @@ keymap.set("n", "]b", "<cmd>bnext<cr>", { desc = "Next buffer" })
 
 -- File manager Neotree
 keymap.set("n", "<leader>e", ":Neotree focus<CR>", { noremap = true, silent = true }) -- focus file explorer
-keymap.set("n", "<C-n>", ":Neotree close<CR>", { noremap = true, silent = true })     -- toggle file explorer
+keymap.set("n", "<C-n>", ":Neotree close<CR>", { noremap = true, silent = true }) -- toggle file explorer
 
 ----------------------
 -- Gopher Keymaps

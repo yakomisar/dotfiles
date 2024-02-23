@@ -1,13 +1,13 @@
 return {
-	"ysomad/gopher.nvim",
-	ft = "go",
-	branch = "develop",
-	config = function()
-		require("gopher").setup({
-			gotests = {
-				template = "testify",
-				named = true,
-			},
-		})
-	end,
+  "olexsmir/gopher.nvim",
+  ft = "go",
+  branch = "develop",
+  config = function ()
+    require("gopher").setup({
+      gotests = {
+        template = "testify",
+        named = true
+      }
+    })
+  end
 }
