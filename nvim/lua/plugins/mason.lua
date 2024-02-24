@@ -29,7 +29,7 @@ return {
 				"pylint", -- python linter
 
 				"gofumpt", -- go better gofmt
-        "goimports-reviser", -- go better imports handler
+				"goimports-reviser", -- go better imports handler
 				{ "gotests", version = "develop" }, -- go tests codegen
 				"golangci-lint",
 			},

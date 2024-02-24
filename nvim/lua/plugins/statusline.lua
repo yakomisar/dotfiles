@@ -6,7 +6,7 @@ return {
 		require("lualine").setup({
 			options = {
 				-- theme = auto,
-        theme = 'tokyonight',
+				theme = "tokyonight",
 				icons_enabled = true,
 				disabled_filetypes = { "neo-tree" },
 				component_separators = { left = "", right = "" },
