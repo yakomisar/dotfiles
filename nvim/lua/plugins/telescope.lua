@@ -1,10 +1,18 @@
 return {
 	{
 		"nvim-telescope/telescope.nvim",
+		event = "VeryLazy",
 		branch = "0.1.x",
 		dependencies = {
-			"nvim-lua/plenary.nvim",
-			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+			{
+				"nvim-telescope/telescope-fzf-native.nvim",
+				build = "make",
+				-- `cond` is a condition used to determine whether this plugin should be
+				-- installed and loaded.
+				cond = function()
+					return vim.fn.executable("make") == 1
+				end,
+			},
 			{
 				"debugloop/telescope-undo.nvim",
 				config = function()
@@ -12,6 +20,7 @@ return {
 					vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>", { desc = "Telescope undo" })
 				end,
 			},
+			{ "nvim-telescope/telescope-ui-select.nvim" },
 		},
 		config = function()
 			local actions = require("telescope.actions")
@@ -46,34 +55,26 @@ return {
 						},
 					},
 				},
+				extensions = {
+					["ui-select"] = {
+						require("telescope.themes").get_dropdown(),
+					},
+				},
 			})
 
 			telescope.load_extension("fzf")
+			telescope.load_extension("ui-select")
 
-			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Fuzzy find files" })
-			vim.keymap.set("n", "<C-p>", builtin.git_files, { desc = "Fuzzy find git files" })
-			vim.keymap.set("n", "<leader>fb", function()
+			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]uzzy find [f]iles" })
+			vim.keymap.set("n", "<C-p>", builtin.git_files, { desc = "[F]uzzy [f]ind [g]it files" })
+			vim.keymap.set("n", "<leader><leader>", function()
 				builtin.buffers({ sort_mru = true, ignore_current_buffer = true })
 			end, { desc = "List opened buffers" })
 			vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Grep string" })
 			vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "List help tags" })
 			vim.keymap.set("n", "<leader>fx", builtin.treesitter, { desc = "List tresitter funcs, vars" })
+			vim.keymap.set("n", "<leader>fo", builtin.oldfiles, { desc = "[S]earch [r]ecent [f]iles" })
 			vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "List todo by folke" })
-		end,
-	},
-	{
-		"nvim-telescope/telescope-ui-select.nvim",
-		config = function()
-			require("telescope").setup({
-				extensions = {
-					["ui-select"] = {
-						require("telescope.themes").get_dropdown({
-							-- even more opts
-						}),
-					},
-				},
-			})
-			require("telescope").load_extension("ui-select")
 		end,
 	},
 }

@@ -31,5 +31,6 @@ return {
 		vim.cmd([[highlight GitSignsAdd guifg=#A7E8AD]])
 		vim.cmd([[highlight GitSignsChange guifg=#FDD14A]])
 		vim.cmd([[highlight GitSignsDelete guifg=#ff6b1d]])
+		vim.cmd([[highlight WinSeparator guibg=None guifg=#181A28]])
 	end,
 }
