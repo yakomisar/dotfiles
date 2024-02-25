@@ -25,12 +25,11 @@ return {
 	opts = {},
 	config = function()
 		vim.cmd([[colorscheme tokyonight]])
-		vim.cmd([[highlight WinSeparator guibg=None guifg=#242437]])
 		vim.cmd([[highlight CursorLineNr guibg=None guifg=#A7E8AD gui=bold,italic]])
 		vim.cmd([[highlight Visual ctermbg=lightblue guibg=#A7E8AD guifg=#242437 gui=bold cterm=bold]])
 		vim.cmd([[highlight GitSignsAdd guifg=#A7E8AD]])
 		vim.cmd([[highlight GitSignsChange guifg=#FDD14A]])
 		vim.cmd([[highlight GitSignsDelete guifg=#ff6b1d]])
-		vim.cmd([[highlight WinSeparator guibg=None guifg=#181A28]])
+		vim.cmd([[highlight WinSeparator guibg=None guifg=#273045]])
 	end,
 }
