@@ -1,13 +1,17 @@
+-- [[ Basic Autocommands ]]
+--  See `:help lua-guide-autocommands`
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
 local komisar_group = augroup("komisar", {})
 -- local statusline_group = augroup("StatusLine", {})
-local highlight_group = augroup("YankHighlight", { clear = true })
 
+--  Highlight when yanking (copying) text
+--  Try it with `yap` in normal mode
+--  See `:help vim.highlight.on_yank()`
 autocmd("TextYankPost", {
-	group = highlight_group,
-	pattern = "*",
+	desc = "Highlight when yanking (copying) text",
+	group = augroup("highlight-yank", { clear = true }),
 	callback = function()
 		vim.highlight.on_yank({
 			timeout = 60,

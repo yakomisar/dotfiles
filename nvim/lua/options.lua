@@ -2,6 +2,10 @@ local opt = vim.opt -- as a shorthand
 
 -- disable the startup splash screen
 opt.shortmess:append("I")
+
+-- Don't show the mode, since it's already in status line
+vim.opt.showmode = false
+
 -- make sure to set `mapleader` before lazy
 vim.g.mapleader = " "
 -- one status line for all windows

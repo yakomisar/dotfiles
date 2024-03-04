@@ -53,10 +53,10 @@ keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left
 -- vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { desc = "chmod +x curr file" })
 
 -- giga yankers and pasters
-keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste from system clipboard" })
-keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Del and yank into system clipboard" })
-keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Yank into system clipboard" })
-keymap.set("n", "<leader>Y", [["+Y]], { desc = "Yank curr line into system clipboard" })
+-- keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste from system clipboard" })
+-- keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Del and yank into system clipboard" })
+-- keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Yank into system clipboard" })
+-- keymap.set("n", "<leader>Y", [["+Y]], { desc = "Yank curr line into system clipboard" })
 
 -- better indenting
 keymap.set("v", "<", "<gv", { desc = "Indent v-block to right" })
