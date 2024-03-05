@@ -44,10 +44,10 @@ return {
 			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
 
 			opts.desc = "Show buffer diagnostics"
-			vim.keymap.set("n", "<leader>D", builtin.diagnostics, opts) -- show  diagnostics for file
+			vim.keymap.set("n", "<leader>d", builtin.diagnostics, opts) -- show  diagnostics for file
 
 			opts.desc = "Show line diagnostics"
-			vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
+			vim.keymap.set("n", "<leader>D", vim.diagnostic.open_float, opts) -- show diagnostics for line
 
 			opts.desc = "Prev diagnostic"
 			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
