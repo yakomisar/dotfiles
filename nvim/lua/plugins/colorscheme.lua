@@ -26,6 +26,7 @@ return {
 					blue = "#45707a",
 					lavender = "#45707a",
 					text = "#654735",
+					subtext2 = "#6e5c4b",
 					subtext1 = "#73503c",
 					subtext0 = "#805942",
 					overlay2 = "#8c6249",
@@ -54,6 +55,7 @@ return {
 					blue = "#7daea3",
 					lavender = "#7daea3",
 					text = "#ebdbb2",
+					subtext2 = "#c5b4a1",
 					subtext1 = "#d5c4a1",
 					subtext0 = "#bdae93",
 					overlay2 = "#a89984",
@@ -65,6 +67,34 @@ return {
 					base = "#1d2021",
 					mantle = "#191b1c",
 					crust = "#141617",
+				},
+				macchiato = {
+					rosewater = "#eb7a73", -- slightly lighter
+					flamingo = "#eb7a73",
+					red = "#eb7a73",
+					maroon = "#eb7a73",
+					pink = "#e396a4", -- slightly lighter
+					mauve = "#e396a4",
+					peach = "#e89a5e", -- slightly lighter
+					yellow = "#e8b267", -- slightly lighter
+					green = "#b9c675", -- slightly lighter
+					teal = "#99c792", -- slightly lighter
+					sky = "#99c792",
+					sapphire = "#99c792",
+					blue = "#8dbba3", -- slightly lighter
+					lavender = "#8dbba3",
+					text = "#f1e4c2", -- much lighter to maintain contrast
+					subtext1 = "#e5d5b1", -- slightly lighter
+					subtext0 = "#c5bda3", -- slightly lighter
+					overlay2 = "#b8a994", -- slightly lighter
+					overlay1 = "#a39284", -- slightly lighter
+					overlay0 = "#656565", -- lighter
+					surface2 = "#5d5d5d", -- lighter
+					surface1 = "#505050", -- lighter
+					surface0 = "#393939", -- lighter
+					base = "#2e3233", -- lighter
+					mantle = "#242727", -- lighter
+					crust = "#1f2223", -- lighter
 				},
 			},
 			transparent_background = false,

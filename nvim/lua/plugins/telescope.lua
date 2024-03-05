@@ -30,9 +30,7 @@ return {
 			telescope.setup({
 				defaults = {
 					path_display = { "truncate " },
-					-- layout_strategy = "vertical",
 					layout_strategy = "horizontal",
-					-- layout_config = { mirror = true, height = 0.95, width = 0.75 },
 					layout_config = {
 						horizontal = {
 							prompt_position = "top",
@@ -65,16 +63,39 @@ return {
 			telescope.load_extension("fzf")
 			telescope.load_extension("ui-select")
 
-			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]uzzy find [f]iles" })
-			vim.keymap.set("n", "<C-p>", builtin.git_files, { desc = "[F]uzzy [f]ind [g]it files" })
+			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]ile" })
+			vim.keymap.set("n", "<C-p>", builtin.git_files, { desc = "[F]ind [G]it files" })
 			vim.keymap.set("n", "<leader><leader>", function()
 				builtin.buffers({ sort_mru = true, ignore_current_buffer = true })
-			end, { desc = "List opened buffers" })
-			vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Grep string" })
-			vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "List help tags" })
-			vim.keymap.set("n", "<leader>fx", builtin.treesitter, { desc = "List tresitter funcs, vars" })
-			vim.keymap.set("n", "<leader>fo", builtin.oldfiles, { desc = "[S]earch [r]ecent [f]iles" })
-			vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "List todo by folke" })
+			end, { desc = "[ ] Find existing buffers" })
+			vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[L]ive [G]rep" })
+			vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[H]elp [T]ags" })
+			vim.keymap.set("n", "<leader>fx", builtin.treesitter, { desc = "[L]ist [R]resitter funcs, vars" })
+			vim.keymap.set("n", "<leader>fo", builtin.oldfiles, { desc = "[R]ecent [F]iles" })
+			vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "[L]ist [T]odo" })
+
+			-- Slightly advanced example of overriding default behavior and theme
+			vim.keymap.set("n", "<leader>/", function()
+				-- You can pass additional configuration to telescope to change theme, layout, etc.
+				builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+					-- winblend = 10,
+					previewer = false,
+				}))
+			end, { desc = "[/] Fuzzily search in current buffer" })
+
+			-- Also possible to pass additional configuration options.
+			--  See `:help telescope.builtin.live_grep()` for information about particular keys
+			vim.keymap.set("n", "<leader>f/", function()
+				builtin.live_grep({
+					grep_open_files = true,
+					prompt_title = "Live Grep in Open Files",
+				})
+			end, { desc = "[S]earch [/] in Open Files" })
+
+			-- Shortcut for searching your neovim configuration files
+			vim.keymap.set("n", "<leader>fn", function()
+				builtin.find_files({ cwd = vim.fn.stdpath("config") })
+			end, { desc = "[S]earch [N]eovim files" })
 		end,
 	},
 }

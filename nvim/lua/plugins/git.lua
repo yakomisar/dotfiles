@@ -39,8 +39,8 @@ return {
 					return "<Ignore>"
 				end, { buffer = bufnr, expr = true, desc = "󰊢 Previous Hunk" })
 
-				_map("n", "<leader>gr", gs.reset_hunk, { buffer = bufnr, desc = "[R]eset [H]unk" })
-				_map("n", "<leader>gR", gs.reset_buffer, { buffer = bufnr, desc = "[R]eset [b]uffer" })
+				-- _map("n", "<leader>gr", gs.reset_hunk, { buffer = bufnr, desc = "[R]eset [H]unk" })
+				-- _map("n", "<leader>gR", gs.reset_buffer, { buffer = bufnr, desc = "[R]eset [b]uffer" })
 				_map("n", "<leader>gp", gs.preview_hunk, { buffer = bufnr, desc = "[P]review [H]unk" })
 				_map("n", "<leader>gd", gs.diffthis, { buffer = bufnr, desc = "[D]iff This" })
 				_map(
