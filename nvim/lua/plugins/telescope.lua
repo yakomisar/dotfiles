@@ -15,10 +15,10 @@ return {
 			},
 			{
 				"debugloop/telescope-undo.nvim",
-				config = function()
-					require("telescope").load_extension("undo")
-					vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>", { desc = "Telescope undo" })
-				end,
+				-- config = function()
+				-- 	require("telescope").load_extension("undo")
+				-- 	vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>", { desc = "[T]elescope [U]ndo" })
+				-- end,
 			},
 			{ "nvim-telescope/telescope-ui-select.nvim" },
 		},
@@ -54,14 +54,30 @@ return {
 					},
 				},
 				extensions = {
+					["undo"] = {
+						mappings = {
+							i = {
+								["<lt>C-y<lt>"] = require("telescope-undo.actions").yank_additions,
+								["<lt>d<lt>"] = require("telescope-undo.actions").yank_deletions,
+								["<lt>cr<lt>"] = require("telescope-undo.actions").restore,
+							},
+						},
+					},
 					["ui-select"] = {
-						require("telescope.themes").get_dropdown(),
+						require("telescope.themes").get_dropdown({
+							layout_config = {
+								width = 0.6,
+								height = 0.4,
+							},
+							winblend = 0,
+						}),
 					},
 				},
 			})
 
 			telescope.load_extension("fzf")
 			telescope.load_extension("ui-select")
+			telescope.load_extension("undo")
 
 			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]ile" })
 			vim.keymap.set("n", "<C-p>", builtin.git_files, { desc = "[F]ind [G]it files" })
@@ -73,6 +89,7 @@ return {
 			vim.keymap.set("n", "<leader>fx", builtin.treesitter, { desc = "[L]ist [R]resitter funcs, vars" })
 			vim.keymap.set("n", "<leader>fo", builtin.oldfiles, { desc = "[R]ecent [F]iles" })
 			vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "[L]ist [T]odo" })
+			vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>", { desc = "[T]elescope [U]ndo" })
 
 			-- Slightly advanced example of overriding default behavior and theme
 			vim.keymap.set("n", "<leader>/", function()

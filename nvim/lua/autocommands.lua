@@ -11,6 +11,7 @@ local komisar_group = augroup("komisar", {})
 --  See `:help vim.highlight.on_yank()`
 autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
+	pattern = "*",
 	group = augroup("highlight-yank", { clear = true }),
 	callback = function()
 		vim.highlight.on_yank({
