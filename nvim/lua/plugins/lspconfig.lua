@@ -22,19 +22,19 @@ return {
 
 			local builtin = require("telescope.builtin")
 
-			opts.desc = "Show LSP references"
+			opts.desc = "Show references [LSP]"
 			vim.keymap.set("n", "<leader>gr", builtin.lsp_references, opts) -- show definition, references
 
-			opts.desc = "Go to declaration"
+			opts.desc = "Go to declaration [LSP]"
 			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
 
-			opts.desc = "Show LSP definitions"
+			opts.desc = "Show definitions [LSP]"
 			vim.keymap.set("n", "gd", builtin.lsp_definitions, opts) -- show lsp definitions
 
-			opts.desc = "Show LSP implementations"
+			opts.desc = "Show implementations [LSP] "
 			vim.keymap.set("n", "gi", builtin.lsp_implementations, opts) -- show lsp implementations
 
-			opts.desc = "Show LSP type definitions"
+			opts.desc = "Show type definitions [LSP]"
 			vim.keymap.set("n", "gt", builtin.lsp_type_definitions, opts) -- show lsp type definitions
 
 			opts.desc = "See available code actions"
@@ -96,7 +96,7 @@ return {
 
 		-- Change the Diagnostic symbols in the sign column (gutter)
 		-- (not in youtube nvim video)
-		local signs = { Error = "", Warn = "", Hint = "", Info = "󰌵" }
+		local signs = { Error = "", Warn = "", Hint = "", Info = "I" }
 		for type, icon in pairs(signs) do
 			local hl = "DiagnosticSign" .. type
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })

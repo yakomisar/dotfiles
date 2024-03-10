@@ -28,7 +28,6 @@ return {
 					end)
 					return "<Ignore>"
 				end, { buffer = bufnr, expr = true, desc = "󰊢 Next Hunk" })
-
 				_map("n", "[g", function()
 					if vim.wo.diff then
 						return "[g"

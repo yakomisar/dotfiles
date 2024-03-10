@@ -15,18 +15,6 @@ require("options")
 require("keymaps")
 require("autocommands")
 require("lazy").setup("plugins", {
-	defaults = {
-		lazy = true,
-		version = false,
-	},
-	checker = {
-		enabled = false,
-	},
-	change_detection = {
-		enabled = false,
-		notify = false,
-	},
-
 	ui = {
 		wrap = true,
 		icons = {
