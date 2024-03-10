@@ -5,8 +5,7 @@ return {
 	config = function()
 		require("lualine").setup({
 			options = {
-				theme = auto,
-				-- theme = "dracula",
+				theme = "catppuccin",
 				icons_enabled = true,
 				disabled_filetypes = { "neo-tree" },
 				component_separators = " ",
