@@ -1,8 +1,8 @@
 # Fonts
-font_family LigaSFMono Nerd Font Medium
-italic_font CartographCF Nerd Font Italic
-bold_font LigaSFMono Nerd Font Bold
-bold_italic_font CartographCF Nerd Font Bold Italic
+font_family      JetBrainsMono Nerd Font
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
 font_size        15.0
 
 adjust_line_height 10
@@ -54,12 +54,6 @@ window_margin_width 0
 window_padding_width 0
 inactive_text_alpha 1.0
 background_opacity 1.0
-
-# Shell
-shell /usr/bin/tmux
-close_on_child_death no
-allow_remote_control yes
-term xterm-256color
 
 # Keys
 map ctrl+shift+v        paste_from_clipboard
