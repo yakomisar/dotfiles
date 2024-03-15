@@ -54,7 +54,6 @@ return {
 								width = 0.6,
 								height = 0.4,
 							},
-							winblend = 0,
 						}),
 					},
 				},
@@ -64,17 +63,18 @@ return {
 			telescope.load_extension("ui-select")
 			telescope.load_extension("undo")
 
-			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]ile" })
-			vim.keymap.set("n", "<C-p>", builtin.git_files, { desc = "[F]ind [G]it files" })
+			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find File" })
+			vim.keymap.set("n", "<C-p>", builtin.git_files, { desc = "Find Git files" })
 			vim.keymap.set("n", "<leader><leader>", function()
 				builtin.buffers({ sort_mru = true, ignore_current_buffer = true })
 			end, { desc = "[ ] Find existing buffers" })
-			vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[L]ive [G]rep" })
-			vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[H]elp [T]ags" })
-			vim.keymap.set("n", "<leader>fx", builtin.treesitter, { desc = "[L]ist [R]resitter funcs, vars" })
-			vim.keymap.set("n", "<leader>fo", builtin.oldfiles, { desc = "[R]ecent [F]iles" })
-			vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "[L]ist [T]odo" })
-			vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>", { desc = "[T]elescope [U]ndo" })
+			vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Live Grep" })
+			vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Help Tags" })
+			vim.keymap.set("n", "<leader>fx", builtin.treesitter, { desc = "List treesitter funcs, vars" })
+			vim.keymap.set("n", "<leader>fo", builtin.oldfiles, { desc = "Recent Files" })
+			vim.keymap.set("n", "<leader>gi", builtin.lsp_implementations, { desc = "Show Implementations" })
+			vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "List Todo" })
+			vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>", { desc = "Telescope Undo" })
 
 			-- Slightly advanced example of overriding default behavior and theme
 			vim.keymap.set("n", "<leader>/", function()
@@ -92,12 +92,12 @@ return {
 					grep_open_files = true,
 					prompt_title = "Live Grep in Open Files",
 				})
-			end, { desc = "[S]earch [/] in Open Files" })
+			end, { desc = "Search [/] in Open Files" })
 
 			-- Shortcut for searching your neovim configuration files
 			vim.keymap.set("n", "<leader>fn", function()
 				builtin.find_files({ cwd = vim.fn.stdpath("config") })
-			end, { desc = "[S]earch [N]eovim files" })
+			end, { desc = "Search neovim files" })
 		end,
 	},
 }
