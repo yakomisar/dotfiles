@@ -13,7 +13,6 @@ return {
 				"vim",
 				"go",
 				"lua",
-				"python",
 				"sql",
 				"javascript",
 				"typescript",
