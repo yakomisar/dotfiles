@@ -7,7 +7,7 @@ return {
 			options = {
 				theme = "catppuccin",
 				icons_enabled = true,
-				disabled_filetypes = { "neo-tree" },
+				-- disabled_filetypes = { "neo-tree" },
 				component_separators = " ",
 				section_separators = { left = "", right = "" },
 			},
