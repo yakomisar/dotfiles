@@ -145,18 +145,19 @@ return {
 						NeoTreeWinSeparator = { fg = colors.base, bg = colors.base },
 						NormalFloat = { bg = colors.base },
 						Pmenu = { bg = colors.mantle, fg = "" },
-						-- telescope color color_overrides
-						TelescopeResultsTitle = { fg = colors.mantle, bg = "#39fd9c" },
+						-- telescope prompt
 						TelescopePromptTitle = { fg = colors.mantle, bg = "#39fd9c" },
-						TelescopePreviewTitle = { fg = colors.mantle, bg = "#39fd9c" },
 						TelescopePromptCounter = { fg = colors.red, style = { "bold" } },
+						TelescopePromptBorder = { bg = colors.base },
+						-- telescope results
+						TelescopeResultsTitle = { fg = colors.mantle, bg = "#39fd9c" },
+						TelescopeResultsBorder = { bg = colors.base },
+						-- telescope preview
+						TelescopePreviewTitle = { fg = colors.mantle, bg = "#39fd9c" },
+						TelescopePreviewBorder = { bg = colors.base },
+
 						-- TelescopePreviewBorder = { fg = colors.crust, bg = colors.surface0 },
 						-- TelescopePreviewNormal = { bg = colors.crust },
-
-						-- vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = oxocarbon.blend, bg = oxocarbon.blend })
-						-- vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = oxocarbon.base02, bg = oxocarbon.blend })
-						-- vim.api.nvim_set_hl(0, "TelescopePromptNormal", { fg = oxocarbon.base05, bg = oxocarbon.blend })
-						-- vim.api.nvim_set_hl(0, "TelescopePromptPrefix", { fg = oxocarbon.base08, bg = oxocarbon.blend })menuSel = { bg = colors.surface0, fg = "" },
 						-- TelescopePreviewBorder = { bg = colors.crust, fg = colors.crust },
 						-- TelescopePreviewNormal = { bg = colors.crust },
 						-- TelescopePreviewTitle = { fg = colors.crust, bg = colors.crust },
@@ -395,6 +396,6 @@ return {
 			},
 		})
 
-		vim.api.nvim_command("colorscheme catppuccin")
+		vim.api.nvim_command("colorscheme catppuccin-macchiato")
 	end,
 }
