@@ -17,9 +17,7 @@ return {
 					maroon = "#ea6962", -- the same
 					pink = "#d3859b", -- the same
 					mauve = "#d3859b", -- the same
-					-- peach = "#e89a5e", -- := == != -colors
 					peach = "#d08050",
-					-- peach = "#8ec07c", -- := == != -colors
 					yellow = "#edc35d",
 					green = "#8ec07c",
 					teal = "#99c792",
@@ -129,7 +127,6 @@ return {
 						NeoTreeDirectoryIcon = { fg = colors.subtext1 },
 						NeoTreeDirectoryName = { fg = colors.subtext1 },
 						NeoTreeFloatBorder = { bg = colors.mantle, fg = colors.mantle },
-						-- NeoTreeFloatBorder = { bg = "None" },
 						NeoTreeGitConflict = { fg = colors.red },
 						NeoTreeGitDeleted = { fg = colors.red },
 						NeoTreeGitIgnored = { fg = colors.overlay0 },
