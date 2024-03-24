@@ -10,34 +10,36 @@ return {
 				dark = "mocha",
 			},
 			color_overrides = {
-				latte = {
-					rosewater = "#c14a4a",
-					flamingo = "#c14a4a",
-					red = "#c14a4a",
-					maroon = "#c14a4a",
-					pink = "#945e80",
-					mauve = "#945e80",
-					peach = "#c35e0a",
-					yellow = "#b47109",
-					green = "#6c782e",
-					teal = "#4c7a5d",
-					sky = "#4c7a5d",
-					sapphire = "#4c7a5d",
-					blue = "#45707a",
-					lavender = "#45707a",
-					text = "#654735",
-					subtext2 = "#6e5c4b",
-					subtext1 = "#73503c",
-					subtext0 = "#805942",
-					overlay2 = "#8c6249",
-					overlay1 = "#8c856d",
-					overlay0 = "#a69d81",
-					surface2 = "#bfb695",
-					surface1 = "#d1c7a3",
-					surface0 = "#e3dec3",
-					base = "#f9f5d7",
-					mantle = "#f0ebce",
-					crust = "#e8e3c8",
+				frappe = {
+					rosewater = "#ea6962", -- the same
+					flamingo = "#ea6962", -- the same
+					red = "#ea6962", -- the same
+					maroon = "#ea6962", -- the same
+					pink = "#d3859b", -- the same
+					mauve = "#d3859b", -- the same
+					-- peach = "#e89a5e", -- := == != -colors
+					peach = "#d08050",
+					-- peach = "#8ec07c", -- := == != -colors
+					yellow = "#edc35d",
+					green = "#8ec07c",
+					teal = "#99c792",
+					sky = "#99c792",
+					sapphire = "#99c792",
+					blue = "#8dbba3",
+					lavender = "#8dbba3",
+					text = "#f1e4c2",
+					subtext2 = "#c5b4a1",
+					subtext1 = "#d5c4a1",
+					subtext0 = "#bdae93",
+					overlay2 = "#a89984",
+					overlay1 = "#928374",
+					overlay0 = "#595959",
+					surface2 = "#4d4d4d",
+					surface1 = "#404040",
+					surface0 = "#292929",
+					base = "#1d2224", -- done but would like to get 29-34-36 (sRGB)
+					mantle = "#1d2224",
+					crust = "#1f2223",
 				},
 				mocha = {
 					rosewater = "#ea6962",
@@ -382,6 +384,6 @@ return {
 			},
 		})
 
-		vim.api.nvim_command("colorscheme catppuccin-macchiato")
+		vim.api.nvim_command("colorscheme catppuccin-frappe")
 	end,
 }
