@@ -14,6 +14,10 @@ opt.laststatus = 3
 opt.backup = false
 opt.swapfile = false
 
+-- turn off vi compatibility mode
+opt.compatible = false
+
+-- save file
 opt.undofile = true
 -- opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 
@@ -36,14 +40,19 @@ opt.wrap = false
 -- set hidden
 opt.hidden = true
 
--- disable scrolling
+-- scrolling + 8 in height
 opt.scrolloff = 8
+-- scrolling + 8 in weight
+opt.sidescrolloff = 8
 
 -- search settings
 opt.hlsearch = false
 opt.incsearch = true
 opt.ignorecase = true
 opt.smartcase = true
+
+-- disable text wrapping
+opt.wrap = false
 
 -- cursor line
 opt.cursorline = true

@@ -33,8 +33,9 @@ keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
 keymap.set("n", "q", "<Nop>", { noremap = true, silent = true })
 keymap.set("v", "q", "<Nop>", { noremap = true, silent = true })
 
--- use jk to exit insert mode
+-- use jk/kj to exit insert mode
 keymap.set("i", "jk", "<ESC>", { noremap = true, silent = true })
+keymap.set("i", "kj", "<ESC>", { noremap = true, silent = true })
 
 -- clear search highlights
 keymap.set("n", "q", ":silent nohl<CR>", { noremap = true, silent = true })
@@ -48,10 +49,6 @@ keymap.set("n", "<leader>x", ":bp<bar>sp<bar>bn<bar>bd<CR>", { noremap = true, s
 -- Toggle terminal
 vim.api.nvim_set_keymap("n", "<D-j>", ":ToggleTerm<CR>", { noremap = true, silent = true })
 
--- utils
-keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Rename in curr buffer" })
--- vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { desc = "chmod +x curr file" })
-
 -- giga yankers and pasters
 -- keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste from system clipboard" })
 -- keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Del and yank into system clipboard" })
@@ -62,9 +59,38 @@ keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left
 keymap.set("v", "<", "<gv", { desc = "Indent v-block to right" })
 keymap.set("v", ">", ">gv", { desc = "Indent v-block to left" })
 
+-- adjust split sizes easier
+keymap.set("n", "<C-,>", ":vertical resize +3<CR>", { desc = "Expand window in width" })
+keymap.set("n", "<C-.>", ":vertical resize -3<CR>", { desc = "Collapse window in width" })
+
 -- center screen on Ctrl+u, Ctrl+d moves
 keymap.set("n", "<C-d>", "<C-d>zz")
 keymap.set("n", "<C-u>", "<C-u>zz")
+
+-------------------------------
+-- Automatically close brackets
+-------------------------------
+-- keymap.set("i", "'", "''<left>")
+-- keymap.set("i", '"', '""<left>')
+-- keymap.set("i", "(", "()<left>")
+-- keymap.set("i", "[", "[]<left>")
+-- keymap.set("i", "{;", "{};<left><left>")
+-- keymap.set("i", "/*", "/**/<left><left>")
+-------------------------------
+-------------END---------------
+-------------------------------
+
+-- utils
+keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Rename in curr buffer" })
+
+---------------
+-- Visual Maps
+---------------
+-- sort
+keymap.set("v", "<C-s>", ":sort<CR>")
+keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+keymap.set("v", "K", ":m '>-2<CR>gv=gv")
+------END------
 
 -- center screen on next
 keymap.set("n", "n", "nzzzv")
