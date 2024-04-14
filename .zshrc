@@ -89,11 +89,15 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
+
+export GOPATH=/Users/oleg.komisarenko/go
+export GO111MODULE=on
+export PATH=/opt/homebrew/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/oleg.komisarenko/go/bin
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -106,13 +110,35 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export GOPATH=/Users/oleg.komisarenko/go
-export GO111MODULE=on
-export PATH=/opt/homebrew/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/oleg.komisarenko/go/bin
 alias v=nvim
 alias lg=lazygit
 alias cat=bat
-alias cl=clear
+alias cl='clear'
+
+# Dirs
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
+
+# Git
+alias gc="git commit -m"
+alias gca="git commit -a -m"
+# alias gp="git push origin HEAD"
+# alias gpu="git pull origin"
+alias gst="git status"
+# alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
+# alias gdiff="git diff"
+# alias gco="git checkout"
+# alias gb='git branch'
+# alias gba='git branch -a'
+# alias gadd='git add'
+# alias ga='git add -p'
+# alias gcoall='git checkout -- .'
+# alias gr='git remote'
+# alias gre='git reset'
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

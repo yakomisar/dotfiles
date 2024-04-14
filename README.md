@@ -32,3 +32,16 @@ then use GNU stow to create symlinks
 ```
 $ stow .
 ```
+
+## Before you leave a machine
+
+> Every new beginning comes from some other beginning’s end.
+
+
+```
+# Copy all yours
+brew leaves > leaves.txt
+
+# Fresh installation
+xargs brew install < leaves.txt
+```
