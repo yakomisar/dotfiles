@@ -1,0 +1,129 @@
+# enable fancy icons
+set icons
+
+# enable dividers
+set drawbox
+# apply ratio for windows
+set ratios 1:1:2
+# enable filesize
+set info size
+
+# global option
+#set hidden!
+set previewer ~/.config/lf/bat.sh
+set ignorecase true
+
+# leave some space at the top and the bottom of the screen
+set scrolloff 10
+
+# Use the `dim` attribute instead of underline for the cursor in the preview pane
+set cursorpreviewfmt "\033[7;2m"
+
+# custom commands
+cmd delete ${{
+    IFS='
+'
+    set -f
+    echo "Files to delete:"
+    for file in $fx; do
+        echo "$file"
+    done
+    printf "Delete all?[y/n] "
+    read ans
+    if [ "$ans" = "y" ]; then
+        for file in $fx; do
+            rm -rf "$file"
+        done
+    fi
+}}
+
+# define custom command to create a file or dir
+cmd create ${{
+    printf "Enter name (end with / for directory): "
+    read -r name
+    if [[ "$name" == */ ]]; then
+        mkdir -p "$name"
+    else
+        touch "$name"
+    fi
+}}
+
+# define a custom 'rename' command without prompt for overwrite
+cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
+
+# unpack
+cmd extract ${{
+    set -f
+    case "$f" in
+        *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf "$f";;
+        *.tar.gz|*.tgz) tar xzvf "$f";;
+        *.tar.xz|*.txz) tar xJvf "$f";;
+        *.zip) unzip "$f";;
+        *.rar) unar "$f";;
+        *.7z) 7z x "$f";;
+        *) echo "Unsupported archive format: $f";;
+    esac
+}}
+
+# compress current file or selected files with tar and gunzip
+cmd tar ${{
+    set -f
+    mkdir $1
+    cp -r $fx $1
+    tar czf $1.tar.gz $1
+    rm -rf $1
+}}
+
+# compress current file or selected files with zip
+cmd zip ${{
+    set -f
+    mkdir $1
+    cp -r $fx $1
+    zip -r $1.zip $1
+    rm -rf $1
+}}
+
+# Add prefix to files
+# dirname -- "$f" extracts the directory name from the full path.
+# basename -- "$f" extracts only the filename from the full path.
+# new_file="$dir/$prefix$base" constructs the new filename with the prefix.
+# mv -- "$f" "$new_file" moves the old file to the new filename.
+cmd prefix ${{
+    set -f
+    prefix="$*"  # Take the prefix as an argument
+    if [ -z "$prefix" ]; then
+        echo "Please provide a prefix."
+        exit 1
+    fi
+    for f in $fx; do
+        dir=$(dirname -- "$f")
+        base=$(basename -- "$f")
+        new_file="$dir/$prefix$base"
+        mv -- "$f" "$new_file"
+    done
+    lf -remote "send $id load"
+}}
+
+# Add suffix to files
+cmd suffix ${{
+    set -f
+    suffix="$*"  # Take the suffix as an argument
+    if [ -z "$suffix" ]; then
+        echo "Please provide a suffix."
+        exit 1
+    fi
+    for f in $fx; do
+      filename=$(basename -- "$f")
+      extension="${filename##*.}"
+      filename_no_ext="${filename%.*}"
+      new_filename="${filename_no_ext}${suffix}.${extension}"
+      mv -- "$f" "$new_filename"
+    done
+    lf -remote "send $id load"
+}}
+
+# mappings
+map d delete
+map E extract
+map r push :rename<space>
+map a create
