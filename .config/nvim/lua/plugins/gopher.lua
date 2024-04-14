@@ -1,13 +1,10 @@
 return {
-  "olexsmir/gopher.nvim",
-  ft = "go",
-  branch = "develop",
-  config = function ()
-    require("gopher").setup({
-      gotests = {
-        template = "testify",
-        named = true
-      }
-    })
-  end
+	"olexsmir/gopher.nvim",
+	ft = "go",
+	config = function(_, opts)
+		require("gopher").setup(opts)
+	end,
+	build = function()
+		vim.cmd([[silent! GoInstallDeps]])
+	end,
 }
