@@ -1,0 +1,4 @@
+k9s:
+  # General K9s styles
+  ui:
+    skin: skin
