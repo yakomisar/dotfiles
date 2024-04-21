@@ -1,36 +1,3 @@
--- return {
--- 	"folke/tokyonight.nvim",
--- 	config = function()
--- 		require("tokyonight").setup({
--- 			-- your configuration comes here
--- 			-- or leave it empty to use the default settings
--- 			style = "storm", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
--- 			transparent = true, -- Enable this to disable setting the background color
--- 			terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
--- 			styles = {
--- 				-- Style to be applied to different syntax groups
--- 				-- Value is any valid attr-list value for `:help nvim_set_hl`
--- 				comments = { italic = false },
--- 				keywords = { italic = false },
--- 				-- Background styles. Can be "dark", "transparent" or "normal"
--- 				sidebars = "dark", -- style for sidebars, see below
--- 				floats = "dark", -- style for floating windows
--- 			},
--- 		})
--- 		vim.cmd("colorscheme tokyonight")
--- 	end,
--- }
--- return {
--- 	"rose-pine/neovim",
--- 	name = "rose-pine",
--- 	config = function()
--- 		require("rose-pine").setup({
--- 			disable_background = true,
--- 		})
---
--- 		vim.cmd("colorscheme rose-pine")
--- 	end,
--- }
 return {
 	"catppuccin/nvim",
 	name = "catppuccin",
@@ -44,15 +11,15 @@ return {
 			},
 			color_overrides = {
 				frappe = {
-					rosewater = "#ea6962", -- the same
-					flamingo = "#ea6962", -- the same
-					red = "#ea6962", -- the same
-					maroon = "#ea6962", -- the same
+					rosewater = "#FC4675", -- the same
+					flamingo = "#FC4675", -- the same
+					red = "#FC4675", -- the same
+					maroon = "#FC4675", -- the same
 					pink = "#d3859b", -- the same
 					mauve = "#d3859b", -- the same
-					peach = "#d08050",
-					yellow = "#edc35d",
-					green = "#8ec07c",
+					peach = "#F98554",
+					yellow = "#FFD054",
+					green = "#9AD863",
 					teal = "#99c792",
 					sky = "#99c792",
 					sapphire = "#99c792",
@@ -68,8 +35,8 @@ return {
 					surface2 = "#4d4d4d",
 					surface1 = "#404040",
 					surface0 = "#292929",
-					base = "#1d2224",
-					mantle = "#1d2224",
+					base = "#110F12",
+					mantle = "#110F12",
 					crust = "#1f2223",
 				},
 				mocha = {

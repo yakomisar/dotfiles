@@ -113,12 +113,8 @@ return {
 			on_attach = on_attach,
 		})
 
-		lspconfig["jsonls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
 		lspconfig["bashls"].setup({
+			cmd = { "bash-language-server", "start" },
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
