@@ -10,35 +10,6 @@ return {
 				dark = "mocha",
 			},
 			color_overrides = {
-				frappe = {
-					rosewater = "#FC4675", -- the same
-					flamingo = "#FC4675", -- the same
-					red = "#FC4675", -- the same
-					maroon = "#FC4675", -- the same
-					pink = "#d3859b", -- the same
-					mauve = "#d3859b", -- the same
-					peach = "#F98554",
-					yellow = "#FFD054",
-					green = "#9AD863",
-					teal = "#99c792",
-					sky = "#99c792",
-					sapphire = "#99c792",
-					blue = "#8dbba3",
-					lavender = "#8dbba3",
-					text = "#f1e4c2",
-					subtext2 = "#c5b4a1",
-					subtext1 = "#d5c4a1",
-					subtext0 = "#bdae93",
-					overlay2 = "#a89984",
-					overlay1 = "#928374",
-					overlay0 = "#595959",
-					surface2 = "#4d4d4d",
-					surface1 = "#404040",
-					surface0 = "#292929",
-					base = "#110F12",
-					mantle = "#110F12",
-					crust = "#1f2223",
-				},
 				mocha = {
 					rosewater = "#FB4834",
 					flamingo = "#FB4834",
@@ -66,37 +37,6 @@ return {
 					surface0 = "#292929",
 					base = "#1d2224",
 					mantle = "#1d2224",
-					crust = "#1f2223",
-				},
-				macchiato = {
-					-- color1   #cc231c
-					-- color9   #fb4833
-					rosewater = "#FB4833",
-					flamingo = "#FB4833",
-					red = "#FB4834",
-					maroon = "#FB4834",
-					pink = "#d3859a",
-					mauve = "#d3859a",
-					peach = "#e78a4e",
-					yellow = "#fabc2e",
-					green = "#8ec07b",
-					teal = "#b8ba25",
-					sky = "#99c792",
-					sapphire = "#99c792",
-					blue = "#448488",
-					lavender = "#83a597",
-					text = "#f1e4c2",
-					subtext2 = "#c5b4a1",
-					subtext1 = "#d5c4a1",
-					subtext0 = "#bdae93",
-					overlay2 = "#a89984",
-					overlay1 = "#928374",
-					overlay0 = "#595959",
-					surface2 = "#4d4d4d",
-					surface1 = "#404040",
-					surface0 = "#292929",
-					base = "#272727",
-					mantle = "#1E2021",
 					crust = "#1f2223",
 				},
 			},
