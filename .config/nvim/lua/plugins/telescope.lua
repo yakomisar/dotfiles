@@ -22,6 +22,11 @@ return {
 			local telescope = require("telescope")
 
 			telescope.setup({
+				pickers = {
+					colorscheme = {
+						enable_preview = true,
+					},
+				},
 				defaults = {
 					path_display = { "truncate " },
 					layout_strategy = "horizontal",
@@ -76,6 +81,7 @@ return {
 			vim.keymap.set("n", "<leader>gi", builtin.lsp_implementations, { desc = "Show Implementations" })
 			vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "List Todo" })
 			vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>", { desc = "Telescope Undo" })
+			vim.keymap.set("n", "<leader>co", "<cmd>Telescope colorscheme<cr>", { desc = "Telescope colorscheme" })
 
 			-- Slightly advanced example of overriding default behavior and theme
 			vim.keymap.set("n", "<leader>/", function()
