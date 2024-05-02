@@ -1,5 +1,4 @@
 vim.cmd([[highlight KomisarMode guifg=#1d2225 guibg=#f1e4c3 gui=bold cterm=bold]])
-vim.cmd([[highlight KomisarBranch guifg=#1d2225 guibg=#ff75a0 gui=bold cterm=bold]])
 
 local modes = {
 	["n"] = "NORMAL",
@@ -119,13 +118,11 @@ function M.setup()
 		-- "%#KomisarBranch# ",
 		"%#Normal# ",
 		git_branch(), -- branch name
-		"  %<", -- spacing
+		" %<", -- spacing
 		-- "%{get(b:,'gitsigns_status','')}", -- gitsigns
 		smart_file_path(), -- smart full path filename
 		"%#Normal# ",
 		lsp(),
-		-- "%#Normal# ",
-		-- "%=%#Normal#", -- right align and add color
 		"%=", -- right align and add color
 		vim.bo.filetype,
 		"[%-3.(%l:%c]", -- line number, column number

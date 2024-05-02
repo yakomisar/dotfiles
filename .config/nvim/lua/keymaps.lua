@@ -18,12 +18,6 @@ map("i", "<C-j>", "<Down>", defaults)
 map("i", "<C-k>", "<Up>", defaults)
 map("i", "<C-l>", "<Right>", defaults)
 
--- Mapping hjkl movement with CTRL in Insert Mode (RU)
-map("i", "<C-р>", "<Left>", defaults)
-map("i", "<C-о>", "<Down>", defaults)
-map("i", "<C-л>", "<Up>", defaults)
-map("i", "<C-д>", "<Right>", defaults)
-
 -- Navigate between splitted windows
 map("n", "<C-h>", "<C-w>h", defaults)
 map("n", "<C-j>", "<C-w>j", defaults)
