@@ -1,11 +1,5 @@
 vim.cmd([[highlight KomisarMode guifg=#1d2225 guibg=#f1e4c3 gui=bold cterm=bold]])
--- vim.cmd([[highlight KomisarBranch guifg=#53d306 guibg=#242424 gui=bold cterm=bold]])
 vim.cmd([[highlight KomisarBranch guifg=#1d2225 guibg=#ff75a0 gui=bold cterm=bold]])
--- vim.cmd([[highlight KomisarFilename guifg=#149dfe guibg=#242424 gui=bold cterm=bold]])
--- vim.cmd([[highlight LspDiagnosticsHint guifg=#f1e4c3 guibg=#2b3339 gui=bold cterm=bold]])
--- vim.cmd([[highlight LspDiagnosticsError guifg=#f1e4c3 guibg=#2b3339 gui=bold cterm=bold]])
--- vim.cmd([[highlight LspDiagnosticsWarning guifg=#f1e4c3 guibg=#2b3339 gui=bold cterm=bold]])
--- vim.cmd([[highlight LspDiagnosticsInformation guifg=#f1e4c3 guibg=#2b3339 gui=bold cterm=bold]])
 
 local modes = {
 	["n"] = "NORMAL",
@@ -125,11 +119,9 @@ function M.setup()
 		-- "%#KomisarBranch# ",
 		"%#Normal# ",
 		git_branch(), -- branch name
-		" %<", -- spacing
+		"  %<", -- spacing
 		-- "%{get(b:,'gitsigns_status','')}", -- gitsigns
-		"%#KomisarMode#",
 		smart_file_path(), -- smart full path filename
-		-- "%#KomisarMode# ",
 		"%#Normal# ",
 		lsp(),
 		-- "%#Normal# ",
