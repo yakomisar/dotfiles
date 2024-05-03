@@ -1,5 +1,3 @@
--- vim.g.base46_cache = vim.fn.stdpath("data") .. "/base46_cache/"
-
 -- make sure to set `mapleader` before lazy
 vim.g.mapleader = " "
 
@@ -55,10 +53,3 @@ require("lazy").setup("plugins", {
 		},
 	},
 })
-
--- dofile(vim.g.base46_cache .. "defaults")
--- dofile(vim.g.base46_cache .. "syntax")
--- dofile(vim.g.base46_cache .. "treesitter")
--- dofile(vim.g.base46_cache .. "git")
--- --
--- require("base46").load_all_highlights() -- this compiles + loads hl
