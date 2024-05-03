@@ -9,7 +9,7 @@ return {
 		},
 		formatters_by_ft = {
 			lua = { "stylua" },
-			c = { "clang-format" },
+			-- c = { "clang-format" },
 
 			-- Conform can also run multiple formatters sequentially
 			go = { "goimports", "gofumpt", "goimports-reviser" },

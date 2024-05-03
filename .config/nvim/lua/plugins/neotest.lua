@@ -29,7 +29,7 @@ return {
 			neotest.run.run(vim.fn.expand("%"))
 		end, { desc = "Neotest current file" })
 
-		vim.keymap.set("n", "<leader>tts", function()
+		vim.keymap.set("n", "<leader>td", function()
 			neotest.run.stop()
 		end, { desc = "Neotest stop" })
 

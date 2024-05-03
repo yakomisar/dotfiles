@@ -74,9 +74,9 @@ map("n", "<C-u>", "<C-u>zz")
 -- map("i", '"', '""<left>')
 -- map("i", "(", "()<left>")
 -- map("i", "[", "[]<left>")
-map("i", "{<cr>", "{<cr>}<ESC>kA<CR>") --new
-local closing_pairs = { ")", "]", '"', "'", ">" }
-local opening_pairs = { "(", "[", '"', "'", "<" }
+-- map("i", "{<cr>", "{<cr>}<ESC>kA<CR>") --new
+local closing_pairs = { ")", "]", '"', "'", ">", "{" }
+local opening_pairs = { "(", "[", '"', "'", "<", "}" }
 for key, chr in pairs(opening_pairs) do
 	map("i", chr, chr .. closing_pairs[key] .. "<esc>i", {})
 end
@@ -88,7 +88,7 @@ end
 map("n", "U", "<C-r>", {})
 
 -- utils
-map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Rename in curr buffer" })
+map("n", "<leader>re", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Rename in curr buffer" })
 
 ---------------
 -- Visual Maps
