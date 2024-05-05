@@ -38,13 +38,13 @@ autocmd("BufEnter", {
 })
 
 -- 2 spaces for selected filetypes
-autocmd("FileType", {
-	pattern = "xml,html,xhtml,css,scss,javascript,lua,yaml,htmljinja",
-	callback = function()
-		vim.opt_local.shiftwidth = 2
-		vim.opt_local.tabstop = 2
-	end,
-})
+-- autocmd("FileType", {
+-- 	pattern = "xml,html,xhtml,css,scss,javascript,lua,yaml,htmljinja",
+-- 	callback = function()
+-- 		vim.opt_local.shiftwidth = 2
+-- 		vim.opt_local.tabstop = 2
+-- 	end,
+-- })
 
 -- custom statusline
 autocmd({ "WinEnter", "BufEnter" }, {

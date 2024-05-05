@@ -70,7 +70,7 @@ opt.backspace = "indent,eol,start"
 opt.clipboard:append("unnamedplus")
 
 -- updatetime (too fast)
-opt.updatetime = 100
+-- opt.updatetime = 4000
 
 -- split windows
 opt.splitright = true
