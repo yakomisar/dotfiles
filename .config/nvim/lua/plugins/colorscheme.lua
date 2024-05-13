@@ -91,10 +91,11 @@ return {
 					return {
 						CmpItemMenu = { fg = colors.surface2 },
 						CursorLineNr = { fg = colors.text },
-						CursorLine = { bg = colors.overlay0 },
+						CursorLine = { bg = colors.surface1 },
 						FloatBorder = { bg = colors.base, fg = colors.subtext1 }, -- colors.surface0 }, difficult to see
 						GitSignsChange = { fg = colors.peach },
 						LineNr = { fg = colors.overlay0 },
+						Visual = { bg = "#b4ebbc", fg = "#212031" },
 						LspInfoBorder = { link = "FloatBorder" },
 						NeoTreeDirectoryIcon = { fg = colors.subtext1 },
 						NeoTreeDirectoryName = { fg = colors.subtext1 },
