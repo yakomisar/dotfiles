@@ -68,7 +68,7 @@ return {
 					crust = "#1f2223",
 				},
 			},
-			transparent_background = false,
+			transparent_background = true,
 			show_end_of_buffer = false,
 			integration_default = false,
 			integrations = {
@@ -91,6 +91,7 @@ return {
 					return {
 						CmpItemMenu = { fg = colors.surface2 },
 						CursorLineNr = { fg = colors.text },
+						CursorLine = { bg = colors.overlay0 },
 						FloatBorder = { bg = colors.base, fg = colors.subtext1 }, -- colors.surface0 }, difficult to see
 						GitSignsChange = { fg = colors.peach },
 						LineNr = { fg = colors.overlay0 },
@@ -106,14 +107,16 @@ return {
 						NeoTreeGitUnstaged = { fg = colors.red },
 						NeoTreeGitUntracked = { fg = colors.green },
 						NeoTreeIndent = { fg = colors.surface1 },
-						NeoTreeNormal = { bg = colors.mantle },
-						NeoTreeNormalNC = { bg = colors.mantle },
+						-- NeoTreeNormal = { bg = colors.mantle },
+						-- NeoTreeNormalNC = { bg = colors.mantle },
+						NeoTreeNormal = { guibg = NONE, ctermbg = NONE },
+						NeoTreeNormalNC = { guibg = NONE, ctermbg = NONE },
 						NeoTreeRootName = { fg = colors.subtext1, style = { "bold" } },
 						NeoTreeTabActive = { fg = colors.text, bg = colors.mantle },
 						NeoTreeTabInactive = { fg = colors.surface2, bg = colors.crust },
 						NeoTreeTabSeparatorActive = { fg = colors.mantle, bg = colors.mantle },
 						NeoTreeTabSeparatorInactive = { fg = colors.crust, bg = colors.crust },
-						NeoTreeWinSeparator = { fg = colors.surface1, bg = colors.base },
+						NeoTreeWinSeparator = { fg = colors.surface1 },
 						NormalFloat = { bg = colors.base },
 						Pmenu = { bg = colors.mantle, fg = "" },
 						-- telescope prompt

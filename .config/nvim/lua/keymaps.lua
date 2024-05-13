@@ -75,8 +75,8 @@ map("n", "<C-u>", "<C-u>zz")
 -- map("i", "(", "()<left>")
 -- map("i", "[", "[]<left>")
 -- map("i", "{<cr>", "{<cr>}<ESC>kA<CR>") --new
-local closing_pairs = { ")", "]", '"', "'", ">", "}" }
-local opening_pairs = { "(", "[", '"', "'", "<", "{" }
+local closing_pairs = { ")", "]", '"', "'", "}" }
+local opening_pairs = { "(", "[", '"', "'", "{" }
 for key, chr in pairs(opening_pairs) do
 	map("i", chr, chr .. closing_pairs[key] .. "<esc>i", {})
 end

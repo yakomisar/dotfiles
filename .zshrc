@@ -112,6 +112,7 @@ export PATH=/opt/homebrew/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias v=nvim
 alias lg=lazygit
+alias yy=yazi
 alias cat=bat
 alias cl='clear'
 
