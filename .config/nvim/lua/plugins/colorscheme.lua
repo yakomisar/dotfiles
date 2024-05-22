@@ -68,7 +68,7 @@ return {
 					crust = "#1f2223",
 				},
 			},
-			transparent_background = true,
+			transparent_background = false,
 			show_end_of_buffer = false,
 			integration_default = false,
 			integrations = {
@@ -91,7 +91,6 @@ return {
 					return {
 						CmpItemMenu = { fg = colors.surface2 },
 						CursorLineNr = { fg = colors.text },
-						CursorLine = { bg = colors.surface1 },
 						FloatBorder = { bg = colors.base, fg = colors.subtext1 }, -- colors.surface0 }, difficult to see
 						GitSignsChange = { fg = colors.peach },
 						LineNr = { fg = colors.overlay0 },
@@ -153,6 +152,20 @@ return {
 						Typedef = { fg = colors.red },
 						Exception = { fg = colors.red },
 						Statement = { fg = colors.red },
+						-- neotest config
+						NeotestPassed = { fg = colors.green },
+						NeotestFailed = { fg = colors.red },
+						NeotestRunning = { fg = colors.yellow },
+						NeotestSkipped = { fg = colors.blue },
+						NeotestFile = { fg = colors.peach },
+						NeotestNamespace = { fg = colors.peach },
+						NeotestDir = { fg = colors.peach },
+						NeotestFocused = { fg = colors.mauve, bold = true, underline = true },
+						NeotestAdapterName = { fg = colors.red },
+						NeotestIndent = { fg = colors.yellow },
+						NeotestExpandMarker = { fg = colors.yellow },
+						NeotestWinSelect = { fg = colors.yellow, bold = true },
+						NeotestTest = { fg = colors.subtext2 },
 
 						Error = { fg = colors.red },
 						StorageClass = { fg = colors.peach },
@@ -356,7 +369,8 @@ return {
 				end,
 			},
 		})
-
 		vim.api.nvim_command("colorscheme catppuccin-mocha")
 	end,
+
+	-- vim.api.nvim_command("colorscheme default"),
 }

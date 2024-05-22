@@ -87,6 +87,11 @@ end
 -- use U for redo :))
 map("n", "U", "<C-r>", {})
 
+-- show/hide inlay hint
+map("n", "<leader>h", function()
+	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end)
+
 -- utils
 map("n", "<leader>re", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Rename in curr buffer" })
 

@@ -26,6 +26,49 @@ return {
 					colorscheme = {
 						enable_preview = true,
 					},
+					buffers = {
+						previewer = false,
+						layout_config = {
+							width = 0.5,
+							prompt_position = "top",
+						},
+					},
+					lsp_references = {
+						layout_strategy = "vertical",
+						layout_config = {
+							width = 0.9,
+							height = 0.9,
+							preview_cutoff = 1,
+							mirror = false,
+						},
+					},
+					lsp_implementations = {
+						layout_strategy = "vertical",
+						layout_config = {
+							width = 0.9,
+							height = 0.9,
+							preview_cutoff = 1,
+							mirror = false,
+						},
+					},
+					lsp_document_symbols = {
+						layout_strategy = "vertical",
+						layout_config = {
+							width = 0.9,
+							height = 0.9,
+							preview_cutoff = 1,
+							mirror = false,
+						},
+					},
+					lsp_dynamic_workspace_symbols = {
+						layout_strategy = "vertical",
+						layout_config = {
+							width = 0.9,
+							height = 0.9,
+							preview_cutoff = 1,
+							mirror = false,
+						},
+					},
 				},
 				defaults = {
 					path_display = { "truncate " },
@@ -103,7 +146,10 @@ return {
 
 			-- Shortcut for searching your neovim configuration files
 			vim.keymap.set("n", "<leader>fn", function()
-				builtin.find_files({ cwd = vim.fn.stdpath("config") })
+				builtin.find_files({
+					cwd = vim.fn.stdpath("config"),
+					prompt_title = "Neovim configuration",
+				})
 			end, { desc = "Search neovim files" })
 		end,
 	},
