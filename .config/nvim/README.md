@@ -2,7 +2,7 @@
 
 Greetings, Code-Warrior! So you've journeyed through the digital realms to find the Usain Bolt of Neovim configurations, huh? Well, slap my syntax and call me compiled—your quest ends here. Behold a startup time that clocks in at an eye-watering 32ms! 🚀 Still skeptical? Take a look at the Lazy profile, it doesn't lie.
 
-![Profile](https://github.com/yakomisar/dotfiles/.config/nvim/screenshots/collage.png)
+![Profile](https://github.com/yakomisar/dotfiles/blob/master/.config/nvim/screenshots/collage.png)
 
 ## The Quest for Ultimate Speed
 
