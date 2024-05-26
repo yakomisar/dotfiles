@@ -9,20 +9,28 @@ return {
 			nvim_tree_darker = true,
 		})
 		vim.cmd.colorscheme("vscode_modern")
-		-- Neotest
-		vim.cmd([[highlight NeotestPassed guifg=#2ea043]])
-		vim.cmd([[highlight NeotestFailed guifg=#ee0000]])
-		vim.cmd([[highlight NeotestRunning guifg=#ffcc00]])
-		vim.cmd([[highlight NeotestSkipped guifg=#0070c1]])
-		vim.cmd([[highlight NeotestNamespace guifg=#ee9d28]])
-		vim.cmd([[highlight NeotestDir guifg=#0070c1]])
-		vim.cmd([[highlight NeotestFocused guifg=#d16d9e gui=bold,underline]])
-		vim.cmd([[highlight NeotestAdapterName guifg=#ee0000]])
-		vim.cmd([[highlight NeotestIndent guifg=#ffcc00]])
-		vim.cmd([[highlight NeotestExpandMarker guifg=#ffcc00]])
-		vim.cmd([[highlight NeotestWinSelect guifg=#ffcc00 gui=bold]])
-		vim.cmd([[highlight NeotestTest guifg=#dcdcaa]])
-		vim.cmd([[highlight NeotestFile guifg=#0070c1]])
+		-- NeoTree
+		vim.cmd([[highlight NeoTreeDirectoryIcon guifg = #729db3 ]])
+		vim.cmd([[highlight NeoTreeDirectoryName guifg = #729db3 ]])
+		vim.cmd([[highlight NeoTreeTitleBar guifg=#1f1f1f guibg=#75beff ]])
+		vim.cmd([[highlight NeoTreeGitModified guifg=#dcdcaa ]])
+
+		--  xxx links to GitSignsChange  guifg=#0078d4
+
+		-- NeoTreeFloatTitle xxx guifg=#cccccc guibg=#1f1f1f
+		-- NeoTreeMessage xxx gui=italic guifg=#525252
+		-- NeoTreeFadeText1 xxx guifg=#626262
+		-- NeoTreeFadeText2 xxx guifg=#444444
+		-- NeoTreeDotfile xxx guifg=#626262
+		-- NeoTreeDimText xxx guifg=#525252
+		-- NeoTreeModified xxx guifg=#d7d787
+		-- NeoTreeGitConflict xxx gui=bold,italic guifg=#ff8700
+		-- NeoTreeGitUntracked xxx gui=italic guifg=#ff8700
+		-- NeoTreeTabInactive xxx guifg=#777777 guibg=#141414
+		-- NeoTreeTabSeparatorActive xxx guifg=#0a0a0a
+		-- NeoTreeTabSeparatorInactive xxx guifg=#101010 guibg=#141414
+		-- NeoTreeFileStats xxx guifg=#646464
+		-- NeoTreeFileStatsHeader xxx gui=bold,italic guifg=#757575
 	end,
 }
 -- return {
