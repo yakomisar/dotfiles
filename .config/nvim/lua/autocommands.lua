@@ -36,19 +36,3 @@ autocmd("BufEnter", {
 		vim.opt.fo:remove("o")
 	end,
 })
-
--- 2 spaces for selected filetypes
--- autocmd("FileType", {
--- 	pattern = "xml,html,xhtml,css,scss,javascript,lua,yaml,htmljinja",
--- 	callback = function()
--- 		vim.opt_local.shiftwidth = 2
--- 		vim.opt_local.tabstop = 2
--- 	end,
--- })
-
--- custom statusline
-autocmd({ "WinEnter", "BufEnter" }, {
-	group = statusline_group,
-	pattern = "*",
-	command = [[setlocal statusline=%!v:lua.require('statusline').setup()]],
-})

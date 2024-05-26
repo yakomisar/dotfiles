@@ -17,6 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 require("options")
 require("keymaps")
 require("autocommands")
+require("statusline")
 require("lazy").setup("plugins", {
 	change_detection = { notify = false },
 	performance = {
