@@ -1,5 +1,29 @@
 local statusline_augroup = vim.api.nvim_create_augroup("komisar_statusline", { clear = true })
 
+local modes = {
+	["n"] = "NORMAL",
+	["no"] = "NORMAL",
+	["v"] = "VISUAL",
+	["V"] = "V·LINE",
+	[""] = "V·BLOCK",
+	["s"] = "SELECT",
+	["S"] = "S·LINE",
+	[""] = "S·BLOCK",
+	["i"] = "INSERT",
+	["ic"] = "INSERT",
+	["R"] = "REPLACE",
+	["Rv"] = "V·REPLACE",
+	["c"] = "COMMAND",
+	["cv"] = "VIM·EX",
+	["ce"] = "EX",
+	["r"] = "PROMPT",
+	["rm"] = "MORE",
+	["r?"] = "CONFIRM",
+	["!"] = "SHELL",
+	["t"] = "TERMINAL",
+	["nt"] = "TERMINAL",
+}
+
 --- @param severity integer
 --- @return integer
 local function get_lsp_diagnostics_count(severity)
@@ -28,35 +52,37 @@ end
 
 --- @return string
 local function mode()
-	return string.format("%%#StatusLineMode# %s %%*", vim.api.nvim_get_mode().mode)
+	-- return string.format("%%#StatusLineMode# %s %%*", vim.api.nvim_get_mode().mode)
+	local current_mode = vim.api.nvim_get_mode().mode
+	return string.format("%%#StatusLineMode# %s %%*", modes[current_mode]:upper())
 end
 
---- @return string
-local function python_env()
-	if not rawget(vim, "lsp") then
-		return ""
-	end
-
-	local buf = vim.api.nvim_get_current_buf()
-	local buf_clients = vim.lsp.get_clients({ bufnr = buf })
-	if next(buf_clients) == nil then
-		return ""
-	end
-
-	for _, client in pairs(buf_clients) do
-		if client.name == "pyright" or client.name == "pylance" then
-			local virtual_env = os.getenv("VIRTUAL_ENV_PROMPT")
-			if virtual_env == nil then
-				return ""
-			end
-
-			virtual_env = virtual_env:gsub("%s+", "")
-			return string.format("%%#StatusLineMedium# %s%%*", virtual_env)
-		end
-	end
-
-	return ""
-end
+-- --- @return string
+-- local function python_env()
+-- 	if not rawget(vim, "lsp") then
+-- 		return ""
+-- 	end
+--
+-- 	local buf = vim.api.nvim_get_current_buf()
+-- 	local buf_clients = vim.lsp.get_clients({ bufnr = buf })
+-- 	if next(buf_clients) == nil then
+-- 		return ""
+-- 	end
+--
+-- 	for _, client in pairs(buf_clients) do
+-- 		if client.name == "pyright" or client.name == "pylance" then
+-- 			local virtual_env = os.getenv("VIRTUAL_ENV_PROMPT")
+-- 			if virtual_env == nil then
+-- 				return ""
+-- 			end
+--
+-- 			virtual_env = virtual_env:gsub("%s+", "")
+-- 			return string.format("%%#StatusLineMedium# %s%%*", virtual_env)
+-- 		end
+-- 	end
+--
+-- 	return ""
+-- end
 
 --- @return string
 local function lsp_active()
@@ -70,7 +96,7 @@ local function lsp_active()
 	local space = "%#StatusLineMedium# %*"
 
 	if #clients > 0 then
-		return space .. "%#StatusLineLspActive#%*" .. space .. "%#StatusLineMedium#LSP%*"
+		return space .. "%#StatusLineLspActive#●%*" .. space .. "%#StatusLineMedium#LSP%*"
 	end
 
 	return ""
@@ -80,7 +106,7 @@ end
 local function diagnostics_error()
 	local count = get_lsp_diagnostics_count(vim.diagnostic.severity.ERROR)
 	if count > 0 then
-		return string.format("%%#StatusLineLspError#  %s%%*", count)
+		return string.format("%%#StatusLineLspError# ● %s%%*", count)
 	end
 
 	return ""
@@ -90,7 +116,7 @@ end
 local function diagnostics_warns()
 	local count = get_lsp_diagnostics_count(vim.diagnostic.severity.WARN)
 	if count > 0 then
-		return string.format("%%#StatusLineLspWarn#  %s%%*", count)
+		return string.format("%%#StatusLineLspWarn# ● %s%%*", count)
 	end
 
 	return ""
@@ -100,7 +126,7 @@ end
 local function diagnostics_hint()
 	local count = get_lsp_diagnostics_count(vim.diagnostic.severity.HINT)
 	if count > 0 then
-		return string.format("%%#StatusLineLspHint#  %s%%*", count)
+		return string.format("%%#StatusLineLspHint# ● %s%%*", count)
 	end
 
 	return ""
@@ -110,7 +136,7 @@ end
 local function diagnostics_info()
 	local count = get_lsp_diagnostics_count(vim.diagnostic.severity.INFO)
 	if count > 0 then
-		return string.format("%%#StatusLineLspInfo#  %s%%*", count)
+		return string.format("%%#StatusLineLspInfo# ● %s%%*", count)
 	end
 
 	return ""
@@ -332,7 +358,7 @@ StatusLine.active = function()
 		diagnostics_hint(),
 		diagnostics_info(),
 		lsp_active(),
-		python_env(),
+		-- python_env(),
 		file_percentage(),
 		total_lines(),
 	}

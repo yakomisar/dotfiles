@@ -30,6 +30,6 @@ return {
 		vim.keymap.set("n", "<leader>?", function()
 			require("dapui").eval(nil, { enter = true })
 		end)
-		vim.keymap.set("n", "<F5>", dap.continue, { desc = "Dap Continue" })
+		vim.keymap.set("n", "<leader>>", dap.continue, { desc = "Dap Continue" })
 	end,
 }

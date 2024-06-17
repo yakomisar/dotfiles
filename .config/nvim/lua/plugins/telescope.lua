@@ -29,7 +29,7 @@ return {
 					buffers = {
 						previewer = false,
 						layout_config = {
-							width = 0.5,
+							width = 0.7,
 							prompt_position = "top",
 						},
 					},
