@@ -24,16 +24,23 @@ map("n", "<C-j>", "<C-w>j", defaults)
 map("n", "<C-k>", "<C-w>k", defaults)
 map("n", "<C-l>", "<C-w>l", defaults)
 
--- Disable macro recording
-map("n", "q", "<Nop>", defaults)
-map("v", "q", "<Nop>", defaults)
+----------------------
+-- Macro Keymaps
+----------------------
+-- To disable macro recording
+-- map("n", "q", "<Nop>", defaults)
+-- map("v", "q", "<Nop>", defaults)
+
+-- To enable macro recording
+map("n", "<leader>ms", "qa", { desc = "Start macro recording" })
+-- Stop recording the macro
+map("n", "<leader>mq", "q", { desc = "Stop macro recording" })
 
 -- Disable space since it is used as a leader key
 map("v", "<space>", "<Nop>", defaults)
 
--- use jk/kj to exit insert mode
+-- use jj to exit insert mode
 map("i", "jk", "<ESC>", defaults)
-map("i", "kj", "<ESC>", defaults)
 
 -- clear search highlights
 map("n", "q", ":silent nohl<CR>", defaults)

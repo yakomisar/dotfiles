@@ -310,6 +310,15 @@ local function formatted_filetype(hlgroup)
 	return string.format("%%#%s# %s %%*", hlgroup, filetype)
 end
 
+--- @return string
+local function filename()
+	local file = vim.fn.expand("%:t")
+	if file == "" then
+		file = "[No Name]"
+	end
+	return string.format("%%#StatusLineFileName# %s %%*", file)
+end
+
 StatusLine = {}
 
 StatusLine.inactive = function()
@@ -349,6 +358,7 @@ StatusLine.active = function()
 	local statusline = {
 		mode(),
 		full_git(),
+		filename(),
 		"%=",
 		"%=",
 		"%S ",
