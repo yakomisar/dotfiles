@@ -1,0 +1,44 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: Open Default Keymap`
+// from the command palette.
+[
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      // put key-bindings here if you want them to work in normal & visual mode
+      "shift-k": "editor::Hover",
+      "space c a": "editor::ToggleCodeActions",
+      "space r e": "editor::Rename",
+      "space d": "diagnostics::Deploy",
+      "space f f": "file_finder::Toggle",
+      "space space": "tab_switcher::Toggle",
+      "space e": "workspace::ToggleLeftDock",
+      "space v": "editor::GoToDefinitionSplit",
+      "space g r": "editor::FindAllReferences",
+      "space g i": "editor::GoToImplementation",
+      "ctrl-j": "terminal_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "vim_mode == insert",
+    "bindings": {
+      "j k": "vim::NormalBefore", // remap jk in insert mode to escape.
+      "ctrl-j": "editor::ContextMenuNext",
+      "ctrl-k": "editor::ContextMenuPrev",
+      "ctrl-h": "editor::MoveLeft",
+      "ctrl-l": "editor::MoveRight"
+    }
+  },
+  {
+    "context": "EmptyPane || SharedScreen",
+    "bindings": {
+      // put key-bindings here (in addition to above) if you want them to
+      // work when no editor exists
+      // "space f": "file_finder::Toggle"
+    }
+  }
+]
