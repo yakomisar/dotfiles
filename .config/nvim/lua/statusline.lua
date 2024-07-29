@@ -31,7 +31,8 @@ local function get_lsp_diagnostics_count(severity)
 		return 0
 	end
 
-	local count = vim.diagnostic.count(0, { serverity = severity })[severity]
+	local count = vim.diagnostic.count(0, { severity = severity })[severity]
+	-- local count = vim.diagnostic.count(0, { serverity = severity })[severity]
 	if count == nil then
 		return 0
 	end
