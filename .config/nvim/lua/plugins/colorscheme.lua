@@ -10,10 +10,10 @@ return {
 		})
 		vim.cmd.colorscheme("vscode_modern")
 		-- -- NeoTree
-		-- vim.cmd([[highlight NeoTreeDirectoryIcon guifg = #729db3 ]])
-		-- vim.cmd([[highlight NeoTreeDirectoryName guifg = #729db3 ]])
-		-- vim.cmd([[highlight NeoTreeTitleBar guifg=#1f1f1f guibg=#75beff ]])
-		-- vim.cmd([[highlight NeoTreeGitModified guifg=#dcdcaa ]])
+		vim.cmd([[highlight NeoTreeDirectoryIcon guifg = #729db3 ]])
+		vim.cmd([[highlight NeoTreeDirectoryName guifg = #729db3 ]])
+		vim.cmd([[highlight NeoTreeTitleBar guifg=#1f1f1f guibg=#75beff ]])
+		vim.cmd([[highlight NeoTreeGitModified guifg=#dcdcaa ]])
 
 		--  xxx links to GitSignsChange  guifg=#0078d4
 

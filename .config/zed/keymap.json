@@ -20,7 +20,8 @@
       "space v": "editor::GoToDefinitionSplit",
       "space g r": "editor::FindAllReferences",
       "space g i": "editor::GoToImplementation",
-      "ctrl-j": "terminal_panel::ToggleFocus"
+      "ctrl-j": "terminal_panel::ToggleFocus",
+      "space h": "editor::ToggleInlayHints"
     }
   },
   {

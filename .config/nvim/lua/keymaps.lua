@@ -125,8 +125,8 @@ map("n", "]b", "<cmd>bnext<cr>", { desc = "Next buffer" })
 ----------------------
 
 -- File manager Neotree
-map("n", "<leader>e", ":Neotree focus<CR>", defaults) -- focus file explorer
-map("n", "<C-n>", ":Neotree close<CR>", defaults) -- toggle file explorer
+-- map("n", "<leader>e", ":Neotree focus<CR>", defaults) -- focus file explorer
+-- map("n", "<C-n>", ":Neotree close<CR>", defaults) -- toggle file explorer
 
 ----------------------
 -- Gopher Keymaps
