@@ -29,6 +29,7 @@ return {
 			keymaps = {
 				["<C-c>"] = false,
 				["q"] = "actions.close",
+				["<ESC>"] = "actions.close",
 			},
 		})
 		-- Open parent directory in floating window

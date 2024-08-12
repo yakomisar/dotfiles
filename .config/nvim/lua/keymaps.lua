@@ -63,8 +63,8 @@ map("t", "<C-t>", "<C-\\><C-n>")
 map("v", "p", [["_dP]], { desc = "Paste from system clipboard" })
 
 -- better indenting
-map("v", "<", "<gv", { desc = "Indent v-block to right" })
-map("v", ">", ">gv", { desc = "Indent v-block to left" })
+map("v", "<", ">gv", { desc = "Indent v-block to right" })
+map("v", ">", "<gv", { desc = "Indent v-block to left" })
 
 -- adjust split sizes easier
 map("n", "<C-,>", ":vertical resize +3<CR>", { desc = "Expand window in width" })

@@ -12,10 +12,11 @@
   "theme": {
     "mode": "system",
     "light": "Gruvbox Dark Hard",
-    "dark": "One Dark"
+    "dark": "Gruvbox Dark Hard"
   },
   "buffer_font_family": "Zed Plex Mono",
-  "ui_font_family": "Zed Plex Sans",
+  "ui_font_family": "Zed Plex Mono",
+  // "ui_font_family": "Zed Plex Sans",
   "vim_mode": true,
   "relative_line_numbers": true,
   "cursor_blink": false,
@@ -46,12 +47,12 @@
           "upgrade_dependency": true,
           "vendor": true
         },
-        "analysis": {
-          "completeUnimported": true,
-          "staticcheck": true,
-          "unusedParams": true,
-          "unusedWrite": true
-        },
+        // "analysis": {
+        //   "completeUnimported": true,
+        //   "staticcheck": true,
+        //   "unusedParams": true,
+        //   "unusedWrite": true
+        // },
         "hints": {
           "assignVariableTypes": true,
           "compositeLiteralFields": true,

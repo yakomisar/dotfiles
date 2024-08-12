@@ -10,10 +10,10 @@ return {
 		})
 		vim.cmd.colorscheme("vscode_modern")
 		-- -- NeoTree
-		vim.cmd([[highlight NeoTreeDirectoryIcon guifg = #729db3 ]])
-		vim.cmd([[highlight NeoTreeDirectoryName guifg = #729db3 ]])
-		vim.cmd([[highlight NeoTreeTitleBar guifg=#1f1f1f guibg=#75beff ]])
-		vim.cmd([[highlight NeoTreeGitModified guifg=#dcdcaa ]])
+		-- vim.cmd([[highlight NeoTreeDirectoryIcon guifg = #729db3 ]])
+		-- vim.cmd([[highlight NeoTreeDirectoryName guifg = #729db3 ]])
+		-- vim.cmd([[highlight NeoTreeTitleBar guifg=#1f1f1f guibg=#75beff ]])
+		-- vim.cmd([[highlight NeoTreeGitModified guifg=#dcdcaa ]])
 
 		--  xxx links to GitSignsChange  guifg=#0078d4
 
@@ -33,6 +33,39 @@ return {
 		-- NeoTreeFileStatsHeader xxx gui=bold,italic guifg=#757575
 	end,
 }
+-- return {
+-- 	"morhetz/gruvbox",
+-- 	lazy = false, -- Ensure the plugin loads immediately
+-- 	priority = 1000, -- Ensure it loads before other plugins
+-- 	config = function()
+-- 		-- You can set any Gruvbox-specific settings here
+-- 		vim.o.background = "dark" -- or "light" for light mode
+-- 		vim.cmd.colorscheme("gruvbox")
+--
+-- 		-- Correct the highlight command syntax
+-- 		vim.cmd([[highlight GruvboxRed guifg=#d75f5f]])
+-- 		-- Set custom highlight for ТИПЫ ДАННЫХ
+-- 		-- vim.api.nvim_set_hl(0, "@type", { fg = "#87afaf", bg = "NONE", bold = true })
+-- 	end,
+-- }
+-- }
+-- {
+-- 	"ellisonleao/gruvbox.nvim",
+-- 	lazy = false,
+-- 	name = "gruvbox",
+-- 	priority = 1000,
+-- 	config = function()
+-- 		require("gruvbox").setup({
+-- 			contrast = "hard",
+-- 			palette_overrides = {
+-- 				-- gray = "#2ea542",
+-- 				dark0_hard = "#000000",
+-- 			},
+-- 		})
+-- 		vim.cmd.colorscheme("gruvbox")
+-- 	end,
+-- },
+-- }
 -- return {
 -- 	"catppuccin/nvim",
 -- 	name = "catppuccin",

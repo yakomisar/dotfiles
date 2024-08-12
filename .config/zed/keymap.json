@@ -12,16 +12,24 @@
       // put key-bindings here if you want them to work in normal & visual mode
       "shift-k": "editor::Hover",
       "space c a": "editor::ToggleCodeActions",
+      "space c f": "editor::Format",
+      "[ e": "editor::GoToDiagnostic",
       "space r e": "editor::Rename",
       "space d": "diagnostics::Deploy",
       "space f f": "file_finder::Toggle",
+      // Search buffer symbols
+      "space f s": "outline::Toggle",
       "space space": "tab_switcher::Toggle",
       "space e": "workspace::ToggleLeftDock",
       "space v": "editor::GoToDefinitionSplit",
       "space g r": "editor::FindAllReferences",
       "space g i": "editor::GoToImplementation",
       "ctrl-j": "terminal_panel::ToggleFocus",
-      "space h": "editor::ToggleInlayHints"
+      "space h": "editor::ToggleInlayHints",
+      "space x": "pane::CloseActiveItem",
+      "tab": "pane::ActivateNextItem",
+      "shift-tab": "pane::ActivatePrevItem",
+      "ctrl-n": "editor::SelectNext"
     }
   },
   {
@@ -32,6 +40,22 @@
       "ctrl-k": "editor::ContextMenuPrev",
       "ctrl-h": "editor::MoveLeft",
       "ctrl-l": "editor::MoveRight"
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "a": "project_panel::NewFile",
+      "A": "project_panel::NewDirectory",
+      "r": "project_panel::Rename",
+      "d": "project_panel::Delete",
+      "c": "project_panel::Copy",
+      "p": "project_panel::Paste",
+      "x": "project_panel::Cut",
+      "s": [
+        "workspace::SendKeystrokes",
+        "ctrl-h cmd-k right right ctrl-l enter right right right right alt-cmd-t"
+      ]
     }
   },
   {
