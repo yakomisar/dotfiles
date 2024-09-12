@@ -313,11 +313,17 @@ end
 
 --- @return string
 local function filename()
+	-- Get the full path of the file
+	local file_path = vim.fn.expand("%:p")
+
+	-- Get the parent directory of the file
+	local folder_path = vim.fn.fnamemodify(file_path, ":h:t")
+
 	local file = vim.fn.expand("%:t")
 	if file == "" then
 		file = "[No Name]"
 	end
-	return string.format("%%#StatusLineFileName# %s %%*", file)
+	return string.format("%%#StatusLineFileName# %s/%s %%*", folder_path, file)
 end
 
 StatusLine = {}
