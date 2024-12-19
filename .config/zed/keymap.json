@@ -20,7 +20,6 @@
       // Search buffer symbols
       "space f s": "outline::Toggle",
       "space space": "tab_switcher::Toggle",
-      "space e": "workspace::ToggleLeftDock",
       "space v": "editor::GoToDefinitionSplit",
       "space g r": "editor::FindAllReferences",
       "space g i": "editor::GoToImplementation",

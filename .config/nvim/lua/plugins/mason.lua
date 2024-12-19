@@ -11,7 +11,7 @@ return {
 			ensure_installed = {
 				"lua_ls",
 				"clangd",
-				"tsserver",
+				-- "tsserver",
 				"bashls",
 				"gopls",
 				"dockerls",

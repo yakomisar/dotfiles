@@ -31,10 +31,9 @@ map("n", "<C-l>", "<C-w>l", defaults)
 -- map("n", "q", "<Nop>", defaults)
 -- map("v", "q", "<Nop>", defaults)
 
--- To enable macro recording
-map("n", "<leader>ms", "qa", { desc = "Start macro recording" })
--- Stop recording the macro
-map("n", "<leader>mq", "q", { desc = "Stop macro recording" })
+-- Макросы
+-- map("n", "<leader>ms", "qa", { noremap = true, silent = true, desc = "Start macro recording" })
+-- map("n", "<leader>mq", ":normal q<CR>", { noremap = true, silent = true, desc = "Stop macro recording" })
 
 -- Disable space since it is used as a leader key
 map("v", "<space>", "<Nop>", defaults)
@@ -42,8 +41,8 @@ map("v", "<space>", "<Nop>", defaults)
 -- use jj to exit insert mode
 map("i", "jk", "<ESC>", defaults)
 
--- clear search highlights
-map("n", "q", ":silent nohl<CR>", defaults)
+-- -- clear search highlights
+-- map("n", "q", ":silent nohl<CR>", defaults)
 
 -- delete single character without copying into register
 map("n", "x", '"_x', defaults)
@@ -71,9 +70,9 @@ map("n", "<C-,>", ":vertical resize +3<CR>", { desc = "Expand window in width" }
 map("n", "<C-.>", ":vertical resize -3<CR>", { desc = "Collapse window in width" })
 
 -- center screen on Ctrl+u, Ctrl+d moves
-map("n", "<C-d>", "<C-d>zz")
-map("n", "<C-u>", "<C-u>zz")
-
+-- map("n", "<C-d>", "<C-d>zz")
+-- map("n", "<C-u>", "<C-u>zz")
+--
 -------------------------------
 -- Automatically close brackets
 -------------------------------
@@ -125,8 +124,8 @@ map("n", "]b", "<cmd>bnext<cr>", { desc = "Next buffer" })
 ----------------------
 
 -- File manager Neotree
-map("n", "<leader>e", ":Neotree focus<CR>", defaults) -- focus file explorer
-map("n", "<C-n>", ":Neotree close<CR>", defaults) -- toggle file explorer
+-- map("n", "<leader>e", ":Neotree focus<CR>", defaults) -- focus file explorer
+-- map("n", "<C-n>", ":Neotree close<CR>", defaults) -- toggle file explorer
 
 ----------------------
 -- Gopher Keymaps
@@ -137,8 +136,10 @@ map("n", "<leader>gsj", "<cmd>GoTagAdd json<cr>", defaults)
 map("n", "<leader>gsy", "<cmd>GoTagAdd yaml<CR>", defaults)
 -- Add avro struct tags
 map("n", "<leader>gsa", "<cmd>GoTagAdd avro<CR>", defaults)
+-- Add db struct tags
+map("n", "<leader>gsd", "<cmd>GoTagAdd db<CR>", defaults)
 -- Remove tags (json/yaml) from struct
-map("n", "<leader>gsr", "<cmd>GoTagRm json,yaml,avro<CR>", defaults)
+map("n", "<leader>gsr", "<cmd>GoTagRm json,yaml,avro,db<CR>", defaults)
 -- Add if err check
 -- map("n", "<leader>rr", "<cmd>GoIfErr<CR>", defaults)
 -- Add if err check (without plugin)

@@ -20,6 +20,13 @@ autocmd("TextYankPost", {
 	end,
 })
 
+-- Clear register 'a' on VimLeave
+autocmd("VimLeave", {
+	group = komisar_group,
+	pattern = "*",
+	command = "let @a = ''",
+})
+
 --- remove all trailing whitespace on save
 autocmd("BufWritePre", {
 	group = komisar_group,

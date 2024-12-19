@@ -24,8 +24,8 @@ opt.undofile = true
 -- opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 
 -- line numbers
--- opt.relativenumber = true
-opt.relativenumber = false
+opt.relativenumber = true
+-- opt.relativenumber = false
 opt.number = true
 
 -- tabs & indentation
