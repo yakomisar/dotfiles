@@ -17,6 +17,7 @@ return {
                 "dockerls",
                 "docker_compose_language_service",
                 "yamlls",
+                "buf_ls",
             },
             automatic_installation = true,
         })
