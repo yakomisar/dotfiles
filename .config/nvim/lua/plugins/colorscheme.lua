@@ -5,114 +5,46 @@
 
 return {
     -- {
-    --     'projekt0n/github-nvim-theme',
-    --     lazy = false,
+    --     'sainnhe/gruvbox-material',
     --     priority = 1000,
     --     config = function()
-    --         require('github-theme').setup {
-    --             styles = {
-    --                 comments = 'NONE',
-    --                 functions = 'NONE',
-    --                 keywords = 'NONE',
-    --                 variables = 'NONE',
-    --                 conditionals = 'NONE',
-    --                 constants = 'NONE',
-    --                 numbers = 'NONE',
-    --                 operators = 'NONE',
-    --                 strings = 'NONE',
-    --                 types = 'NONE',
-    --             },
-    --             groups = {
-    --                 all = {
-    --                     SnacksPickerInput = { bg = 'bg0' },
-    --                     SnacksPickerInputBorder = { bg = 'bg0' },
-    --                     SnacksPickerList = { bg = 'bg3' },
-    --                     SnacksPickerListBorder = { bg = 'bg3' },
-    --                     SnacksPickerPreviewBorder = { bg = 'bg0' },
-    --                     SnacksPickerDir = { link = 'Comment' },
-    --                     SnacksPickerRow = { link = 'Comment' },
-    --                     NvimTreeWinSeparator = { bg = 'bg1', fg = 'bg1' },
-    --                     TreesitterContextLineNumber = {
-    --                         bg = 'palette.accent.subtle',
-    --                     },
-    --
-    --                     StatusLine = { bg = 'bg0', fg = 'palette.fg.muted' },
-    --                     StatusLineMode = { bg = 'palette.black.bright', fg = 'fg' },
-    --                     StatusLineMedium = { bg = 'bg2', fg = 'palette.fg.muted' },
-    --                     StatusLineGitBranchIcon = { bg = 'bg2', fg = 'orange' },
-    --                     StatusLineGitDiffAdded = {
-    --                         bg = 'bg2',
-    --                         fg = 'palette.green.base',
-    --                     },
-    --                     StatusLineGitDiffChanged = {
-    --                         bg = 'bg2',
-    --                         fg = 'palette.attention.fg',
-    --                     },
-    --                     StatusLineGitDiffRemoved = {
-    --                         bg = 'bg2',
-    --                         fg = 'palette.danger.fg',
-    --                     },
-    --                     StatusLineLspError = {
-    --                         bg = 'bg2',
-    --                         fg = 'palette.danger.fg',
-    --                     },
-    --                     StatusLineLspWarn = {
-    --                         bg = 'bg2',
-    --                         fg = 'palette.attention.fg',
-    --                     },
-    --                     StatusLineLspHint = { bg = 'bg2', fg = 'palette.fg.muted' },
-    --                     StatusLineLspInfo = { bg = 'bg2', fg = 'palette.accent.fg' },
-    --                     StatusLineLspMessages = {
-    --                         bg = 'bg0',
-    --                     },
-    --                 },
-    --             },
-    --         }
-    --
-    --         vim.cmd.colorscheme 'github_dark_dimmed'
-    --     end,
-    -- }
-    {
-        'sainnhe/gruvbox-material',
-        priority = 1000,
-        config = function()
-            vim.g.gruvbox_material_enable_italic = true
-            vim.cmd.colorscheme('gruvbox-material')
-        end,
-    },
-    -- {
-    --     "gmr458/vscode_modern_theme.nvim",
-    --     lazy = false,
-    --     -- event = "VeryLazy",
-    --     priority = 1000,
-    --     config = function()
-    --         require("vscode_modern").setup({
-    --             cursorline = true,
-    --             transparent_background = false,
-    --             nvim_tree_darker = true,
-    --         })
-    --         vim.cmd.colorscheme("vscode_modern")
-    --
-    --         vim.cmd([[highlight NeoTreeNormalNC guifg = #181818 ]])
-    --
-    --         -- NeoTree Directory and Git Status
-    --         vim.cmd([[highlight NeoTreeDirectoryIcon guifg = #729db3 ]])
-    --         vim.cmd([[highlight NeoTreeDirectoryName guifg = #729db3 ]])
-    --         vim.cmd([[highlight NeoTreeTitleBar guifg=#1f1f1f guibg=#75beff ]])
-    --         vim.cmd([[highlight NeoTreeGitModified guifg=#dcdcaa ]])
-    --
-    --         -- NeoTree Float Title and Git Changes
-    --         vim.cmd([[highlight NeoTreeFloatTitle guifg=#cccccc guibg=#1f1f1f ]])
-    --         vim.cmd([[highlight NeoTreeGitConflict gui=bold,italic guifg=#ff8700 ]])
-    --         vim.cmd([[highlight NeoTreeGitUntracked gui=italic guifg=#ff8700 ]])
-    --         vim.cmd([[highlight NeoTreeFileStats guifg=#646464 ]])
-    --
-    --         -- NeoTree Tabs and Separators
-    --         vim.cmd([[highlight NeoTreeTabInactive guifg=#777777 guibg=#141414 ]])
-    --         vim.cmd([[highlight NeoTreeTabSeparatorActive guifg=#0a0a0a ]])
-    --         vim.cmd([[highlight NeoTreeTabSeparatorInactive guifg=#101010 guibg=#141414 ]])
+    --         -- vim.g.gruvbox_material_enable_italic = true
+    --         vim.cmd.colorscheme('gruvbox-material')
     --     end,
     -- },
+    {
+        "gmr458/vscode_modern_theme.nvim",
+        lazy = false,
+        -- event = "VeryLazy",
+        priority = 1000,
+        config = function()
+            require("vscode_modern").setup({
+                cursorline = true,
+                transparent_background = false,
+                nvim_tree_darker = true,
+            })
+            vim.cmd.colorscheme("vscode_modern")
+
+            vim.cmd([[highlight NeoTreeNormalNC guifg = #181818 ]])
+
+            -- NeoTree Directory and Git Status
+            vim.cmd([[highlight NeoTreeDirectoryIcon guifg = #729db3 ]])
+            vim.cmd([[highlight NeoTreeDirectoryName guifg = #729db3 ]])
+            vim.cmd([[highlight NeoTreeTitleBar guifg=#1f1f1f guibg=#75beff ]])
+            vim.cmd([[highlight NeoTreeGitModified guifg=#dcdcaa ]])
+
+            -- NeoTree Float Title and Git Changes
+            vim.cmd([[highlight NeoTreeFloatTitle guifg=#cccccc guibg=#1f1f1f ]])
+            vim.cmd([[highlight NeoTreeGitConflict gui=bold,italic guifg=#ff8700 ]])
+            vim.cmd([[highlight NeoTreeGitUntracked gui=italic guifg=#ff8700 ]])
+            vim.cmd([[highlight NeoTreeFileStats guifg=#646464 ]])
+
+            -- NeoTree Tabs and Separators
+            vim.cmd([[highlight NeoTreeTabInactive guifg=#777777 guibg=#141414 ]])
+            vim.cmd([[highlight NeoTreeTabSeparatorActive guifg=#0a0a0a ]])
+            vim.cmd([[highlight NeoTreeTabSeparatorInactive guifg=#101010 guibg=#141414 ]])
+        end,
+    },
     -- {
     --     "folke/tokyonight.nvim",
     --     lazy = false,

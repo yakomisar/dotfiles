@@ -24,9 +24,9 @@ return {
         require("mason-tool-installer").setup({
             ensure_installed = {
                 "clang-format",
-                "stylua",               -- lua formatter
-                "gofumpt",              -- go better gofmt
-                "goimports-reviser",    -- go better imports handler
+                "stylua",                           -- lua formatter
+                "gofumpt",                          -- go better gofmt
+                "goimports-reviser",                -- go better imports handler
                 { "gotests", version = "develop" }, -- go tests codegen
                 "golangci-lint",
             },

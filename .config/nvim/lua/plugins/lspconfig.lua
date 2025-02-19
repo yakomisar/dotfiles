@@ -120,6 +120,13 @@ return {
         })
 
         lspconfig["clangd"].setup({
+            filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
+        lspconfig["buf_ls"].setup({
+            filetypes = { "proto" },
             capabilities = capabilities,
             on_attach = on_attach,
         })
