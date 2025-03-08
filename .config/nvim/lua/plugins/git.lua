@@ -16,8 +16,8 @@ return {
             { "<leader>gd", "<cmd>DiffviewOpen<cr>",        desc = "Open Diffview" },
             { "<leader>gD", "<cmd>DiffviewClose<cr>",       desc = "Close Diffview" },
             -- Optional additional mappings:
-            { "<leader>gF", "<cmd>DiffviewFocusFiles<cr>",  desc = "Focus Diffview File Panel" },
-            { "<leader>gT", "<cmd>DiffviewToggleFiles<cr>", desc = "Toggle Diffview File Panel" },
+            { "<leader>gf", "<cmd>DiffviewToggleFiles<cr>", desc = "Toggle Diffview File Panel" },
+            { "<leader>gh", "<cmd>DiffviewFileHistory<cr>", desc = "Open Diffview File History" },
         },
         config = true
     },
