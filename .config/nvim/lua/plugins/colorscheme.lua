@@ -30,6 +30,10 @@ return {
             vim.cmd([[highlight NeoTreeTabInactive guifg=#777777 guibg=#141414 ]])
             vim.cmd([[highlight NeoTreeTabSeparatorActive guifg=#0a0a0a ]])
             vim.cmd([[highlight NeoTreeTabSeparatorInactive guifg=#101010 guibg=#141414 ]])
+
+            vim.cmd([[highlight BlinkCmpMenuSelection guibg=#b4ebbc guifg=#212031 gui=bold]])
+            vim.cmd([[highlight BlinkCmpMenu guibg=#1f1f1f]])
+            vim.cmd([[highlight BlinkCmpMenuBorder guibg=#1f1f1f]])
         end,
     },
 }

@@ -32,6 +32,20 @@ return {
                 },
             },
             -- You can add other dap-ui settings here if needed
+            icons = { expanded = '▾', collapsed = '▸', current_frame = '*' },
+            controls = {
+                icons = {
+                    pause = '⏸', -- Pause button
+                    play = '▶', -- Play button
+                    step_into = '⏎', -- Step into
+                    step_over = '⏭', -- Step over
+                    step_out = '⏮', -- Step out
+                    step_back = 'b', -- Step back
+                    run_last = '▶▶', -- Repeat/Run last
+                    terminate = '⏹', -- Stop button
+                    disconnect = '⏏', -- Close/X
+                },
+            },
         })
 
 
