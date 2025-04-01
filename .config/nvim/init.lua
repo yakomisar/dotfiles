@@ -18,6 +18,7 @@ require("options")
 require("keymaps")
 require("autocommands")
 require("statusline")
+require("lsp")
 require("lazy").setup("plugins", {
 	change_detection = { notify = false },
 	performance = {

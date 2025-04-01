@@ -99,7 +99,7 @@ map("n", "<leader>h", function()
 end)
 
 -- utils
-map("n", "<leader>re", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Rename in curr buffer" })
+map("n", "<leader>re", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Smart rename" })
 
 ---------------
 -- Visual Maps
