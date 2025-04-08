@@ -37,13 +37,6 @@ return {
 			desc = "Grep",
 		},
 		{
-			"<leader>:",
-			function()
-				Snacks.picker.command_history()
-			end,
-			desc = "Command History",
-		},
-		{
 			"<leader>n",
 			function()
 				Snacks.picker.notifications()
