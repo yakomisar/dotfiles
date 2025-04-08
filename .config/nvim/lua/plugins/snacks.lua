@@ -22,20 +22,13 @@ return {
 	},
 	keys = {
 		-- Top Pickers & Explorer
-		{
-			"<leader><space>",
-			function()
-				Snacks.picker.smart()
-			end,
-			desc = "Smart Find Files",
-		},
-		{
-			"<leader>,",
-			function()
-				Snacks.picker.buffers()
-			end,
-			desc = "Buffers",
-		},
+		-- {
+		-- 	"<leader><space>",
+		-- 	function()
+		-- 		Snacks.picker.smart()
+		-- 	end,
+		-- 	desc = "Smart Find Files",
+		-- },
 		{
 			"<leader>/",
 			function()
@@ -66,20 +59,6 @@ return {
 		},
 		-- find
 		{
-			"<leader>fb",
-			function()
-				Snacks.picker.buffers()
-			end,
-			desc = "Buffers",
-		},
-		{
-			"<leader>fc",
-			function()
-				Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
-			end,
-			desc = "Find Config File",
-		},
-		{
 			"<leader>ff",
 			function()
 				Snacks.picker.files()
@@ -92,6 +71,24 @@ return {
 				Snacks.picker.git_files()
 			end,
 			desc = "Find Git Files",
+		},
+		{
+			"<leader><leader>",
+			function()
+				Snacks.picker.buffers({
+					current = false,
+					sort_lastused = true,
+					layout = "vscode",
+				})
+			end,
+			desc = "Buffers",
+		},
+		{
+			"<leader>fn",
+			function()
+				Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
+			end,
+			desc = "Find Config File",
 		},
 		{
 			"<leader>fp",
@@ -231,7 +228,7 @@ return {
 			desc = "Commands",
 		},
 		{
-			"<leader>sd",
+			"<leader>d",
 			function()
 				Snacks.picker.diagnostics()
 			end,
@@ -245,7 +242,7 @@ return {
 			desc = "Buffer Diagnostics",
 		},
 		{
-			"<leader>sh",
+			"<leader>fh",
 			function()
 				Snacks.picker.help()
 			end,
@@ -322,20 +319,21 @@ return {
 			desc = "Resume",
 		},
 		{
-			"<leader>su",
+			"<leader>u",
 			function()
-				Snacks.picker.undo()
+				Snacks.picker.undo({
+					layout = "ivy",
+				})
 			end,
 			desc = "Undo History",
 		},
 		{
-			"<leader>uC",
+			"<leader>co",
 			function()
 				Snacks.picker.colorschemes()
 			end,
 			desc = "Colorschemes",
 		},
-		-- LSP
 		{
 			"gd",
 			function()
@@ -351,7 +349,7 @@ return {
 			desc = "Goto Declaration",
 		},
 		{
-			"gr",
+			"<leader>gr",
 			function()
 				Snacks.picker.lsp_references()
 			end,
@@ -359,7 +357,7 @@ return {
 			desc = "References",
 		},
 		{
-			"gI",
+			"<leader>gi",
 			function()
 				Snacks.picker.lsp_implementations()
 			end,
