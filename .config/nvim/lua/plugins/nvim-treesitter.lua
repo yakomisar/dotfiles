@@ -22,6 +22,7 @@ return {
 				"gomod",
 				"gosum",
 				"proto",
+				"regex",
 			},
 			highlight = { enable = true },
 			indent = { enable = true },
