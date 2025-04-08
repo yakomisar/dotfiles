@@ -71,7 +71,7 @@ return {
 				Snacks.picker.buffers({
 					current = false,
 					sort_lastused = true,
-					layout = "vscode",
+					layout = "select",
 				})
 			end,
 			desc = "Buffers",
@@ -133,13 +133,13 @@ return {
 			end,
 			desc = "Git Stash",
 		},
-		{
-			"<leader>gd",
-			function()
-				Snacks.picker.git_diff()
-			end,
-			desc = "Git Diff (Hunks)",
-		},
+		-- {
+		-- 	"<leader>gd",
+		-- 	function()
+		-- 		Snacks.picker.git_diff()
+		-- 	end,
+		-- 	desc = "Git Diff (Hunks)",
+		-- },
 		{
 			"<leader>gf",
 			function()
@@ -327,24 +327,26 @@ return {
 			end,
 			desc = "Colorschemes",
 		},
-		{
-			"gd",
-			function()
-				Snacks.picker.lsp_definitions()
-			end,
-			desc = "Goto Definition",
-		},
-		{
-			"gD",
-			function()
-				Snacks.picker.lsp_declarations()
-			end,
-			desc = "Goto Declaration",
-		},
+		-- {
+		-- 	"gd",
+		-- 	function()
+		-- 		Snacks.picker.lsp_definitions()
+		-- 	end,
+		-- 	desc = "Goto Definition",
+		-- },
+		-- {
+		-- 	"gD",
+		-- 	function()
+		-- 		Snacks.picker.lsp_declarations()
+		-- 	end,
+		-- 	desc = "Goto Declaration",
+		-- },
 		{
 			"<leader>gr",
 			function()
-				Snacks.picker.lsp_references()
+				Snacks.picker.lsp_references({
+					layout = "ivy",
+				})
 			end,
 			nowait = true,
 			desc = "References",
@@ -352,7 +354,9 @@ return {
 		{
 			"<leader>gi",
 			function()
-				Snacks.picker.lsp_implementations()
+				Snacks.picker.lsp_implementations({
+					layout = "ivy",
+				})
 			end,
 			desc = "Goto Implementation",
 		},
@@ -379,47 +383,19 @@ return {
 		},
 		-- Other
 		{
-			"<leader>z",
-			function()
-				Snacks.zen()
-			end,
-			desc = "Toggle Zen Mode",
-		},
-		{
-			"<leader>Z",
-			function()
-				Snacks.zen.zoom()
-			end,
-			desc = "Toggle Zoom",
-		},
-		{
-			"<leader>.",
-			function()
-				Snacks.scratch()
-			end,
-			desc = "Toggle Scratch Buffer",
-		},
-		{
-			"<leader>S",
-			function()
-				Snacks.scratch.select()
-			end,
-			desc = "Select Scratch Buffer",
-		},
-		{
 			"<leader>n",
 			function()
 				Snacks.notifier.show_history()
 			end,
 			desc = "Notification History",
 		},
-		{
-			"<leader>bd",
-			function()
-				Snacks.bufdelete()
-			end,
-			desc = "Delete Buffer",
-		},
+		-- {
+		-- 	"<leader>bd",
+		-- 	function()
+		-- 		Snacks.bufdelete()
+		-- 	end,
+		-- 	desc = "Delete Buffer",
+		-- },
 		{
 			"<leader>cR",
 			function()
@@ -449,19 +425,19 @@ return {
 			end,
 			desc = "Dismiss All Notifications",
 		},
-		{
-			"<c-/>",
-			function()
-				Snacks.terminal()
-			end,
-			desc = "Toggle Terminal",
-		},
-		{
-			"<c-_>",
-			function()
-				Snacks.terminal()
-			end,
-			desc = "which_key_ignore",
-		},
+		-- {
+		-- 	"<c-/>",
+		-- 	function()
+		-- 		Snacks.terminal()
+		-- 	end,
+		-- 	desc = "Toggle Terminal",
+		-- },
+		-- {
+		-- 	"<c-_>",
+		-- 	function()
+		-- 		Snacks.terminal()
+		-- 	end,
+		-- 	desc = "which_key_ignore",
+		-- },
 	},
 }
