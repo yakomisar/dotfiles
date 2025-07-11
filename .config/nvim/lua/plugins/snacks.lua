@@ -12,7 +12,14 @@ return {
 		explorer = { enabled = false },
 		indent = { enabled = false },
 		input = { enabled = false },
-		picker = { enabled = true },
+		picker = {
+			sources = {
+				explorer = {
+					auto_close = false, -- всегда закрывает поэтому вырубил
+					hidden = false,
+				},
+			},
+		},
 		notifier = { enabled = false },
 		quickfile = { enabled = false },
 		scope = { enabled = false },
@@ -69,9 +76,21 @@ return {
 			"<leader><leader>",
 			function()
 				Snacks.picker.buffers({
+					-- I always want my buffers picker to start in normal mode
+					on_show = function()
+						vim.cmd.stopinsert()
+					end,
 					current = false,
 					sort_lastused = true,
 					layout = "select",
+					win = {
+						input = {
+							keys = {
+								["d"] = "bufdelete",
+							},
+						},
+						list = { keys = { ["d"] = "bufdelete" } },
+					},
 				})
 			end,
 			desc = "Buffers",
@@ -345,7 +364,7 @@ return {
 			"<leader>gr",
 			function()
 				Snacks.picker.lsp_references({
-					layout = "ivy",
+					layout = "vertical",
 				})
 			end,
 			nowait = true,
@@ -355,7 +374,7 @@ return {
 			"<leader>gi",
 			function()
 				Snacks.picker.lsp_implementations({
-					layout = "ivy",
+					layout = "vertical",
 				})
 			end,
 			desc = "Goto Implementation",

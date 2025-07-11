@@ -32,7 +32,7 @@ return {
 					preselect = true,
 					auto_insert = true,
 				},
-				max_items = 10,
+				max_items = 20,
 			},
 
 			menu = {

@@ -10,6 +10,9 @@ return {
 		local dap, dapui = require("dap"), require("dapui")
 
 		dapui.setup({
+			render = {
+				max_type_length = 0,
+			},
 			layouts = {
 				{
 					elements = {
