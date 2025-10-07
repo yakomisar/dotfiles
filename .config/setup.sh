@@ -35,10 +35,11 @@ brew install git || { echo "Git installation failed"; exit 1; }
 echo "Installing Go..."
 brew install go || { echo "Go installation failed"; exit 1; }
 
+# Go installation path
 echo "Setting up Go environment variables..."
+echo "export GOROOT=/usr/local/go" >> ~/.zshrc
 echo "export GOPATH=$HOME/go" >> ~/.zshrc
-echo "export GO111MODULE=on" >> ~/.zshrc
-echo "export PATH=$PATH:$HOME/go/bin" >> ~/.zshrc
+echo "export PATH=$PATH:$GOROOT/bin:$GOPATH/bin" >> ~/.zshrc
 source ~/.zshrc
 
 # Go tools
